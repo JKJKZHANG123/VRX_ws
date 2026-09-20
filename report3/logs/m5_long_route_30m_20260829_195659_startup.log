@@ -1,0 +1,105 @@
+[validation] start=2026-08-29T19:56:59+08:00
+[validation] preflight process check:
+  17509    2209 Ssl        07:33 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch vrx_gz competition.launch.py world:=sydney_regatta
+  17530   17509 S          07:32 /bin/sh -c ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -v 4 -r  sydney_regatta.sdf --force-version 8
+  17532   17530 S          07:32 gz sim -v 4 -r sydney_regatta.sdf
+  17534   17509 Sl         07:32 /opt/ros/jazzy/lib/ros_gz_bridge/parameter_bridge /clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock /vrx/task/info@ros_gz_interfaces/msg/ParamVec[gz.msgs.Param /vrx/debug/wind/speed@std_msgs/msg/Float32[gz.msgs.Float /vrx/debug/wind/direction@std_msgs/msg/Float32[gz.msgs.Float --ros-args -r /clock:=/clock -r /vrx/task/info:=/vrx/task/info -r /vrx/debug/wind/speed:=/vrx/debug/wind/speed -r /vrx/debug/wind/direction:=/vrx/debug/wind/direction
+  17575   17532 Sl         07:32 gz sim server
+  17576   17532 SLl        07:32 gz sim gui
+  17605   17509 Sl         07:31 /opt/ros/jazzy/lib/ros_gz_bridge/parameter_bridge /model/wamv/pose@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V /model/wamv/pose_static@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V /world/sydney_regatta/model/wamv/joint_state@sensor_msgs/msg/JointState[gz.msgs.Model /vrx/contacts@ros_gz_interfaces/msg/Contacts[gz.msgs.Contacts /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/image@sensor_msgs/msg/Image[gz.msgs.Image /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/image@sensor_msgs/msg/Image[gz.msgs.Image /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/image@sensor_msgs/msg/Image[gz.msgs.Image /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo /world/sydney_regatta/model/wamv/link/wamv/gps_wamv_link/sensor/navsat/navsat@sensor_msgs/msg/NavSatFix[gz.msgs.NavSat /world/sydney_regatta/model/wamv/link/wamv/imu_wamv_link/sensor/imu_wamv_sensor/imu@sensor_msgs/msg/Imu[gz.msgs.IMU wamv/thrusters/left/thrust@std_msgs/msg/Float64]gz.msgs.Double wamv/thrusters/left/pos@std_msgs/msg/Float64]gz.msgs.Double wamv/thrusters/right/thrust@std_msgs/msg/Float64]gz.msgs.Double wamv/thrusters/right/pos@std_msgs/msg/Float64]gz.msgs.Double wamv/sensors/acoustics/receiver/range_bearing@ros_gz_interfaces/msg/ParamVec[gz.msgs.Param /pinger/set_pinger_position@geometry_msgs/msg/Vector3]gz.msgs.Vector3d /wamv/shooters/ball_shooter/fire@std_msgs/msg/Bool]gz.msgs.Boolean --ros-args -r __ns:=/wamv -r /model/wamv/pose:=pose -r /model/wamv/pose_static:=pose_static -r /world/sydney_regatta/model/wamv/joint_state:=joint_states -r /vrx/contacts:=/vrx/contacts -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/image:=sensors/cameras/front_left_camera_sensor/image_raw -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/camera_info:=sensors/cameras/front_left_camera_sensor/camera_info -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/image:=sensors/cameras/front_right_camera_sensor/image_raw -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/camera_info:=sensors/cameras/front_right_camera_sensor/camera_info -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan:=sensors/lidars/lidar_wamv_sensor/scan -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points:=sensors/lidars/lidar_wamv_sensor/points -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/image:=sensors/cameras/middle_right_camera_sensor/image_raw -r /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/camera_info:=sensors/cameras/middle_right_camera_sensor/camera_info -r /world/sydney_regatta/model/wamv/link/wamv/gps_wamv_link/sensor/navsat/navsat:=sensors/gps/gps/fix -r /world/sydney_regatta/model/wamv/link/wamv/imu_wamv_link/sensor/imu_wamv_sensor/imu:=sensors/imu/imu/data -r wamv/thrusters/left/thrust:=thrusters/left/thrust -r wamv/thrusters/left/pos:=thrusters/left/pos -r wamv/thrusters/right/thrust:=thrusters/right/thrust -r wamv/thrusters/right/pos:=thrusters/right/pos -r wamv/sensors/acoustics/receiver/range_bearing:=sensors/acoustics/receiver/range_bearing -r /pinger/set_pinger_position:=/pinger/set_pinger_position -r /wamv/shooters/ball_shooter/fire:=shooters/ball_shooter/fire
+  18305    2209 Ssl        07:08 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 run usv_navigation clock_bridge_watchdog --ros-args -p use_sim_time:=false
+  18343   18305 Sl         07:08 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/usv_navigation/lib/usv_navigation/clock_bridge_watchdog --ros-args -p use_sim_time:=false
+  18365    2209 Ssl        07:06 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch point_lio mapping_vrx.launch.py rviz:=true
+  18385   18365 Sl         07:06 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/lidar_timestamp_adapter/lib/lidar_timestamp_adapter/cloud_filter --ros-args -r __node:=cloud_filter --params-file /tmp/launch_params_4mqmla3k
+  18386   18365 Rl         07:06 /home/jkjkzhang/lidar_project/install/point_lio/lib/point_lio/pointlio_mapping --ros-args -r __node:=laserMapping --params-file /home/jkjkzhang/lidar_project/install/point_lio/share/point_lio/config/vrx_wamv.yaml --params-file /tmp/launch_params_whcy0_xd
+  18388   18365 SNl        07:06 /opt/ros/jazzy/lib/rviz2/rviz2 -d /home/jkjkzhang/lidar_project/install/point_lio/share/point_lio/rviz_cfg/loam_livox.rviz --ros-args -r __node:=rviz --params-file /tmp/launch_params_jhss5af9
+  18667    2209 Sl         06:55 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp
+  18848    2209 Ssl        06:50 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_cloud_filter cloud_filter.launch.py
+  18933   18848 Sl         06:49 /home/jkjkzhang/lidar_project/install/usv_cloud_filter/lib/usv_cloud_filter/obstacle_filter --ros-args -r __node:=obstacle_filter --params-file /home/jkjkzhang/lidar_project/install/usv_cloud_filter/share/usv_cloud_filter/config/cloud_filter_params.yaml
+  19207    2209 Ssl        06:39 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_navigation navigation.launch.py enable_dynamic_tracker:=false
+  19227   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_controller/controller_server --ros-args -r __node:=controller_server -p use_sim_time:=True --params-file /tmp/tmpj3_1xw93
+  19228   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_planner/planner_server --ros-args -r __node:=planner_server -p use_sim_time:=True --params-file /tmp/tmpx10y7fu7
+  19229   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_smoother/smoother_server --ros-args -r __node:=smoother_server -p use_sim_time:=True --params-file /tmp/tmp1qqge_pp
+  19230   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_behaviors/behavior_server --ros-args -r __node:=behavior_server -p use_sim_time:=True --params-file /tmp/tmp9sdt_a8c
+  19231   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_bt_navigator/bt_navigator --ros-args -r __node:=bt_navigator -p use_sim_time:=True --params-file /tmp/tmp4kxcgfq8
+  19232   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_waypoint_follower/waypoint_follower --ros-args -r __node:=waypoint_follower -p use_sim_time:=True --params-file /tmp/tmpxss4qrk6
+  19233   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_velocity_smoother/velocity_smoother --ros-args -r __node:=velocity_smoother -p use_sim_time:=True --params-file /tmp/tmpclqatny6
+  19234   19207 Sl         06:38 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/usv_navigation/lib/usv_navigation/costmap_3d_markers --ros-args -r __node:=costmap_3d_markers -p use_sim_time:=True --params-file /tmp/launch_params_3t0cdts6
+  19235   19207 Rl         06:38 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/usv_navigation/lib/usv_navigation/click_to_goal --ros-args -r __node:=click_to_goal -p use_sim_time:=True --params-file /home/jkjkzhang/lidar_project/install/usv_navigation/share/usv_navigation/config/goal_guard.yaml
+  19236   19207 Sl         06:38 /opt/ros/jazzy/lib/nav2_lifecycle_manager/lifecycle_manager --ros-args -r __node:=lifecycle_manager_navigation -p use_sim_time:=True --params-file /tmp/launch_params_9y1j839r --params-file /tmp/launch_params_z62jhuzi --params-file /tmp/launch_params_ti240j83
+  19825    2209 Ssl        06:24 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_control_bridge control_bridge.launch.py
+  19847   19825 Sl         06:23 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/usv_control_bridge/lib/usv_control_bridge/control_bridge --ros-args -r __node:=control_bridge --params-file /home/jkjkzhang/lidar_project/install/usv_control_bridge/share/usv_control_bridge/config/bridge_params.yaml
+  19864    2209 Ssl        06:21 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_click_gazebo gz_click_bridge.launch.py
+  19937   19864 Sl         06:20 /opt/ros/jazzy/lib/ros_gz_bridge/parameter_bridge /gazebo/click/point@geometry_msgs/msg/Vector3[gz.msgs.Vector3d /gazebo/boat_pose@geometry_msgs/msg/Vector3[gz.msgs.Vector3d /gazebo/waypoint_cmd@std_msgs/msg/String[gz.msgs.StringMsg --ros-args -r __node:=gz_click_bridge --params-file /tmp/launch_params_vax51g7r -r /gazebo/click/point:=/gz_click/point -r /gazebo/boat_pose:=/gz_boat_pose -r /gazebo/waypoint_cmd:=/gz_waypoint_cmd
+  19938   19864 Rl         06:20 python3 /home/jkjkzhang/lidar_project/install/usv_click_gazebo/lib/usv_click_gazebo/gz_click_to_goal_node.py --ros-args -r __node:=gz_click_to_goal_node --params-file /tmp/launch_params_b4vhla0r
+  20061    2209 Ssl        06:18 rviz2 -d /home/jkjkzhang/lidar_project/install/usv_navigation/share/usv_navigation/config/nav3d_view.rviz
+[validation] starting USV stack...
+[0;36m[USV][0m 启动前强制清理旧 ROS/Gazebo/Nav2 进程...
+[0;36m[USV][0m 停止全部 USV 进程...
+[0;32m[OK][0m  已停止
+
+[0;36m╔══════════════════════════════════════════════╗[0m
+[0;36m║      USV 自主导航全链路启动                 ║[0m
+[0;36m╚══════════════════════════════════════════════╝[0m
+
+[0;36m[USV][0m ① 启动 VRX 仿真 (Gazebo)...
+[0;36m[USV][0m 启动 sim ...
+  → pid 23585  日志: /home/jkjkzhang/lidar_project/.usv_logs/sim.log
+[0;36m[USV][0m 等待仿真初始化 (25s)...
+[0;36m[USV][0m 启动仿真时钟看门狗...
+[0;36m[USV][0m 启动 clock_watchdog ...
+  → pid 24425  日志: /home/jkjkzhang/lidar_project/.usv_logs/clock_watchdog.log
+[0;36m[USV][0m ② 启动 Point-LIO + 点云视图...
+[0;36m[USV][0m 启动 lio ...
+  → pid 24467  日志: /home/jkjkzhang/lidar_project/.usv_logs/lio.log
+[0;36m[USV][0m 等待 LIO 启动 (10s)...
+[0;36m[USV][0m 等待 Point-LIO 首条里程计，确认 camera_init 已建立...
+. ✓
+[0;36m[USV][0m 确认点云过滤所需 TF camera_init -> base_link...
+ ✓
+[0;36m[USV][0m 启动水面点云过滤...
+[0;36m[USV][0m 启动 cloud_filter ...
+  → pid 25169  日志: /home/jkjkzhang/lidar_project/.usv_logs/cloud_filter.log
+[0;36m[USV][0m 等待 SafetyCloud 首帧 (确认坐标系与 TF 已就绪)...
+ ✓
+[0;36m[USV][0m 检查启动点云洁净度（连续 5 帧）...
+[0;32m[OK][0m  启动点云洁净度通过；数据已保存到 /home/jkjkzhang/lidar_project/report3/data/startup_cloud_gate_20260829_195756.csv
+[0;36m[USV][0m ④ 启动 Nav2 导航栈...
+[0;36m[USV][0m 动态障碍物跟踪器: false
+[0;36m[USV][0m Nav2 只使用带衰减的实时点云层（不加载持久结构地图）
+[0;36m[USV][0m 启动 nav2 ...
+  → pid 25408  日志: /home/jkjkzhang/lidar_project/.usv_logs/nav2.log
+[0;36m[USV][0m 等待 Nav2 就绪 (15s)...
+[0;36m[USV][0m ⑤ 启动控制桥...
+[0;36m[USV][0m 启动 bridge ...
+  → pid 26012  日志: /home/jkjkzhang/lidar_project/.usv_logs/bridge.log
+[0;36m[USV][0m ⑥ 启动 Gazebo 点击目标桥...
+[0;36m[USV][0m 启动 gz_click ...
+  → pid 26051  日志: /home/jkjkzhang/lidar_project/.usv_logs/gz_click.log
+[0;36m[USV][0m ⑦ 启动 3D 导航视图 (RViz)...
+[0;36m[USV][0m 启动 view ...
+  → pid 26248  日志: /home/jkjkzhang/lidar_project/.usv_logs/view.log
+
+[0;32m╔══════════════════════════════════════════════╗[0m
+[0;32m║  全链路启动完成！                            ║[0m
+[0;32m║                                              ║[0m
+[0;32m║  两个 RViz 窗口:                             ║[0m
+[0;32m║  - LIO RViz: 看点云/地图 (白色点云)          ║[0m
+[0;32m║  - Nav2 RViz: 看路径/costmap (绿线/彩色格子) ║[0m
+[0;32m║                                              ║[0m
+[0;32m║  发送导航目标 (建议用命令行):                ║[0m
+[0;32m║    ./goto.sh 20 0    # 前进 20 米            ║[0m
+[0;32m║    ./goto.sh 15 15   # 斜向右前方            ║[0m
+[0;32m║    ./goto.sh cancel  # 取消当前目标          ║[0m
+[0;32m║                                              ║[0m
+[0;32m║  已启用:                                     ║[0m
+[0;32m║  • 距离过滤 (只保留 30m 内点云, 去除地平线)     ║[0m
+[0;32m║  • 高度过滤 (z>0.3m, 只保留岸线/浮标结构)       ║[0m
+[0;32m║  • Point-LIO 直接导航 (无 EKF, 无 GPS)          ║[0m
+[0;32m║                                              ║[0m
+[0;32m║  日志目录: .usv_logs/                        ║[0m
+[0;32m║  停止全部: ./usv.sh stop                     ║[0m
+[0;32m║  重新加载配置: ./usv.sh restart              ║[0m
+[0;32m╚══════════════════════════════════════════════╝[0m
+
+[validation] usv.sh start rc=0 end=2026-08-29T19:58:20+08:00

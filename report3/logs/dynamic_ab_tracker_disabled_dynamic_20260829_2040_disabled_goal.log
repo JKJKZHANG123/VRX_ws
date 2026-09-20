@@ -1,0 +1,2 @@
+2026-08-29T20:41:23+08:00 sending one goal after subscriber readiness
+[INFO] [1788007285.976393657] [dynamic_trial_goal_publisher]: published one goal (10.000, 0.000) and holding DDS for 3.0s

@@ -1,0 +1,4 @@
+2026-09-01T10:54:02+08:00 fresh=ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-01T10:54:05+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-01T10:54:11+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-01T10:54:17+08:00 ABORTED code=6; status_seq=4

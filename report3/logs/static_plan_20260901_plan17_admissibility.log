@@ -1,0 +1,12 @@
+boat camera_init x=7.71 y=3.33 yaw=-0.134
+global_costmap 200x200 res=0.5 unknown=89.7% cost>=50=1.7%
+local_costmap  200x200 res=0.30000001192092896 unknown=0.0% cost>=50=4.9%
+
+bearing  best_r       x       y  why
+      0    24.0   31.50    0.11  local:free
+    -15    24.0   29.85   -5.93  local:free
+     15    24.0   31.52    6.38  local:free
+    -30    24.0   26.70  -11.35  local:free
+     30    24.0   29.92   12.44  local:free
+    -45    24.0   22.26  -15.76  local:free
+     45    24.0   26.81   17.87  local:free

@@ -1,0 +1,3 @@
+wall_time=2026-09-04T13:49:11+08:00
+geometry obstacle=(5.0,0.0) goal=(11.0,0.0)
+nav2=verified_active

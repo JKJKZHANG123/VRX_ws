@@ -1,0 +1,81 @@
+### M3 water-surface obstacle filter (feeds Nav2 costmaps)
+obstacle_filter:
+    ros__parameters:
+        use_sim_time: true
+
+        # Point-LIO registered cloud, already in the LIO world frame camera_init.
+        input_topic: "/cloud_registered"
+
+        # Direct Gazebo LiDAR scan for the independent emergency stop.
+        raw_input_topic: "/wamv/sensors/lidars/lidar_wamv_sensor/points"
+        safety_output_topic: "/usv/safety_cloud"
+        raw_obstacle_output_topic: "/usv/raw_obstacle_cloud"
+
+        # 原始扫描用于近场避岸：去水面、去船体自身回波。
+        raw_z_min: 0.10
+        raw_z_max: 4.0
+        self_x_min: -2.8
+        self_x_max: 2.8
+        self_y_half_width: 1.6
+
+        # Filtered clouds are transformed into this frame before publishing.
+        # MUST be the boat base frame: Nav2's obstacle layer uses the
+        # observation frame's origin as the sensor origin (range filtering +
+        # raytrace-clearing). In the boat frame the sensor is the boat, so
+        # local avoidance stays correct no matter how far the boat travels
+        # from the map origin. Set to "camera_init" to disable the transform.
+        output_frame: "wamv/wamv/base_link"
+
+        # Wide band output (kept for comparison/rollback).
+        output_topic: "/usv/costmap_cloud"
+
+        # Strict structure output. Height filtering is applied after TF into
+        # base_link, so z~=0 is the local water surface even if camera_init/LIO
+        # drifts vertically. The 0.10m threshold rejects the water plane while retaining the
+        # visible upper part of round/marker buoys (round buoy top is ~0.25m).
+        structure_output_topic: "/usv/structure_cloud"
+
+        # Same filtered structure points in the fixed LIO world frame.  The
+        # local topic above is base_link for rolling local avoidance; this
+        # topic is consumed by the global costmap and is never ray-cleared.
+        structure_map_output_topic: "/usv/structure_map_cloud"
+        world_output_frame: "camera_init"
+
+        # /cloud_registered is a single registered scan. Build a world-fixed
+        # voxel map during startup, then freeze it before dynamic avoidance.
+        # This makes /usv/structure_map_cloud genuinely persistent instead of
+        # subtracting the current moving-target scan from itself.
+        structure_map_accumulate: true
+        structure_map_voxel_size: 0.5
+        # Do not persist the first unstable LIO/cloud frames. After warmup, a
+        # voxel must recur in several scans before it becomes permanent.
+        structure_map_warmup_s: 5.0
+        structure_map_freeze_after_s: 15.0
+        structure_map_min_observations: 3
+        structure_map_max_points: 200000
+        structure_z_min: 0.10
+        structure_z_max: 3.0
+
+        # Wider comparison output, also cropped in base_link coordinates.
+        z_min: 0.10
+        z_max: 3.0
+
+        # Voxel downsample leaf (m); <=0 disables. Eases costmap + outlier cost.
+        voxel_size: 0.1
+
+        # Radius outlier removal: a point with fewer than min_neighbors within
+        # outlier_radius is dropped (isolated spray / wave-crest specks).
+        # 平衡设置：保留离群点过滤（滤水花/波峰单点噪声），但放宽到
+        # 1 个邻居即可，救回远处稀疏浮标点。半径也放大到 1.0m，让 50-80m
+        # 处间距较大的浮标点互相算作邻居而不被误删。
+        enable_outlier: true
+        outlier_radius: 1.0
+        outlier_min_neighbors: 1
+
+        # Distance crop in the output boat frame: drop points beyond this
+        # radius (meters) from the moving vessel. 35 m keeps the complete
+        # six-buoy row visible from the default start (farthest buoy is ~31 m)
+        # while still excluding distant shoreline clutter.
+        max_range: 35.0
+
+        log_throttle_ms: 5000

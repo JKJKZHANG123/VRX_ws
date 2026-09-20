@@ -1,0 +1,73 @@
+/**:
+    ros__parameters:
+        common:
+            lid_topic: "/wamv/points_filtered"   # cloud_filter output (non-finite points removed)
+            imu_topic: "/wamv/sensors/imu/imu/data"
+            con_frame: false # true: if you need to combine several LiDAR frames into one
+            con_frame_num: 1 # the number of frames combined
+            cut_frame: false # true: if you need to cut one LiDAR frame into several subframes
+            cut_frame_time_interval: 0.1 # should be integral fraction of 1 / LiDAR frequency
+            time_lag_imu_to_lidar: 0.0 # sim sensors share the Gazebo clock, no offset
+
+        preprocess:
+            lidar_type: 2 # 2 = Velodyne-style PointCloud2 (x,y,z,intensity,ring,time)
+                          # raw VRX gpu_ray cloud lacks the time field and contains
+                          # inf no-return points -> must go through cloud_filter node
+            scan_line: 32   # wamv lidar switched to 32_beam (2187 samples, vert -10.7..31 deg)
+            timestamp_unit: 0           # cloud_filter writes per-point time in seconds
+            blind: 2.0                  # WAM-V deck/posts self-hit exclusion radius
+
+        mapping:
+            imu_en: true
+            start_in_aggressive_motion: false
+            extrinsic_est_en: false # extrinsic known exactly from wamv xacro
+            imu_time_inte: 0.01 # = 1 / 100Hz (VRX imu update_rate, measured ~96Hz)
+            satu_acc: 100.0 # sim IMU never saturates, keep thresholds out of the way
+            satu_gyro: 100.0
+            acc_norm: 9.81 # Gazebo IMU reports m/s^2
+            lidar_meas_cov: 0.01
+            acc_cov_output: 500.0
+            gyr_cov_output: 1000.0
+            b_acc_cov: 0.0001
+            b_gyr_cov: 0.0001
+            imu_meas_acc_cov: 0.1
+            imu_meas_omg_cov: 0.1
+            # Optional IMU stationary detector + zero-velocity update.
+            # Keep position hold disabled: IMU/ZUPT constrains velocity, not absolute position.
+            zupt_enable: true
+            zupt_position_hold_enable: false
+            zupt_gyro_threshold: 0.03
+            zupt_acc_threshold: 0.20
+            zupt_gyro_std_threshold: 0.01
+            zupt_acc_std_threshold: 0.10
+            zupt_window_size: 60
+            zupt_min_stationary_time: 0.50
+            zupt_velocity_cov: 0.01
+            zupt_position_cov: 0.0025
+            gyr_cov_input: 0.01
+            acc_cov_input: 0.1
+            plane_thr: 0.1
+            match_s: 81.0
+            fov_degree: 360.0 # VRX lidar scans full circle
+            det_range: 130.0  # = max_range in wamv_3d_lidar.xacro
+            gravity_align: true
+            gravity: [ 0.0, 0.0, -9.810 ]
+            gravity_init: [ 0.0, 0.0, -9.810 ]
+            # LiDAR pose w.r.t. IMU, both level-mounted on base_link (vrx_sensors branch):
+            # lidar (0.7, 0, 1.8), imu (0.3, -0.2, 1.3), zero rotations
+            extrinsic_T: [ 0.4, 0.2, 0.5 ]
+            extrinsic_R: [ 1.0, 0.0, 0.0,
+                           0.0, 1.0, 0.0,
+                           0.0, 0.0, 1.0 ]
+
+        odometry:
+            publish_odometry_without_downsample: true
+
+        publish:
+            path_en: true
+            scan_publish_en: true
+            scan_bodyframe_pub_en: false
+
+        pcd_save:
+            pcd_save_en: false
+            interval: -1

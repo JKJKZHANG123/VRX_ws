@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+  WAM-V navigation tree.
+
+  The tree deliberately follows Nav2's planner/controller recovery contract:
+  a ComputePathToPose failure is recovered before FollowPath is ever ticked.
+  This prevents the controller from receiving an empty {path} after a rolling
+  costmap update.  Replanning is bounded to 0.25 Hz; the current path is not
+  replaced every controller cycle.
+
+  A WAM-V cannot safely spin in place or back up near a shoreline, so those
+  recovery actions are intentionally omitted.  The last recovery is a
+  costmap-clear plus a short wait, then Nav2 aborts cleanly if no safe path
+  exists.  The control bridge also zeros thrust on the terminal action state.
+-->
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="2" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithBoundedReplanning">
+        <ControllerSelector selected_controller="{selected_controller}"
+          default_controller="FollowPath" topic_name="controller_selector"/>
+        <PlannerSelector selected_planner="{selected_planner}"
+          default_planner="GridBased" topic_name="planner_selector"/>
+        <RateController hz="0.25">
+          <RecoveryNode number_of_retries="1" name="ComputePathToPose">
+            <ComputePathToPose goal="{goal}" path="{path}"
+              planner_id="{selected_planner}"
+              error_code_id="{compute_path_error_code}"/>
+            <Sequence>
+              <WouldAPlannerRecoveryHelp
+                error_code="{compute_path_error_code}"/>
+              <ClearEntireCostmap name="ClearGlobalCostmap-PlanningRecovery"
+                service_name="global_costmap/clear_entirely_global_costmap"/>
+            </Sequence>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="{selected_controller}"
+            error_code_id="{follow_path_error_code}"/>
+          <Sequence>
+            <WouldAControllerRecoveryHelp error_code="{follow_path_error_code}"/>
+            <ClearEntireCostmap name="ClearLocalCostmap-ControlRecovery"
+              service_name="local_costmap/clear_entirely_local_costmap"/>
+          </Sequence>
+        </RecoveryNode>
+      </PipelineSequence>
+      <Sequence name="SafeNavigationRecovery">
+        <Fallback>
+          <WouldAControllerRecoveryHelp error_code="{follow_path_error_code}"/>
+          <WouldAPlannerRecoveryHelp error_code="{compute_path_error_code}"/>
+        </Fallback>
+        <ClearEntireCostmap name="ClearLocalCostmap-FinalRecovery"
+          service_name="local_costmap/clear_entirely_local_costmap"/>
+        <ClearEntireCostmap name="ClearGlobalCostmap-FinalRecovery"
+          service_name="global_costmap/clear_entirely_global_costmap"/>
+        <Wait wait_duration="2.0"/>
+      </Sequence>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,4 @@
+sequence,target_x,target_y,acceptance_tolerance_m,passed,first_within_logger_t_s,elapsed_after_accept_s,min_error_m,min_error_logger_t_s
+1,1.5,0.0,0.7,True,19.000,8.599,0.077,22.601
+2,3.0,0.5,0.7,True,29.201,18.800,0.400,30.801
+3,4.0,0.0,0.8,True,34.601,24.200,0.780,34.601

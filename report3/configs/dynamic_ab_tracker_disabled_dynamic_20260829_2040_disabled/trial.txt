@@ -1,0 +1,12 @@
+mode=tracker_disabled
+run_id=dynamic_20260829_2040_disabled
+world=sydney_regatta
+goal_camera_init=10.0,0.0,0.0
+obstacle_model=dynamic_obstacle_ab
+obstacle_start_camera_init=6.5,-6.0
+obstacle_end_camera_init=6.5,6.0
+obstacle_speed_mps=0.60
+obstacle_update_hz=5.0
+obstacle_z_m=1.0
+post_motion_record_s=45
+started_wall_time=2026-08-29T20:41:20+08:00

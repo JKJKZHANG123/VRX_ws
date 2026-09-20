@@ -1,0 +1,2 @@
+[INFO] [1788271524.302933245] [spawn_obstacle_ahead]: transform_frozen: camera=(0.00,0.00) world=(-531.86,162.23) tx=-531.863190; ty=162.226940; yaw=1.000000; boat_world=(-531.58, 163.333); boat_camera=(1.0837,0.3593)
+[INFO] [1788271524.303708822] [spawn_obstacle_ahead]: waiting_for_motion: camera=(1.08,0.36) world=(-531.58,163.33) need speed>=0.25 m/s and travel>=4.0 m

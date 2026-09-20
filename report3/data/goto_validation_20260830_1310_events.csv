@@ -1,0 +1,4 @@
+wall_time,t,event,detail
+2026-08-30T13:10:34+0800,0.000,recorder_started,prefix=report3/data/goto_validation_20260830_1310
+2026-08-30T13:10:36+0800,2.072,goal_status,SUCCEEDED code=4; status_seq=4
+2026-08-30T13:11:48+0800,74.345,recorder_stopped,

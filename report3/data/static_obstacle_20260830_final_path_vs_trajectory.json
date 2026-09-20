@@ -1,0 +1,16 @@
+{
+  "trajectory_samples": 879,
+  "trajectory_duration_s": 175.6,
+  "plan_snapshot_count": 570,
+  "first_plan_points": 19,
+  "last_plan_points": 26,
+  "first_plan_length_m": 14.739525100374289,
+  "last_plan_length_m": 16.808367332780826,
+  "actual_traveled_distance_m": 8.207088312983814,
+  "mean_actual_to_time_aligned_plan_m": 0.25524300773662906,
+  "p95_actual_to_time_aligned_plan_m": 0.45151882574262614,
+  "max_actual_to_time_aligned_plan_m": 0.6509514574835823,
+  "min_actual_distance_to_scenario_obstacle_m": 5.855410032610867,
+  "observed_obstacle_points": 7670,
+  "scenario_obstacle_samples": 4
+}

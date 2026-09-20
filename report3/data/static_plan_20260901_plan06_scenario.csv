@@ -1,0 +1,4 @@
+wall_time,sim_time,event,camera_x,camera_y,world_x,world_y,detail
+2026-09-01T13:21:16+0800,890.628,transform_frozen,0.000,0.000,-532.042,162.011,"tx=-532.041509; ty=162.010939; yaw=1.000000; boat_world=(-533.595, 161.791); boat_camera=(-1.024427364754368, 1.1883843709685946)"
+2026-09-01T13:21:16+0800,890.628,spawned,10.000,0.000,-526.638,170.426,speed=0.600 m/s; update_hz=5.0
+2026-09-01T13:21:16+0800,890.628,static_ready,10.000,0.000,-526.638,170.426,static obstacle ready; no motion loop

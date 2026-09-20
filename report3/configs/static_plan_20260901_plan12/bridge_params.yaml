@@ -1,0 +1,107 @@
+### M5 control bridge tunable parameters (feed-forward)
+control_bridge:
+    ros__parameters:
+        use_sim_time: true
+
+        # Surge feed-forward drag model: F = k_v_lin*vx + k_v_quad*vx*|vx|
+        # URDF drag baseline. Steady-state thrust: v=1 -> 124 N,
+        # v=2 -> 392 N. Keep this conservative while validating the route.
+        k_v_lin: 51.3
+        k_v_quad: 72.4
+
+        # Yaw feed-forward: dF = k_yaw * wz  (differential thrust per rad/s).
+        # Bigger = turns harder. Start moderate; raise if turns are sluggish,
+        # lower if the boat over-rotates / weaves.
+        #
+        # 2026-09-01: 80 -> 420, CALIBRATED, not guessed. An open-loop sweep
+        # (experiments/measure_turn_capability.py, data in
+        # report3/data/turn_capability_20260901.csv) drove the thrusters directly
+        # with Nav2 and this bridge stopped, and the hull response is linear:
+        #     dF =  8 N -> wz 0.0200      dF = 25 N -> wz 0.0607
+        #     dF = 14 N -> wz 0.0346      dF = 40 N -> wz 0.0938
+        #     fit: wz = 0.00238 * dF   =>  dF = 420 * wz
+        # So k_yaw=80 delivered only 19% of the differential a commanded yaw
+        # rate needs, which is why the boat tracked ~0.4 of its commanded wz,
+        # never completed a detour, and drove straight until its bow entered an
+        # obstacle's inflation ring ("Start occupied" aborts in
+        # report3 static_plan_20260901_plan06/plan07).
+        # An intermediate 160 made things worse on its own because the lookahead
+        # was still short enough to command unachievable curvature; that is
+        # fixed separately in nav2_params.yaml. Note max_yaw_difference_ratio
+        # still clips dF at 0.45*F (25.6 N at cruise), which is what actually
+        # bounds the turning radius to ~9.9 m -- see minimum_turning_radius.
+        k_yaw: 420.0
+
+        # 2026-08-29 M5 telemetry: yaw_sign=-1 made commanded wz and
+        # measured camera_init yaw change predominantly opposite in sign.
+        # +1 follows the physical WAM-V differential-thrust convention.
+        yaw_sign: 1.0
+
+        # Safety limits
+        max_thrust_n: 300.0         # N per thruster (hard clamp)
+        max_slew_n_per_step: 80.0   # N/step slew rate (thruster protection)
+        cmd_timeout_s: 0.5           # watchdog: zero thrust if cmd goes stale
+        min_thrust_deadband: 2.0     # N deadband (suppresses idle chatter)
+
+        # Independent last-resort stop based on the filtered cloud in base_link.
+        # This is produced directly from the current Gazebo LiDAR scan, not
+        # from Point-LIO's map, so localization drift cannot disable the stop.
+        safety_cloud_topic: /usv/safety_cloud
+        # The Nav2 footprint is deliberately buffered, and this second gate
+        # uses the same conservative hull envelope.  Once a return enters this
+        # box, both thrusters are forced to zero; there is no escape override.
+        safety_emergency_min_x_m: -2.8
+        safety_emergency_max_x_m: 3.5
+        safety_emergency_half_width_m: 1.8
+        # Farther warning band: only a live, explicit turn command may creep
+        # through it, at 0.18 m/s maximum.
+        safety_corridor_start_x_m: 3.5
+        safety_stop_distance_m: 6.0
+        safety_corridor_half_width_m: 2.4
+        safety_min_points: 3
+        # The VRX LiDAR is nominally 5 Hz, but Gazebo can briefly stretch a
+        # scan interval while Point-LIO/PCL are busy.  Keep the fail-safe stop,
+        # but avoid false stale-cloud stops during a sub-second scheduling gap.
+        safety_cloud_timeout_s: 2.0
+        # Keep the last-resort LiDAR gate, but let Nav2 turn away from a
+        # detected obstacle instead of deadlocking at zero thrust.
+        safety_escape_linear_velocity_mps: 0.18
+        safety_escape_min_yaw_rate_rps: 0.08
+        # Speed-invariant companion to the yaw-rate floor above. RPP emits
+        # w = v/R and slows near obstacles (cost-regulated scaling), so the same
+        # geometric detour produces a smaller w exactly when it matters: on the
+        # 2.5 m minimum-radius turn, vx=0.18 m/s gives only 0.072 rad/s and the
+        # 0.08 floor zeroed thrust for 65% of samples in
+        # report3 static_plan_20260901_plan06. Set 0.0 to use the yaw-rate floor
+        # alone.
+        #
+        # 2026-09-01: 0.10 -> 0.05. minimum_turning_radius is now 10.0 m, so a
+        # nominal detour has curvature 1/10 = 0.100 rad/m -- exactly at a 0.10
+        # floor. Any tracking error that slightly straightened the command would
+        # fall under it and zero the thrust mid-avoidance. 0.05 rad/m (a 20 m
+        # radius) still only passes a deliberate turn, but leaves margin above
+        # the planner's own limit. The yaw-rate floor cannot carry this case at
+        # all: R=10 m at cruise is 0.060 rad/s, below the 0.08 rad/s floor.
+        safety_escape_min_curvature_rad_per_m: 0.05
+        # Swept-path escape test. Both turn tests above are proxies: a Dubins
+        # detour is arc-straight-arc, so on the straight leg the boat is aligned
+        # on a safe path yet reads as "not turning" and gets its thrust cut. In
+        # report3 static_plan_20260901_plan10 that was 251 of 271 zeroed corridor
+        # samples, ending in a "Failed to make progress" abort. Instead, project
+        # the commanded arc forward and release thrust when the swept hull
+        # corridor clears the observed returns.
+        # Replay of that trial (experiments/replay_corridor_gate.py): releases
+        # 311/330 corridor samples, stops on 0 where the arc would actually hit.
+        safety_swept_horizon_s: 6.0
+        safety_swept_half_width_m: 1.1     # hull half width, matches footprint
+        safety_swept_margin_m: 0.6         # extra clearance required to proceed
+        max_yaw_difference_ratio: 0.45
+        # Escape-branch yaw authority floor. max_dF is normally a fraction of
+        # the surge thrust, but the escape cap (0.18 m/s) collapsed F to ~12 N,
+        # leaving ~5 N of differential — not enough to turn this hull. The boat
+        # then crept straight into the obstacle's inscribed inflation and Smac
+        # aborted with "Start occupied" (report3 static_plan_20260901_plan01).
+        # Sizing the escape limit from this reference speed decouples "go slow"
+        # from "cannot steer". Set 0.0 to restore the old coupled behavior.
+        yaw_authority_ref_vx_mps: 0.6
+        goal_status_topic: /usv/goal_status

@@ -1,0 +1,1 @@
+t,pose_x,pose_y,pose_yaw,goal_x,goal_y,goal_active,goal_status,plan_id,plan_nearest_error_m,raw_obstacle_points,dynamic_obstacle_points,dynamic_tracks,dynamic_predicted_points,dynamic_max_speed_mps,safety_stop,cmd_vx,cmd_wz,left_thrust_n,right_thrust_n

@@ -1,0 +1,91 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-08-29-14-23-23-295484-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-240356
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [obstacle_filter-1]: process started with pid [240426]
+[obstacle_filter-1] [INFO] [1787984603.467097589] [obstacle_filter]: obstacle_filter up:
+[obstacle_filter-1] [INFO] [1787984603.467224700] [obstacle_filter]:   in : /cloud_registered
+[obstacle_filter-1] [INFO] [1787984603.467232678] [obstacle_filter]:   raw: /wamv/sensors/lidars/lidar_wamv_sensor/points -> /usv/safety_cloud, /usv/raw_obstacle_cloud
+[obstacle_filter-1] [INFO] [1787984603.467239495] [obstacle_filter]:   out: /usv/costmap_cloud [0.10, 3.00]
+[obstacle_filter-1] [INFO] [1787984603.467251613] [obstacle_filter]:   out: /usv/structure_cloud [0.10, 3.00]
+[obstacle_filter-1] [INFO] [1787984603.467258139] [obstacle_filter]:   map: /usv/structure_map_cloud frame=camera_init
+[obstacle_filter-1] [INFO] [1787984603.467265090] [obstacle_filter]:   out frame: wamv/wamv/base_link, voxel 0.10 m, max_range 35.0 m
+[obstacle_filter-1] [INFO] [1787984604.481990310] [obstacle_filter]: filtered [0.10,3.00]: 7541 -> band 1212 -> range 439 -> out 437
+[obstacle_filter-1] [INFO] [1787984604.566079085] [obstacle_filter]: raw safety cloud: 23318 finite -> 3615 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984610.318809596] [obstacle_filter]: filtered [0.10,3.00]: 7555 -> band 1208 -> range 429 -> out 427
+[obstacle_filter-1] [INFO] [1787984610.330204012] [obstacle_filter]: raw safety cloud: 23285 finite -> 3536 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984616.046791361] [obstacle_filter]: filtered [0.10,3.00]: 7476 -> band 1190 -> range 463 -> out 462
+[obstacle_filter-1] [INFO] [1787984616.067469928] [obstacle_filter]: raw safety cloud: 23225 finite -> 3559 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984621.768038106] [obstacle_filter]: raw safety cloud: 23167 finite -> 3545 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984622.226646050] [obstacle_filter]: filtered [0.10,3.00]: 7387 -> band 1135 -> range 471 -> out 471
+[obstacle_filter-1] [INFO] [1787984627.804729209] [obstacle_filter]: raw safety cloud: 23017 finite -> 3394 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984628.219770981] [obstacle_filter]: filtered [0.10,3.00]: 7296 -> band 1104 -> range 459 -> out 458
+[obstacle_filter-1] [INFO] [1787984633.777872792] [obstacle_filter]: raw safety cloud: 23027 finite -> 3370 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984634.149905113] [obstacle_filter]: filtered [0.10,3.00]: 7261 -> band 1100 -> range 454 -> out 453
+[obstacle_filter-1] [INFO] [1787984639.584662168] [obstacle_filter]: raw safety cloud: 23108 finite -> 3468 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984640.099925886] [obstacle_filter]: filtered [0.10,3.00]: 7413 -> band 1153 -> range 467 -> out 462
+[obstacle_filter-1] [INFO] [1787984645.550722106] [obstacle_filter]: raw safety cloud: 23226 finite -> 3602 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984646.056994689] [obstacle_filter]: filtered [0.10,3.00]: 7470 -> band 1187 -> range 416 -> out 415
+[obstacle_filter-1] [INFO] [1787984651.698057641] [obstacle_filter]: raw safety cloud: 23314 finite -> 3479 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984652.341300917] [obstacle_filter]: filtered [0.10,3.00]: 7703 -> band 1224 -> range 420 -> out 416
+[obstacle_filter-1] [INFO] [1787984657.317965861] [obstacle_filter]: raw safety cloud: 23304 finite -> 3443 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984658.259070145] [obstacle_filter]: filtered [0.10,3.00]: 7696 -> band 1217 -> range 413 -> out 411
+[obstacle_filter-1] [INFO] [1787984663.257466897] [obstacle_filter]: raw safety cloud: 23252 finite -> 3430 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984664.162033779] [obstacle_filter]: filtered [0.10,3.00]: 7644 -> band 1216 -> range 409 -> out 404
+[obstacle_filter-1] [INFO] [1787984669.095859225] [obstacle_filter]: raw safety cloud: 23242 finite -> 3596 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984670.859598632] [obstacle_filter]: filtered [0.10,3.00]: 7580 -> band 1200 -> range 421 -> out 418
+[obstacle_filter-1] [INFO] [1787984675.193747702] [obstacle_filter]: raw safety cloud: 23214 finite -> 3567 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984676.568608514] [obstacle_filter]: filtered [0.10,3.00]: 7657 -> band 1219 -> range 418 -> out 417
+[obstacle_filter-1] [INFO] [1787984681.344091395] [obstacle_filter]: raw safety cloud: 23371 finite -> 3693 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984682.183146613] [obstacle_filter]: filtered [0.10,3.00]: 7614 -> band 1187 -> range 409 -> out 407
+[obstacle_filter-1] [INFO] [1787984687.144602763] [obstacle_filter]: raw safety cloud: 23449 finite -> 3715 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984688.472114024] [obstacle_filter]: filtered [0.10,3.00]: 7678 -> band 1221 -> range 472 -> out 468
+[obstacle_filter-1] [INFO] [1787984693.489245205] [obstacle_filter]: raw safety cloud: 23528 finite -> 3589 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984694.403468886] [obstacle_filter]: filtered [0.10,3.00]: 7683 -> band 1205 -> range 463 -> out 458
+[obstacle_filter-1] [INFO] [1787984699.146164332] [obstacle_filter]: raw safety cloud: 23501 finite -> 3608 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984700.289811721] [obstacle_filter]: filtered [0.10,3.00]: 7649 -> band 1225 -> range 413 -> out 408
+[obstacle_filter-1] [INFO] [1787984705.294392639] [obstacle_filter]: raw safety cloud: 23221 finite -> 3537 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984706.606160310] [obstacle_filter]: filtered [0.10,3.00]: 7490 -> band 1176 -> range 442 -> out 442
+[obstacle_filter-1] [INFO] [1787984711.261381029] [obstacle_filter]: raw safety cloud: 23190 finite -> 3574 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984712.439534272] [obstacle_filter]: filtered [0.10,3.00]: 7537 -> band 1220 -> range 428 -> out 427
+[obstacle_filter-1] [INFO] [1787984717.026774922] [obstacle_filter]: raw safety cloud: 23231 finite -> 3584 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984718.717050871] [obstacle_filter]: filtered [0.10,3.00]: 7628 -> band 1229 -> range 423 -> out 422
+[obstacle_filter-1] [INFO] [1787984722.900659703] [obstacle_filter]: raw safety cloud: 23290 finite -> 3617 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984725.006152830] [obstacle_filter]: filtered [0.10,3.00]: 7661 -> band 1234 -> range 411 -> out 411
+[obstacle_filter-1] [INFO] [1787984728.960093763] [obstacle_filter]: raw safety cloud: 23320 finite -> 3486 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984731.101467071] [obstacle_filter]: filtered [0.10,3.00]: 7601 -> band 1208 -> range 415 -> out 411
+[obstacle_filter-1] [INFO] [1787984734.923963868] [obstacle_filter]: raw safety cloud: 23402 finite -> 3448 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984736.948749513] [obstacle_filter]: filtered [0.10,3.00]: 7495 -> band 1170 -> range 427 -> out 423
+[obstacle_filter-1] [INFO] [1787984740.577616243] [obstacle_filter]: raw safety cloud: 23350 finite -> 3386 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984743.132267017] [obstacle_filter]: filtered [0.10,3.00]: 7465 -> band 1155 -> range 390 -> out 387
+[obstacle_filter-1] [INFO] [1787984746.375479734] [obstacle_filter]: raw safety cloud: 23236 finite -> 3393 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984749.376667757] [obstacle_filter]: filtered [0.10,3.00]: 7585 -> band 1205 -> range 383 -> out 382
+[obstacle_filter-1] [INFO] [1787984752.175120738] [obstacle_filter]: raw safety cloud: 23109 finite -> 3427 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984755.271349019] [obstacle_filter]: filtered [0.10,3.00]: 7590 -> band 1209 -> range 412 -> out 410
+[obstacle_filter-1] [INFO] [1787984758.138483042] [obstacle_filter]: raw safety cloud: 23062 finite -> 3519 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984761.347594742] [obstacle_filter]: filtered [0.10,3.00]: 7685 -> band 1208 -> range 411 -> out 408
+[obstacle_filter-1] [INFO] [1787984764.031999003] [obstacle_filter]: raw safety cloud: 23114 finite -> 3570 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984766.995089061] [obstacle_filter]: filtered [0.10,3.00]: 7693 -> band 1223 -> range 414 -> out 412
+[obstacle_filter-1] [INFO] [1787984769.596798797] [obstacle_filter]: raw safety cloud: 23234 finite -> 3582 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984772.897257855] [obstacle_filter]: filtered [0.10,3.00]: 7617 -> band 1228 -> range 423 -> out 421
+[obstacle_filter-1] [INFO] [1787984775.442470870] [obstacle_filter]: raw safety cloud: 23285 finite -> 3623 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984778.745315614] [obstacle_filter]: filtered [0.10,3.00]: 7517 -> band 1198 -> range 442 -> out 439
+[obstacle_filter-1] [INFO] [1787984781.234602835] [obstacle_filter]: raw safety cloud: 23337 finite -> 3506 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984784.765099813] [obstacle_filter]: filtered [0.10,3.00]: 7426 -> band 1186 -> range 429 -> out 423
+[obstacle_filter-1] [INFO] [1787984787.398386668] [obstacle_filter]: raw safety cloud: 22355 finite -> 3157 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984791.943577577] [obstacle_filter]: filtered [0.10,3.00]: 6907 -> band 1109 -> range 413 -> out 412
+[obstacle_filter-1] [INFO] [1787984794.401213589] [obstacle_filter]: raw safety cloud: 23639 finite -> 4781 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984798.967402112] [obstacle_filter]: filtered [0.10,3.00]: 4783 -> band 776 -> range 281 -> out 279
+[obstacle_filter-1] [INFO] [1787984801.017278241] [obstacle_filter]: raw safety cloud: 29489 finite -> 1319 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984806.624569741] [obstacle_filter]: filtered [0.10,3.00]: 7115 -> band 1082 -> range 225 -> out 223
+[obstacle_filter-1] [INFO] [1787984809.214748483] [obstacle_filter]: raw safety cloud: 21290 finite -> 2211 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984814.871418864] [obstacle_filter]: filtered [0.10,3.00]: 6111 -> band 888 -> range 420 -> out 416
+[obstacle_filter-1] [INFO] [1787984816.943795668] [obstacle_filter]: raw safety cloud: 29158 finite -> 1211 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984821.980285342] [obstacle_filter]: filtered [0.10,3.00]: 6975 -> band 976 -> range 365 -> out 359
+[obstacle_filter-1] [INFO] [1787984823.973171961] [obstacle_filter]: raw safety cloud: 22989 finite -> 5037 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984828.218876016] [obstacle_filter]: filtered [0.10,3.00]: 7007 -> band 1101 -> range 372 -> out 368
+[obstacle_filter-1] [INFO] [1787984830.063495397] [obstacle_filter]: raw safety cloud: 22971 finite -> 5055 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984834.016600807] [obstacle_filter]: filtered [0.10,3.00]: 6952 -> band 1098 -> range 324 -> out 321
+[obstacle_filter-1] [INFO] [1787984835.805034110] [obstacle_filter]: raw safety cloud: 23131 finite -> 5268 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984839.779841170] [obstacle_filter]: filtered [0.10,3.00]: 6969 -> band 1105 -> range 324 -> out 318
+[obstacle_filter-1] [INFO] [1787984841.239635621] [obstacle_filter]: raw safety cloud: 23286 finite -> 5334 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1787984846.360495151] [obstacle_filter]: filtered [0.10,3.00]: 6981 -> band 1111 -> range 380 -> out 378
+[obstacle_filter-1] [INFO] [1787984846.816157964] [obstacle_filter]: raw safety cloud: 23420 finite -> 5447 near points (frame wamv/wamv/base_link)

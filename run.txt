@@ -1,0 +1,10 @@
+# ===== 无 GPS 建图 (推荐) =====
+colcon build --symlink-install
+ros2 launch my_mapping_launcher mapping_no_gps.launch.py
+
+# 仅建图不要 RViz (省资源):
+ros2 launch my_mapping_launcher mapping_no_gps.launch.py rviz:=false
+
+# ===== 有 GPS 全功能 (旧) =====
+# colcon build --symlink-install
+# ros2 launch my_mapping_launcher all_in_one.launch.py

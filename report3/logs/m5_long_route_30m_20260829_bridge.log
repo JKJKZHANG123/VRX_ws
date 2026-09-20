@@ -1,0 +1,43 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-08-29-19-58-15-543706-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-26012
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [26033]
+[control_bridge-1] [INFO] [1788004696.258567930] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=80.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, safety_corridor=x[2.8,8.8]m, yaw_ratio=0.45
+[control_bridge-1] [WARN] [1788004696.698091729] [control_bridge]: FORWARD SAFETY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [INFO] [1788004696.806927359] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [WARN] [1788004894.459197744] [control_bridge]: FORWARD SAFETY STOP: direct LiDAR cloud stale/unavailable
+[control_bridge-1] [INFO] [1788004894.540276396] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [INFO] [1788005312.201814000] [control_bridge]: shutting down - zeroing thrusters
+[control_bridge-1] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[control_bridge-1] Traceback (most recent call last):
+[control_bridge-1]   File "/home/jkjkzhang/lidar_project/build/usv_control_bridge/usv_control_bridge/control_bridge.py", line 310, in main
+[control_bridge-1]     rclpy.spin(node)
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[control_bridge-1]     executor.spin_once()
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+[control_bridge-1]     self._spin_once_impl(timeout_sec)
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+[control_bridge-1]     handler, entity, node = self.wait_for_ready_callbacks(
+[control_bridge-1]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+[control_bridge-1]     return next(self._cb_iter)
+[control_bridge-1]            ^^^^^^^^^^^^^^^^^^^
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+[control_bridge-1]     raise ExternalShutdownException()
+[control_bridge-1] rclpy.executors.ExternalShutdownException
+[control_bridge-1] 
+[control_bridge-1] During handling of the above exception, another exception occurred:
+[control_bridge-1] 
+[control_bridge-1] Traceback (most recent call last):
+[control_bridge-1]   File "/home/jkjkzhang/lidar_project/install/usv_control_bridge/lib/usv_control_bridge/control_bridge", line 33, in <module>
+[control_bridge-1]     sys.exit(load_entry_point('usv-control-bridge', 'console_scripts', 'control_bridge')())
+[control_bridge-1]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[control_bridge-1]   File "/home/jkjkzhang/lidar_project/build/usv_control_bridge/usv_control_bridge/control_bridge.py", line 315, in main
+[control_bridge-1]     node._zero_thrust('shutdown')
+[control_bridge-1]   File "/home/jkjkzhang/lidar_project/build/usv_control_bridge/usv_control_bridge/control_bridge.py", line 295, in _zero_thrust
+[control_bridge-1]     self._publish(0.0, 0.0)
+[control_bridge-1]   File "/home/jkjkzhang/lidar_project/build/usv_control_bridge/usv_control_bridge/control_bridge.py", line 302, in _publish
+[control_bridge-1]     self._pub_left.publish(lm)
+[control_bridge-1]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/publisher.py", line 70, in publish
+[control_bridge-1]     self.__publisher.publish(msg)
+[control_bridge-1] rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[ERROR] [control_bridge-1]: process has died [pid 26033, exit code 1, cmd '/home/jkjkzhang/lidar_project/install/usv_control_bridge/lib/usv_control_bridge/control_bridge --ros-args -r __node:=control_bridge --params-file /home/jkjkzhang/lidar_project/install/usv_control_bridge/share/usv_control_bridge/config/bridge_params.yaml'].

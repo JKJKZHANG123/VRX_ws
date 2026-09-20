@@ -1,0 +1,4 @@
+[INFO] [1788315842.768394288] [spawn_obstacle_ahead]: start: camera=(0.85,0.35) world=(-531.57,163.07) boat_world=(-531.573,163.072) yaw=1.158; lio_camera=(0.854,0.351); spawn point will be computed from Gazebo truth, not LIO
+[INFO] [1788315842.769730853] [spawn_obstacle_ahead]: waiting_for_motion: camera=(0.85,0.35) world=(-531.57,163.07) need speed>=0.25 m/s and travel>=4.0 m
+[INFO] [1788315857.794448978] [spawn_obstacle_ahead]: trigger_met: camera=(4.81,0.96) world=(-529.63,167.46) speed=0.31 m/s; travelled=4.00 m; world_yaw=1.218 rad
+[INFO] [1788315858.199726003] [spawn_obstacle_ahead]: spawned: camera=(2.29,7.68) world=(-527.34,175.14) GAZEBO-TRUTH spawn 8.0 m ahead of boat_world=(-529.63,167.46) yaw=1.218; lateral=0.5 m; verified_gap=8.02 m; boat_speed=0.31 m/s (camera_x/camera_y columns here are a world-frame offset, not camera_init coordinates)

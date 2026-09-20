@@ -1,0 +1,2 @@
+wall_time,sim_time,topic,frame_id,tf_ok,total_points,danger_points,expanded_box_points,nearest_xy_m,danger_sectors,raw_clean_streak,result
+2026-08-30T16:44:41+0800,0.000,/usv/structure_map_cloud,camera_init,0,0,0,0,,0,,blocked

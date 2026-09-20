@@ -1,0 +1,8 @@
+[37;1m2026-09-01 13:21:25.159 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed init_port fastrtps_port7025: open_and_lock_file failed[34;1m -> Function [36mopen_port_internal[m
+[INFO] [1788240088.885155591] [dynamic_trial_goal_publisher]: baseline status='IDLE code=0; status_seq=1'; generation=1; status_seq=1
+[INFO] [1788240088.886219498] [dynamic_trial_goal_publisher]: published goal (18.000, 0.000), yaw=0.000
+[INFO] [1788240088.889218303] [dynamic_trial_goal_publisher]: goal gateway changed status to: QUEUED code=1; waiting for Nav2 action server; status_seq=2
+STATUS:QUEUED code=1; waiting for Nav2 action server; status_seq=2
+[INFO] [1788240088.894890299] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+STATUS:ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+[INFO] [1788240088.895618382] [dynamic_trial_goal_publisher]: Nav2 accepted the goal; target publication verified

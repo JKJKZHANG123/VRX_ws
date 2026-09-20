@@ -1,0 +1,26 @@
+M5 long-route derived metrics
+experiment=m5_long_route_30m_20260829_valid
+target=(30.0,0.0), frame=camera_init, yaw=0
+rows=941
+recorded_duration_s=188.200
+start_pose=(0.000,0.000)
+end_pose=(30.259,0.065)
+final_goal_error_m=0.267032
+min_goal_error_m=0.032062
+traveled_distance_m=56.228663
+max_crosstrack_m=3.673000
+p95_crosstrack_m=3.425000
+mean_crosstrack_m=1.109119
+min_path_clearance_m=8.038000
+max_path_length_m=31.108000
+peak_des_vx_mps=0.600000
+peak_act_vx_mps=0.831000
+left_thrust_max_N=64.226000
+right_thrust_max_N=61.936000
+left_thrust_nonzero_samples=466
+right_thrust_nonzero_samples=466
+left_thrust_mean_all_N=16.250162
+right_thrust_mean_all_N=14.998099
+safety_stop_samples=0
+terminal_status=SUCCEEDED code=4 (verified in .usv_logs/nav2.log)
+raw_goal_status_fields=unavailable in raw CSV; see companion events CSV

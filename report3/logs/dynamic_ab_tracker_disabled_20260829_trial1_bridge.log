@@ -1,0 +1,6 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-08-29-14-23-41-551215-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-241083
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [241103]
+[control_bridge-1] [INFO] [1787984622.278068202] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=80.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, safety_corridor=x[2.8,8.8]m, yaw_ratio=0.45
+[control_bridge-1] [WARN] [1787984625.222460513] [control_bridge]: FORWARD SAFETY STOP: direct LiDAR cloud stale/unavailable
+[control_bridge-1] [INFO] [1787984625.525568974] [control_bridge]: forward safety stop cleared

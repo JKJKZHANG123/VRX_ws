@@ -1,0 +1,7 @@
+[INFO] [1788314760.245816266] [dynamic_trial_goal_publisher]: baseline status='SUCCEEDED code=4; status_seq=4'; generation=1; status_seq=4
+[INFO] [1788314760.246726401] [dynamic_trial_goal_publisher]: published goal (24.000, 0.000), yaw=0.000
+[INFO] [1788314760.249849754] [dynamic_trial_goal_publisher]: goal gateway changed status to: QUEUED code=1; waiting for Nav2 action server; status_seq=5
+STATUS:QUEUED code=1; waiting for Nav2 action server; status_seq=5
+[INFO] [1788314760.252750640] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted; status_seq=6
+STATUS:ACCEPTED code=1; Nav2 goal accepted; status_seq=6
+[INFO] [1788314760.253293794] [dynamic_trial_goal_publisher]: Nav2 accepted the goal; target publication verified

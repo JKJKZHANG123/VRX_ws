@@ -1,0 +1,22 @@
+navsat_transform_node:
+  ros__parameters:
+    # 基础频率配置
+    frequency: 30.0
+    delay: 0.0
+
+    # 坐标系设置 (必须与 TF 树对齐)
+    map_frame: camera_init
+    odom_frame: camera_init      # Point-LIO 默认的世界坐标系
+    base_link_frame: body        # Point-LIO 默认的机器人中心坐标系
+    world_frame: camera_init
+
+    # 核心融合策略 (严格贯彻我们之前讨论的方案)
+    use_odometry_yaw: true       # 坚决使用 Point-LIO 的精确航向，不信磁力计
+    zero_altitude: true          # 忽略 GPS 的不准高度，Z 轴原点贴地，信雷达
+    publish_filtered_gps: false  # 不需要发布过滤后的 GPS 坐标
+    broadcast_cartesian_transform: true   # 允许节点发布 utm -> camera_init 的 TF 变换
+
+    # 容忍度与补偿
+    transform_timeout: 0.1
+    yaw_offset: 0.0              # 如果雷达 X 轴正前方不是正东，这里填偏移量(弧度)
+    magnetic_declination_radians: 0.0 # 不用磁力计，填 0

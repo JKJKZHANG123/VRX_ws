@@ -1,0 +1,5 @@
+wall_time,sim_time,event,camera_x,camera_y,world_x,world_y,detail
+2026-09-01T22:34:03+0800,193.240,start,0.112,0.318,-531.466,163.335,"boat_world=(-531.466,163.335) yaw=1.006; lio_camera=(0.112,0.318); spawn point will be computed from Gazebo truth, not LIO"
+2026-09-01T22:34:03+0800,193.240,waiting_for_motion,0.112,0.318,-531.466,163.335,need speed>=0.25 m/s and travel>=4.0 m
+2026-09-01T22:34:11+0800,200.100,trigger_met,4.056,1.012,-529.752,166.732,speed=0.56 m/s; travelled=4.00 m; world_yaw=1.338 rad
+2026-09-01T22:34:11+0800,200.100,spawned,2.767,11.677,-526.985,178.409,"GAZEBO-TRUTH spawn 12.0 m ahead of boat_world=(-529.75,166.73) yaw=1.338; lateral=0.0 m; verified_gap=12.00 m; boat_speed=0.56 m/s (camera_x/camera_y columns here are a world-frame offset, not camera_init coordinates)"

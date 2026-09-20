@@ -1,0 +1,8 @@
+[INFO] [1788004677.822176604] [startup_cloud_gate]: /usv/raw_obstacle_cloud: total=3147, danger=0, box=0, nearest=8.09 m, sectors=0, tf=True, raw_streak=1/5
+[INFO] [1788004677.947338194] [startup_cloud_gate]: /usv/structure_map_cloud: total=0, danger=0, box=0, nearest=inf m, sectors=0, tf=True, raw_streak=1/5
+[INFO] [1788004678.245793613] [startup_cloud_gate]: /usv/raw_obstacle_cloud: total=3157, danger=0, box=0, nearest=8.09 m, sectors=0, tf=True, raw_streak=2/5
+[INFO] [1788004678.384925133] [startup_cloud_gate]: /usv/structure_map_cloud: total=0, danger=0, box=0, nearest=inf m, sectors=0, tf=True, raw_streak=2/5
+[INFO] [1788004678.879967295] [startup_cloud_gate]: /usv/raw_obstacle_cloud: total=3103, danger=0, box=0, nearest=8.09 m, sectors=0, tf=True, raw_streak=3/5
+[INFO] [1788004679.278816322] [startup_cloud_gate]: /usv/raw_obstacle_cloud: total=3025, danger=0, box=0, nearest=8.08 m, sectors=0, tf=True, raw_streak=4/5
+[INFO] [1788004679.483238598] [startup_cloud_gate]: /usv/raw_obstacle_cloud: total=2999, danger=0, box=0, nearest=8.08 m, sectors=0, tf=True, raw_streak=5/5
+[INFO] [1788004679.484208775] [startup_cloud_gate]: startup cloud cleanliness gate passed (monitor_seen=True)

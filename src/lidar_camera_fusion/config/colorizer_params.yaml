@@ -1,0 +1,47 @@
+# LiDAR-Camera 着色参数
+pointcloud_colorizer:
+  ros__parameters:
+    # 坐标系
+    lidar_frame: "unilidar_lidar"
+    camera_frame: "camera_color_frame"
+
+    # 话题
+    cloud_topic: "/unilidar/cloud"
+    image_topic: "/camera/color/image_raw"
+    camera_info_topic: "/camera/color/camera_info"
+    colored_cloud_topic: "/colored_cloud"
+
+    # 外参模式: true=从tf2获取, false=手动指定(标定用此模式)
+    use_tf_extrinsic: false
+
+    # ==========================================================
+    # 手动外参 = 内置基准旋转(LiDAR->相机光学系, 约90°) + 以下微调量
+    # ----------------------------------------------------------
+    # 程序已内置 LiDAR(x前y左z上) -> 相机光学(x右y下z前) 的基准旋转,
+    # 所以下面 6 个值全为 0 时颜色就应"大致"对齐, 你只需微调消除:
+    #   - 安装角度误差 (roll/pitch/yaw, 单位:度, 一般 ±15° 内)
+    #   - 杆臂平移     (x/y/z, 单位:米, 相机相对LiDAR的物理偏移)
+    #
+    # 标定方法: 运行时用 rqt_reconfigure 拖滑块, 看 RViz 颜色对齐,
+    #           调好后把最终值填回这里.
+    # ==========================================================
+    extrinsic_roll:  0.0   # 度, 绕相机光轴(x_cam=右)微调
+    extrinsic_pitch: 0.0   # 度, 上下俯仰微调
+    extrinsic_yaw:   0.0   # 度, 左右偏航微调
+    extrinsic_x:     0.0   # 米, 相机相对LiDAR 左右偏移
+    extrinsic_y:     0.0   # 米, 相机相对LiDAR 上下偏移
+    extrinsic_z:     0.0   # 米, 相机相对LiDAR 前后偏移
+
+    # 投影参数
+    min_depth: 0.1         # 最小投影深度 (米)
+    max_range: 100.0       # 最大距离
+    queue_size: 10
+
+    # ---- 累积彩色地图 (方案 B) ----
+    accumulate: true              # 是否累积全局彩色地图
+    odom_topic: "/aft_mapped_to_init"  # Point-LIO 里程计话题 (nav_msgs/Odometry)
+    global_frame: "camera_init"   # 全局坐标系
+    colored_map_topic: "/colored_map"
+    voxel_size: 0.05              # 体素降采样 (米), <=0 关闭降采样
+    map_publish_period: 1.0       # 地图发布周期 (秒)
+    max_map_points: 5000000       # 地图点数上限

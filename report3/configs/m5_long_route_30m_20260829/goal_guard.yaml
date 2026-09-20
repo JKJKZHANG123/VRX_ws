@@ -1,0 +1,19 @@
+# Conservative goal gateway settings for the moving WAM-V.
+# Geofence remains disabled until its limits are calibrated for the selected
+# VRX world; the costmap/footprint check is active immediately.
+click_to_goal:
+  ros__parameters:
+    use_sim_time: true
+    global_frame: camera_init
+    max_goal_distance_m: 45.0
+    # Approximate radius of the WAM-V footprint plus localization margin.
+    goal_check_radius_m: 2.8
+    # Nav2 costmap values >= 50 are inflated/high-cost cells.
+    occupied_cost_threshold: 50
+    reject_unknown: true
+    require_costmap: true
+    geofence_enabled: false
+    geofence_min_x_m: -100.0
+    geofence_max_x_m: 100.0
+    geofence_min_y_m: -100.0
+    geofence_max_y_m: 100.0

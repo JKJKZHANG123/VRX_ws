@@ -1,0 +1,23 @@
+wall_time=2026-09-02T10:05:29+08:00
+goal=(24,0) trigger_ahead=8.0m lateral=0.5m
+nav2=verified_active
+[INFO] [1788314760.245816266] [dynamic_trial_goal_publisher]: baseline status='SUCCEEDED code=4; status_seq=4'; generation=1; status_seq=4
+[INFO] [1788314760.246726401] [dynamic_trial_goal_publisher]: published goal (24.000, 0.000), yaw=0.000
+[INFO] [1788314760.249849754] [dynamic_trial_goal_publisher]: goal gateway changed status to: QUEUED code=1; waiting for Nav2 action server; status_seq=5
+STATUS:QUEUED code=1; waiting for Nav2 action server; status_seq=5
+[INFO] [1788314760.252750640] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted; status_seq=6
+STATUS:ACCEPTED code=1; Nav2 goal accepted; status_seq=6
+[INFO] [1788314760.253293794] [dynamic_trial_goal_publisher]: Nav2 accepted the goal; target publication verified
+obstacle injection failed
+[INFO] [1788314767.555232112] [spawn_obstacle_ahead]: start: camera=(18.93,0.16) world=(-523.04,178.12) boat_world=(-523.044,178.120) yaw=0.710; lio_camera=(18.931,0.164); spawn point will be computed from Gazebo truth, not LIO
+[INFO] [1788314767.556280132] [spawn_obstacle_ahead]: waiting_for_motion: camera=(18.93,0.16) world=(-523.04,178.12) need speed>=0.25 m/s and travel>=4.0 m
+Traceback (most recent call last):
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 233, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 226, in main
+    return node.run()
+           ^^^^^^^^^^
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 202, in run
+    raise RuntimeError(
+RuntimeError: boat never reached speed 0.25 m/s and travel 4.0 m within 120.0s

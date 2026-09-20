@@ -1,0 +1,3 @@
+[INFO] [1788064233.498760511] [dynamic_trial_goal_publisher]: published goal (8.000, 0.000), yaw=0.000
+[INFO] [1788064233.499882099] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+STATUS:ACCEPTED code=1; Nav2 goal accepted; status_seq=3

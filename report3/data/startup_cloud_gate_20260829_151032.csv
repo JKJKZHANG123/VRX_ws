@@ -1,0 +1,6 @@
+wall_time,sim_time,frame_id,total_points,danger_points,expanded_box_points,nearest_xy_m,danger_sectors,clean_streak,result
+2026-08-29T15:10:35+0800,42.620,wamv/wamv/base_link,3512,0,0,7.245,0,1,clean
+2026-08-29T15:10:36+0800,42.716,wamv/wamv/base_link,3515,0,0,7.243,0,2,clean
+2026-08-29T15:10:36+0800,42.952,wamv/wamv/base_link,3523,0,0,7.239,0,3,clean
+2026-08-29T15:10:36+0800,43.148,wamv/wamv/base_link,3524,0,0,7.235,0,4,clean
+2026-08-29T15:10:36+0800,43.248,wamv/wamv/base_link,3522,0,0,7.219,0,5,PASS

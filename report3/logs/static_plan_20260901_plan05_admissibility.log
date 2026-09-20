@@ -1,0 +1,13 @@
+[37;1m2026-09-01 13:12:10.642 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed init_port fastrtps_port7025: open_and_lock_file failed[34;1m -> Function [36mopen_port_internal[m
+boat camera_init x=-0.46 y=0.50 yaw=-0.001
+global_costmap 200x200 res=0.5 unknown=86.7% cost>=50=2.8%
+local_costmap  200x200 res=0.30000001192092896 unknown=0.0% cost>=50=8.4%
+
+bearing  best_r       x       y  why
+      0    24.0   23.54    0.49  local:free
+    -15    24.0   22.71   -5.72  local:free
+     15    20.5   19.34    5.80  local:free
+    -30    24.0   20.31  -11.51  local:free
+     30    22.0   18.60   11.49  local:free
+    -45    24.0   16.50  -16.48  local:free
+     45    24.0   16.52   17.46  local:free

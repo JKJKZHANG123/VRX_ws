@@ -1,0 +1,96 @@
+### M2: GPS + IMU + Point-LIO fusion for the WAM-V (VRX sim)
+# Frame design: odom == camera_init (static identity TF in the launch file).
+# EKF owns odom -> wamv/wamv/base_link; Point-LIO's camera_init -> aft_mapped
+# stays a parallel branch of the same tree, no parent conflicts.
+ekf_filter_node:
+    ros__parameters:
+        use_sim_time: true
+        frequency: 30.0
+        sensor_timeout: 0.5
+        two_d_mode: true          # USV planar motion; kills LIO's slow Z drift outright
+        publish_tf: true
+        publish_acceleration: false
+
+        map_frame: map
+        odom_frame: odom
+        base_link_frame: wamv/wamv/base_link
+        world_frame: odom
+
+        # --- Point-LIO odometry: VELOCITY (vx, vy, vyaw) + ENU YAW ---
+        # We fuse LIO's TWIST (vx/vy/vyaw) plus its ABSOLUTE YAW. Rationale:
+        # (1) same intent as the old differential-pose setup -- use LIO's
+        # motion, not its open-water-drifting absolute position (GPS anchors
+        # that) -- but (2) WITHOUT the divide-by-dt that made differential mode
+        # explode: Point-LIO publishes at ~2.7 kHz and ~2% of frames land
+        # <0.01 ms apart (min 1 ns), so velocity = pose_delta / dt amplified mm
+        # jitter into 1e6 m/s spikes -> position ran to millions of metres.
+        # LIO's own twist is clean (+/-3 m/s) and needs no dt division.
+        # odom0_differential MUST be false for velocity.
+        #
+        # YAW: odom0_config below fuses absolute yaw from LIO. Point-LIO's yaw
+        # is expressed in camera_init (spawn-relative; the boat spawns at
+        # yaw=1.0 rad in the ENU world), so it would be ~57 deg off the GPS/ENU
+        # anchor. The covariance_injector rotates the relayed pose by
+        # +spawn_yaw_offset (default 1.0) so the fused heading IS ENU-consistent
+        # with the GPS position. Keep that param in sync here.
+        odom0: /aft_mapped_to_init/cov   # covariance-injected (raw twist cov is 0)
+        odom0_config: [false, false, false,
+                       false, false, true,
+                       true,  true,  false,
+                       false, false, true,
+                       false, false, false]
+        odom0_differential: false
+        odom0_queue_size: 20
+        odom0_nodelay: true
+
+        # --- IMU: yaw rate ONLY (M2 first cut) ---
+        # Absolute yaw NOT fused: gz IMU yaw is relative to spawn heading, and
+        # anchoring heading to a different axis convention than camera_init
+        # would fight the LIO deltas.
+        # Surge acceleration (ax) fusion DISABLED: gravity removal relies on an
+        # absolute attitude reference, but the gz IMU has no ENU reference, so a
+        # bad gravity projection injected divergent accel. vx is instead derived
+        # by the motion model from LIO/GPS position deltas. Re-enable only after
+        # the heading reference is made self-consistent.
+        imu0: /wamv/sensors/imu/imu/data
+        imu0_config: [false, false, false,
+                      false, false, false,
+                      false, false, false,
+                      false, false, true,
+                      false, false, false]
+        imu0_differential: false
+        imu0_queue_size: 40
+        imu0_nodelay: true
+        imu0_remove_gravitational_acceleration: false
+
+        # --- GPS (via navsat_transform) : absolute XY anchor ---
+        # Re-enabled after the LIO velocity-fusion fix: the core now emits finite,
+        # bounded /odometry/filtered from startup, so navsat can anchor its datum
+        # correctly (the earlier ~9743 m bogus offset was a symptom of the EKF
+        # being NaN when navsat initialised, not a navsat bug of its own).
+        odom1: /odometry/gps
+        odom1_config: [true,  true,  false,
+                       false, false, false,
+                       false, false, false,
+                       false, false, false,
+                       false, false, false]
+        odom1_differential: false
+        odom1_queue_size: 10
+        odom1_nodelay: true
+
+        # Trust motion model moderately; GPS in sim is clean (RTK-like)
+        process_noise_covariance: [0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.06, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.03, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.03, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.06, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.025,0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.025,0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.04, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.02, 0.0,  0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,
+                                   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.015]

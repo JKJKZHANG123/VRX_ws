@@ -1,0 +1,4 @@
+[INFO] [1788272100.114932170] [spawn_obstacle_ahead]: transform_frozen: camera=(0.00,0.00) world=(-532.16,161.96) tx=-532.155937; ty=161.956585; yaw=1.000000; boat_world=(-532.614, 161.577); boat_camera=(-0.5669,0.1804)
+[INFO] [1788272100.115786408] [spawn_obstacle_ahead]: waiting_for_motion: camera=(-0.57,0.18) world=(-532.61,161.58) need speed>=0.25 m/s and travel>=4.0 m
+[INFO] [1788272133.558428462] [spawn_obstacle_ahead]: trigger_met: camera=(9.64,1.51) world=(-528.22,170.89) speed=0.26 m/s; travelled=10.30 m; heading=-0.094 rad
+[INFO] [1788272133.923627861] [spawn_obstacle_ahead]: spawned: camera=(17.61,0.76) world=(-523.28,177.18) ahead=8.0 m of boat at (9.64,1.51); lateral=0.0 m; boat_speed=0.26 m/s

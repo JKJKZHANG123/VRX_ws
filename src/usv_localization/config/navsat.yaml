@@ -1,0 +1,23 @@
+### navsat_transform_node: GPS fix -> odometry in the odom (== camera_init) frame
+navsat_transform_node:
+    ros__parameters:
+        use_sim_time: true
+        frequency: 10.0
+        delay: 0.0
+
+        # gz-sim IMU yaw is RELATIVE to spawn orientation (no ENU reference
+        # configured in wamv_imu.xacro). The WAM-V spawns at yaw = 1.0 rad in
+        # the ENU-aligned world (competition.launch.py: [-532, 162, 0, 0, 0, 1]).
+        # That offset used to live HERE (yaw_offset: 1.0) to turn the
+        # spawn-relative /odometry/filtered yaw into ENU. Since the
+        # covariance_injector now rotates the fused LIO yaw into ENU directly,
+        # /odometry/filtered yaw is already ENU -- adding it again would
+        # double-apply the rotation and break the GPS anchor. Keep 0.0.
+        yaw_offset: 0.0
+        magnetic_declination_radians: 0.0
+
+        zero_altitude: true          # trust LiDAR/EKF Z (two_d_mode), not GPS altitude
+        use_odometry_yaw: true       # EKF fuses LIO absolute yaw (stable, map-anchored)
+        wait_for_datum: false        # datum = first GPS fix
+        publish_filtered_gps: false
+        broadcast_cartesian_transform: false   # keep the TF tree minimal

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/libgz_click_to_goal.so">
+    <file alias="libgz_click_to_goal.so.qml">gz_click_to_goal.qml</file>
+  </qresource>
+</RCC>

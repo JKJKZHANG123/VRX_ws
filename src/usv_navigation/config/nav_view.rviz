@@ -1,0 +1,142 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+      Splitter Ratio: 0.5
+    Tree Height: 700
+  - Class: rviz_common/Tool Properties
+    Name: Tool Properties
+    Splitter Ratio: 0.5
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 2
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Name: Grid
+      Reference Frame: camera_init
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Odometry
+      Enabled: true
+      Keep: 200
+      Name: 船的轨迹
+      Shape:
+        Alpha: 1
+        Color: 255; 25; 0
+        Value: Arrow
+      Topic:
+        Depth: 5
+        Reliability Policy: Reliable
+        Value: /aft_mapped_to_init
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 0; 230; 0
+      Enabled: true
+      Name: 全局路径
+      Topic:
+        Depth: 5
+        Reliability Policy: Reliable
+        Value: /plan
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 0; 100; 255
+      Enabled: true
+      Name: MPPI局部轨迹
+      Topic:
+        Depth: 5
+        Reliability Policy: Reliable
+        Value: /local_plan
+      Value: true
+    - Alpha: 0.6
+      Class: rviz_default_plugins/Map
+      Color Scheme: costmap
+      Enabled: true
+      Name: 局部代价地图
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Value: /local_costmap/costmap
+      Value: true
+    - Alpha: 0.3
+      Class: rviz_default_plugins/Map
+      Color Scheme: costmap
+      Enabled: true
+      Name: 全局代价地图
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Value: /global_costmap/costmap
+      Value: true
+    - Class: rviz_default_plugins/Polygon
+      Color: 0; 255; 100
+      Enabled: true
+      Name: 船体轮廓
+      Topic:
+        Depth: 5
+        Reliability Policy: Reliable
+        Value: /local_costmap/published_footprint
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: 导航点标记 (红)
+      Topic:
+        Depth: 5
+        Reliability Policy: Reliable
+        Value: /nav_waypoints_markers
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 30; 30; 40
+    Fixed Frame: camera_init
+    Frame Rate: 20
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive: false
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: nav2_rviz_plugins/GoalTool
+      Capture modifiers: false
+      Topic:
+        Value: /goal_pose
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 80
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 1.2
+      Target Frame: camera_init
+      Value: Orbit (rviz_default_plugins)
+      Yaw: 0
+    Saved: ~
+
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 900
+  Tool Properties:
+    collapsed: false
+  Width: 1400
+  X: 0
+  Y: 27

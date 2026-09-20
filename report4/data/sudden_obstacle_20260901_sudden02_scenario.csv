@@ -1,0 +1,5 @@
+wall_time,sim_time,event,camera_x,camera_y,world_x,world_y,detail
+2026-09-01T22:15:00+0800,219.896,transform_frozen,0.000,0.000,-532.156,161.957,"tx=-532.155937; ty=161.956585; yaw=1.000000; boat_world=(-532.614, 161.577); boat_camera=(-0.5669,0.1804)"
+2026-09-01T22:15:00+0800,219.896,waiting_for_motion,-0.567,0.180,-532.614,161.577,need speed>=0.25 m/s and travel>=4.0 m
+2026-09-01T22:15:33+0800,251.600,trigger_met,9.642,1.514,-528.220,170.888,speed=0.26 m/s; travelled=10.30 m; heading=-0.094 rad
+2026-09-01T22:15:33+0800,251.600,spawned,17.606,0.762,-523.284,177.183,"ahead=8.0 m of boat at (9.64,1.51); lateral=0.0 m; boat_speed=0.26 m/s"

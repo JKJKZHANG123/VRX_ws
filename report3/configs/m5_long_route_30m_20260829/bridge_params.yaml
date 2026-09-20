@@ -1,0 +1,42 @@
+### M5 control bridge tunable parameters (feed-forward)
+control_bridge:
+    ros__parameters:
+        use_sim_time: true
+
+        # Surge feed-forward drag model: F = k_v_lin*vx + k_v_quad*vx*|vx|
+        # URDF drag baseline. Steady-state thrust: v=1 -> 124 N,
+        # v=2 -> 392 N. Keep this conservative while validating the route.
+        k_v_lin: 51.3
+        k_v_quad: 72.4
+
+        # Yaw feed-forward: dF = k_yaw * wz  (differential thrust per rad/s).
+        # Bigger = turns harder. Start moderate; raise if turns are sluggish,
+        # lower if the boat over-rotates / weaves.
+        k_yaw: 80.0
+
+        # 2026-08-29 M5 telemetry: yaw_sign=-1 made commanded wz and
+        # measured camera_init yaw change predominantly opposite in sign.
+        # +1 follows the physical WAM-V differential-thrust convention.
+        yaw_sign: 1.0
+
+        # Safety limits
+        max_thrust_n: 300.0         # N per thruster (hard clamp)
+        max_slew_n_per_step: 80.0   # N/step slew rate (thruster protection)
+        cmd_timeout_s: 0.5           # watchdog: zero thrust if cmd goes stale
+        min_thrust_deadband: 2.0     # N deadband (suppresses idle chatter)
+
+        # Independent last-resort stop based on the filtered cloud in base_link.
+        # This is produced directly from the current Gazebo LiDAR scan, not
+        # from Point-LIO's map, so localization drift cannot disable the stop.
+        safety_cloud_topic: /usv/safety_cloud
+        # 从船艏外缘开始计算，避免把双体船/支架自身回波当成岸。
+        safety_corridor_start_x_m: 2.8
+        safety_stop_distance_m: 6.0
+        safety_corridor_half_width_m: 2.2
+        safety_min_points: 3
+        # The VRX LiDAR is nominally 5 Hz, but Gazebo can briefly stretch a
+        # scan interval while Point-LIO/PCL are busy.  Keep the fail-safe stop,
+        # but avoid false stale-cloud stops during a sub-second scheduling gap.
+        safety_cloud_timeout_s: 2.0
+        max_yaw_difference_ratio: 0.45
+        goal_status_topic: /usv/goal_status

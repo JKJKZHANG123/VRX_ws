@@ -1,0 +1,15 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-09-02-10-22-19-995975-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-28206
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [28245]
+[control_bridge-1] [INFO] [1788315740.640801120] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=420.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, emergency_box=x[-2.8,3.5]m +/-y1.3, warning_corridor=x[3.5,9.5]m +/-y2.4, yaw_ratio=0.70, escape_v=0.18m/s, escape_w=0.08rad/s
+[control_bridge-1] [ERROR] [1788315740.670598521] [control_bridge]: COLLISION EMERGENCY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [WARN] [1788315740.671082634] [control_bridge]: FORWARD SAFETY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [INFO] [1788315744.061954994] [control_bridge]: collision emergency stop cleared
+[control_bridge-1] [INFO] [1788315744.062364770] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [WARN] [1788315858.535022195] [control_bridge]: FORWARD SAFETY STOP: obstacle in warning corridor (961 points)
+[control_bridge-1] [INFO] [1788315858.545145927] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=2.03 m, diagnostic)
+[control_bridge-1] [INFO] [1788315860.555035282] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=1.52 m, diagnostic)
+[control_bridge-1] [INFO] [1788315862.616979662] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=1.38 m, diagnostic)
+[control_bridge-1] [INFO] [1788315864.690538505] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=1.50 m, diagnostic)
+[control_bridge-1] [INFO] [1788315866.023156151] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [INFO] [1788315941.152985549] [control_bridge]: zeroing thrust: goal terminal: SUCCEEDED code=4; status_seq=4

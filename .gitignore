@@ -1,0 +1,55 @@
+# ══════════════════════════════════════════════════════════════════
+#  lidar_project — 顶层 .gitignore
+#
+#  这是一个 ROS 2 (Jazzy) 工作空间，src/ 下是各功能包。
+#  忽略原则：只排除「构建产物 / 运行日志 / 超大点云输出」，
+#  源码、config、launch、以及 report*/data 里的实验数据全部提交。
+# ══════════════════════════════════════════════════════════════════
+
+# ── colcon 构建产物（根目录）──────────────────────────────────────
+/build/
+/install/
+/log/
+
+# 嵌套在包目录里的 colcon 产物
+src/point_lio_ros2/build/
+src/point_lio_ros2/install/
+src/point_lio_ros2/log/
+
+# ── 运行日志 / PID / 临时文件 ─────────────────────────────────────
+/.usv_logs/
+/.manual_logs/
+/.usv_pids
+/Log/
+*.pid
+# 注意：这里刻意不写 `*.log`。report*/data/ 下的 *_goal_gateway.log
+# 是记录在案的实验证据，必须提交。真正的运行日志都在 /Log/ 和
+# /.usv_logs/ 里，上面已经排除。
+
+# ── 编辑器 / Python 缓存 ─────────────────────────────────────────
+/.vscode/
+/.idea/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# ── 超大点云 / 地理输出 ───────────────────────────────────────────
+#  这些是跑出来的结果而非源码，且单文件远超 GitHub 的 100MB 硬限制
+#  （my_mapping_launcher/PCD 下合计 2.0G，point_lio_ros2/PCD 另有 103M）。
+#  留在本地即可；需要共享请另走 release asset / 网盘。
+*.pcd
+*.las
+
+# ── 上游 Point-LIO 的 README 动图（4 个，合计 216MB）──────────────
+#  它们都 <100MB 所以技术上能传，只是会触发 GitHub 的 50MB 体积警告。
+#  想恢复就把下面这行注释掉（代价是首次 clone 慢 200M+）。
+src/point_lio_ros2/image/*.gif
+
+# ── 生成的分析数据 ────────────────────────────────────────────────
+#  zupt_metrics.csv 单文件 236MB，超 GitHub 限制。
+src/point_lio_ros2/Log/*.csv
+
+# ── tf2_tools 生成的 TF 帧图 ──────────────────────────────────────
+frames_*.gv
+frames_*.pdf

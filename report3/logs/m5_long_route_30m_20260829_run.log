@@ -1,0 +1,31 @@
+[validation] start=2026-08-29T20:04:03+08:00 goal=(30,0) duration=180s
+[1;36m[test] 启动 nav_data_logger -> report3/data/m5_long_route_30m_20260829.csv[0m
+[1;36m[test] 发送导航目标 (30, 0)  yaw=0  yaw_sign=1.0[0m
+[1;36m[test] 航行 180 秒 (Ctrl-C 提前结束)...[0m
+  t=176s  pos: 
+  t=168s  pos: 
+  t=161s  pos: x: 4.668277321913815 y: 1.214770723521924 z: 0.005317588545482907 --- 
+  t=154s  pos: x: 7.632346220158049 y: 2.3176549750270343 z: 0.14494718711175608 --- 
+  t=146s  pos: x: 9.824730277495725 y: 2.754276887573892 z: 0.17031425476532663 --- 
+  t=138s  pos: 
+  t=131s  pos: A message was lost!!! 	total count change:2 	total count: 2--- x: 13.745852096736568 y: 3.534737803531461 z: 0.2551607092919294 --- 
+  t=123s  pos: 
+  t=115s  pos: 
+  t=108s  pos: x: 23.401107573821598 y: 2.294177435142971 z: 0.5152628621843386 --- 
+  t=101s  pos: x: 26.531717449700192 y: 1.2796902711066307 z: 0.04073476716244529 --- 
+  t=92s  pos: 
+  t=84s  pos: 
+  t=77s  pos: x: 29.742405085686766 y: 0.1825534253258719 z: 0.2898843862694155 --- 
+  t=69s  pos: 
+  t=62s  pos: x: 30.162456385492852 y: 0.26714903168968657 z: 0.07160436010702728 --- 
+  t=54s  pos: 
+  t=47s  pos: x: 30.18070963827292 y: -0.08442567371422578 z: 0.06907226231543821 --- 
+  t=39s  pos: 
+  t=32s  pos: A message was lost!!! 	total count change:20 	total count: 20--- A message was lost!!! 	total count change:25 	total count: 45--- A message was lost!!! 	total count change:881 	total count: 926--- A message was lost!!! 	total count change:2 	total count: 928--- A message was lost!!! 	total count change:2 	total count: 930--- A message was lost!!! 	total count change:3 	total count: 933--- A message was lost!!! 	total count change:1 	total count: 934--- A message was lost!!! 	total count change:3 	total count: 937--- A message was lost!!! 	total count change:1 	total count: 938--- A message was lost!!! 	total count change:4 	total count: 942--- A message was lost!!! 	total count change:2 	total count: 944--- A message was lost!!! 	total count change:2 	total count: 946--- A message was lost!!! 	total count change:2 	total count: 948--- A message was lost!!! 	total count change:1 	total count: 949--- A message was lost!!! 	total count change:2 	total count: 951--- A message was lost!!! 	total count change:2 	total count: 953--- A message was lost!!! 	total count change:2 	total count: 955--- A message was lost!!! 	total count change:1 	total count: 956--- A message was lost!!! 	total count change:2 	total count: 958--- A message was lost!!! 	total count change:2 	total count: 960--- x: 30.164591435852316 y: 0.18344457521380153 z: 0.12074773938434026 --- 
+  t=24s  pos: 
+  t=16s  pos: A message was lost!!! 	total count change:2 	total count: 2--- A message was lost!!! 	total count change:2 	total count: 4--- A message was lost!!! 	total count change:2 	total count: 6--- A message was lost!!! 	total count change:2 	total count: 8--- A message was lost!!! 	total count change:2 	total count: 10--- A message was lost!!! 	total count change:2 	total count: 12--- A message was lost!!! 	total count change:1 	total count: 13--- A message was lost!!! 	total count change:2 	total count: 15--- A message was lost!!! 	total count change:8 	total count: 23--- A message was lost!!! 	total count change:2 	total count: 25--- A message was lost!!! 	total count change:1 	total count: 26--- A message was lost!!! 	total count change:2 	total count: 28--- A message was lost!!! 	total count change:2 	total count: 30--- A message was lost!!! 	total count change:2 	total count: 32--- A message was lost!!! 	total count change:4 	total count: 36--- A message was lost!!! 	total count change:1 	total count: 37--- A message was lost!!! 	total count change:1 	total count: 38--- A message was lost!!! 	total count change:3 	total count: 41--- A message was lost!!! 	total count change:3 	total count: 44--- A message was lost!!! 	total count change:6 	total count: 50--- A message was lost!!! 	total count change:2 	total count: 52--- A message was lost!!! 	total count change:2 	total count: 54--- A message was lost!!! 	total count change:2 	total count: 56--- A message was lost!!! 	total count change:1 	total count: 57--- A message was lost!!! 	total count change:2 	total count: 59--- A message was lost!!! 	total count change:1 	total count: 60--- A message was lost!!! 	total count change:2 	total count: 62--- A message was lost!!! 	total count change:5 	total count: 67--- x: 29.97019017193165 y: 0.1433113774122674 z: 0.14357424306719394 --- 
+  t=9s  pos: x: 29.55576829707524 y: 0.6112020545092233 z: 0.010276888130279391 --- 
+  t=2s  pos: x: 30.071134667971442 y: 0.1223605409779563 z: 0.2182144646625114 --- 
+[1;36m[test] 停止 logger[0m
+[1;32m[test] 完成 -> report3/data/m5_long_route_30m_20260829.csv[0m
+[validation] run_nav_test rc=0 end=2026-08-29T20:07:13+08:00

@@ -1,0 +1,452 @@
+bt_navigator:
+  ros__parameters:
+    use_sim_time: true
+    # No EKF/GPS chain: Point-LIO is the sole odometry source. camera_init IS
+    # the world/map frame, /aft_mapped_to_init carries pose + twist directly.
+    global_frame: camera_init
+    robot_base_frame: wamv/wamv/base_link
+    odom_topic: /aft_mapped_to_init
+    bt_loop_duration: 10
+    default_server_timeout: 20
+    enable_groot_monitoring: false
+    groot_zmq_publisher_port: 1666
+    groot_zmq_server_port: 1667
+    # 自定义 BT: 0.25 Hz 有界重规划，并在规划失败时先恢复再进入控制器。
+    # 差速船禁止原地转 (use_rotate_to_heading:false) 与倒退 (allow_reversing:false),
+    # 也不使用 Spin/BackUp 恢复；规划失败时只清代价地图、等待并安全退出。
+    # 绝对路径由 navigation.launch.py 通过 bt_actual 覆盖此处值 (无 RewrittenYaml)。
+    default_nav_to_pose_bt_xml: "PACKAGE_SHARE/usv_nav_to_pose.xml"
+
+bt_navigator_navigate_through_poses_rclcpp_node:
+  ros__parameters:
+    use_sim_time: true
+    default_nav_through_poses_bt_xml: "PACKAGE_SHARE/usv_nav_to_pose.xml"
+
+bt_navigator_navigate_to_pose_rclcpp_node:
+  ros__parameters:
+    use_sim_time: true
+
+controller_server:
+  ros__parameters:
+    use_sim_time: true
+    controller_frequency: 10.0
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.0
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.3
+    progress_checker_plugin: "progress_checker"
+    goal_checker_plugins: ["general_goal_checker"]
+    controller_plugins: ["FollowPath"]
+
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.3
+      movement_time_allowance: 8.0
+
+    general_goal_checker:
+      stateful: true
+      plugin: "nav2_controller::SimpleGoalChecker"
+      # A 2 m tolerance made a 4 m test report success at x≈2.1 m.
+      # Require the boat centre to reach within 0.8 m of the requested point.
+      xy_goal_tolerance: 0.8
+      yaw_goal_tolerance: 0.5
+
+    FollowPath:
+      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+
+      # ── 核心巡航速度 (你要的“开多快”就调这一个) ──────────────
+      # 2.5 -> 1.0: 差速船惯性大, 2.5m/s 时转弯半径远超 Dubin 规划假设 (2.5m),
+      # 是"打圈/冲岸"的直接原因之一。1.0m/s 让实际轨迹贴合规划线。
+      desired_linear_vel: 0.6           # m/s 目标巡航速度
+
+      # NOTE: RPP has no max_angular_vel parameter (its parameter struct only
+      # exposes rotate_to_heading_angular_vel and max_angular_accel), so the
+      # yaw ceiling is enforced in velocity_smoother's max_velocity instead.
+      # See the measured hull limit documented there.
+      min_approach_linear_velocity: 0.2   # 接近目标时的最低速度
+      approach_velocity_scaling_dist: 6.0 # 距目标多远开始减速
+
+      # ── 前视距离 (RPP 的“朝多远的点开”) ──────────────────────
+      # 2026-09-01: lengthened to match the 8.0 m minimum_turning_radius.
+      # Pure pursuit commands curvature k = 2e/Ld^2 for cross-track error e, so
+      # a short lookahead demands a radius the hull cannot hold: at Ld=2 m a
+      # 1 m error asks for a 2 m radius (vs 8 m achievable). The controller then
+      # overcorrects, reverses, and the yaw impulses cancel -- measured as 11
+      # sign flips and 0.4 deg net heading change over 111 s in
+      # report3 static_plan_20260901_plan06. Stability needs Ld >= sqrt(2R) = 4 m.
+      lookahead_dist: 6.0              # 基础前视距离 (m)
+      min_lookahead_dist: 5.0
+      max_lookahead_dist: 10.0
+      lookahead_time: 1.5              # 速度越快前视越远 (vel × time)
+      use_velocity_scaled_lookahead_dist: true
+
+      # ── 转向行为 (差动船: 不原地转、不倒退, 匹配 Dubin 规划) ──
+      use_rotate_to_heading: false
+      allow_reversing: false
+      max_robot_pose_search_dist: 10.0
+      use_interpolation: true
+      transform_tolerance: 0.2
+
+      # ── 弯道限速 (转弯时自动减速, 防止甩尾) ──────────────────
+      use_regulated_linear_velocity_scaling: true
+      # Kept equal to minimum_turning_radius (7.0) so curvature slowdown engages
+      # exactly when the path is at the planner's tightest arc, not before.
+      regulated_linear_scaling_min_radius: 7.0
+      # 0.2 -> 0.5. This floor is a STEERING limit, not a comfort setting. The
+      # bridge caps the differential at a fraction of surge thrust, so yaw
+      # authority falls off with speed while the detour's yaw requirement only
+      # falls linearly. Measured against R=11:
+      #     vx=0.60 need 0.0545 / can 0.0609  OK
+      #     vx=0.50 need 0.0455 / can 0.0469  OK
+      #     vx=0.45 need 0.0409 / can 0.0404  CANNOT TURN
+      #     vx=0.20 need 0.0182 / can 0.0141  CANNOT TURN
+      # At the old 0.2 floor the obstacle slowdown dropped the boat straight
+      # into the region where it physically cannot hold its own detour: it
+      # slowed, lost steering, drove on, and stalled at the obstacle. Keeping
+      # >=0.5 m/s preserves the authority needed to complete the avoidance.
+      regulated_linear_scaling_min_speed: 0.5
+
+      # ── 避障限速 (靠近障碍自动减速) ─────────────────────────
+      use_cost_regulated_linear_velocity_scaling: true
+      inflation_cost_scaling_factor: 3.0   # 需与 costmap inflation 一致
+      cost_scaling_dist: 3.0
+      cost_scaling_gain: 1.0
+      # Collision prediction in RPP checks the instantaneous carrot arc.  For
+      # this large differential-thrust USV it can veto a valid Smac detour
+      # before the hull has time to yaw onto that path.  Smac performs the
+      # footprint collision check on the planned path, while the independent
+      # base_link LiDAR safety gate remains the last-resort impact stop.
+      use_collision_detection: false
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      update_frequency: 5.0
+      publish_frequency: 2.0
+      global_frame: camera_init
+      robot_base_frame: wamv/wamv/base_link
+      use_sim_time: true
+      rolling_window: true
+      # 2026-09-01: 30 -> 60 m.  The goal gateway needs the 2.8 m check disk to
+      # sit inside a costmap that reports known space, and the global map is
+      # ~86% unknown on open water, so admissibility came entirely from this
+      # rolling window: +-15 m capped every goal near x=12 m.  That in turn
+      # forced the test obstacle within ~5 m of the bow, leaving the hull no
+      # room to yaw before its 3.1 m bow reached the inscribed ring and Smac
+      # rejected the start pose ("Start occupied").  60 m allows a ~10 m
+      # obstacle standoff with a goal beyond it.  Cost: 200x200 cells at 0.3 m,
+      # the same grid size the global costmap already carries.
+      width: 60
+      height: 60
+      resolution: 0.3
+      # 2026-09-01: dropped the 0.5 m bow/side margin, back to the nominal
+      # 4.9x2.2 m WAM-V collision hull.  The margin was counted twice against
+      # obstacles: Smac tests every footprint vertex against cost 253, but
+      # cost 253 already means "the ROBOT CENTRE cannot be here" (it is the
+      # inscribed-radius ring).  So the 3.1 m bow reach and the 1.6 m inscribed
+      # ring stacked, and the boat needed 5.3 m of centre-to-centre clearance
+      # before any plan was legal -- it aborted with "Start occupied" while
+      # still 1.6 m clear of the obstacle (report3 static_plan_20260901_plan04).
+      # Now: inscribed 1.1 m, ring 1.70 m, required clearance ~4.3 m.
+      # The bridge's independent base_link LiDAR gate remains the impact stop.
+      footprint: "[[2.6, 1.1], [2.6, -1.1], [-2.3, -1.1], [-2.3, 1.1]]"
+      # Use the current, body-frame scan only.  The registered cloud is an
+      # accumulated LIO map and feeding it to a rolling costmap repaints old
+      # returns around the boat.  The plain obstacle layer is intentional:
+      # unlike STVL it does not retain a voxel after the current scan clears it.
+      plugins: ["obstacle_layer", "inflation_layer"]
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        combination_method: 1
+        observation_sources: lidar_cloud dynamic_cloud
+        transform_tolerance: 0.3
+
+        lidar_cloud:
+          data_type: "PointCloud2"
+          topic: /usv/raw_obstacle_cloud
+          marking: true
+          clearing: true
+          obstacle_max_range: 25.0
+          raytrace_max_range: 30.0
+          min_obstacle_height: 0.50
+          max_obstacle_height: 3.0
+          expected_update_rate: 2.0
+          observation_persistence: 0.0
+          inf_is_valid: false
+          clear_after_reading: true
+
+        # The tracker publishes short-horizon predicted returns in the boat
+        # frame.  Keep the raw scan as the authoritative source for static
+        # structure and emergency clearing; this second source adds the
+        # dynamic prediction without replacing ordinary LiDAR avoidance.
+        dynamic_cloud:
+          data_type: "PointCloud2"
+          topic: /usv/dynamic_obstacle_cloud
+          marking: true
+          clearing: true
+          obstacle_max_range: 35.0
+          raytrace_max_range: 35.0
+          min_obstacle_height: 0.50
+          max_obstacle_height: 3.0
+          # The tracker is intentionally disabled in the static trial.  A
+          # nonzero expected_update_rate would make Nav2 mark the whole
+          # costmap stale when this optional source has no publisher, causing
+          # planner calls to time out.  The raw LiDAR source above retains the
+          # freshness watchdog; enabled tracker runs still consume this cloud.
+          # Optional source: see the local costmap note above.  Do not let
+          # tracker-disabled static runs make the global map non-current.
+          expected_update_rate: 0.0
+          observation_persistence: 0.0
+          inf_is_valid: false
+          clear_after_reading: true
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0
+        # Smac's optimized collision checking requires inflation >= half of the
+        # robot's largest cross-section. Footprint 5.9x3.2m -> max 5.9m -> half
+        # 2.95m. Set to 3.0 to clear the threshold and suppress the planner error.
+        # The cost>=50 contour is still set by the inscribed radius and scaling
+        # factor, decaying below 50 at 1.64 m from an obstacle cell.
+        # gateway rejects (still ~2.24 m from a 1.2 m box centre).  An earlier
+        # 3.8 -> 2.0 change here was made on the theory that inflation drove
+        # the "Start occupied" aborts; measurement showed it does not -- that
+        # ring comes from the footprint's inscribed radius, not this value.
+        inflation_radius: 3.0
+
+      always_send_full_costmap: true
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 1.0
+      publish_frequency: 1.0
+      global_frame: camera_init
+      robot_base_frame: wamv/wamv/base_link
+      use_sim_time: true
+      # Must match the local costmap: Smac plans on this map, so a larger
+      # footprint here would still reject the start pose.  See the rationale
+      # in the local costmap above.
+      footprint: "[[2.6, 1.1], [2.6, -1.1], [-2.3, -1.1], [-2.3, 1.1]]"
+      resolution: 0.5
+      rolling_window: true
+      width: 100
+      height: 100
+      track_unknown_space: true
+      # Use the same live body-frame scan for both maps.  This prevents a
+      # startup snapshot or persistent LIO map from becoming a large global
+      # ring.  A rolling global map is refreshed and ray-cleared on every scan.
+      plugins: ["obstacle_layer", "inflation_layer"]
+
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        combination_method: 1
+        observation_sources: lidar_cloud dynamic_cloud
+        transform_tolerance: 0.3
+
+        lidar_cloud:
+          data_type: "PointCloud2"
+          topic: /usv/raw_obstacle_cloud
+          marking: true
+          clearing: true
+          obstacle_max_range: 25.0
+          raytrace_max_range: 30.0
+          min_obstacle_height: 0.50
+          max_obstacle_height: 3.0
+          expected_update_rate: 2.0
+          observation_persistence: 0.0
+          inf_is_valid: false
+          clear_after_reading: true
+
+        dynamic_cloud:
+          data_type: "PointCloud2"
+          topic: /usv/dynamic_obstacle_cloud
+          marking: true
+          clearing: true
+          obstacle_max_range: 35.0
+          raytrace_max_range: 35.0
+          min_obstacle_height: 0.50
+          max_obstacle_height: 3.0
+          expected_update_rate: 0.0
+          observation_persistence: 0.0
+          inf_is_valid: false
+          clear_after_reading: true
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 5.0
+        # Kept equal to the local costmap: see the rationale there.  Smac plans
+        # on this map, so this is the value its collision checker validates
+        # against the 2.82 m circumscribed radius. Set to 3.0 (>= 5.9m/2) to
+        # satisfy the optimized collision checking requirement.
+        inflation_radius: 3.0
+
+      always_send_full_costmap: true
+
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 1.0
+    use_sim_time: true
+    planner_plugins: ["GridBased"]
+
+    GridBased:
+      plugin: "nav2_smac_planner::SmacPlannerHybrid"
+      downsample_costmap: false
+      downsampling_factor: 1
+      tolerance: 2.0
+      # 在线滚动地图的未观测区不能阻塞起点；实际点云障碍仍不可穿越。
+      allow_unknown: true
+      # Bound each search so a stale plan cannot block the BT/controller.
+      # 2026-09-01: 300000 -> 100000. The planner_server action becomes unresponsive
+      # mid-mission (t~51s in plan19), causing BT timeout "waiting for action server
+      # to acknowledge goal request". Hypothesis: a pathological search occasionally
+      # exceeds max_planning_time and hangs the action server. Tighter iteration cap
+      # should prevent runaway searches while still allowing complex detours.
+      max_iterations: 100000
+      max_planning_time: 3.0
+      motion_model_for_search: "DUBIN"
+      # 36 bins are adequate for a slow surface vessel and halve search cost.
+      angle_quantization_bins: 36
+      analytic_expansion_ratio: 3.5
+      analytic_expansion_max_length: 20.0
+      # 2026-09-01: 2.5 -> 8.0, measured from the vessel instead of assumed.
+      # This was the actual cause of the boat drifting into an obstacle's
+      # inflation ring and stalling. The planned paths were never at fault:
+      # across report3 static_plan_20260901_plan06/plan07, ZERO of 1019 plan
+      # snapshots entered the lethal ring and the closest planned approach was
+      # 2.04 m. But Smac generated those detours assuming a 2.5 m turning
+      # radius, while the hull only achieved v/w = 6.9 m under the same
+      # commands. So the boat could not track its own plan: cross-track error
+      # grew, RPP answered with alternating +/- yaw corrections that cancelled
+      # (net heading change over a 111 s run: 0.4 deg), and it continued
+      # essentially straight ahead. Its CENTRE stayed 4.1 m clear, but the
+      # 2.6 m bow reached 1.59 m -- inside the ring -- so the next planning
+      # cycle rejected the start pose with "Start occupied" and the BT aborted.
+      # A radius the boat can actually hold makes Smac commit to the detour
+      # early enough to be executed, rather than late and impossibly tight.
+      #
+      # 2026-09-01 update: 8.0 -> 10.0, now derived from a direct measurement
+      # rather than from observed closed-loop behaviour. The open-loop sweep in
+      # report3/data/turn_capability_20260901.csv gives wz = 0.00238*dF, and the
+      # bridge clips the differential at max_yaw_difference_ratio * F = 25.6 N at
+      # cruise, so the tightest SUSTAINABLE radius is 0.6/(0.00238*25.6) = 9.9 m.
+      # (Measured 8.86 m at dF=25 N, and 5.2 m at dF=40 N -- but 40 N is above
+      # the cap, so a plan built on it could never be executed.) 8.0 m would
+      # demand 31.5 N, i.e. permanently clipped commands, which is the same
+      # untrackable-plan failure in a subtler form.
+      # 2026-09-01 final: 11.0 -> 7.0. An 11 m radius means a 22 m turning
+      # DIAMETER, larger than the 18 m distance to the goal, so no detour could
+      # close and the planner emitted loop-around paths (plan12 drove 116 m on an
+      # 18 m goal). Raising the bridge's max_yaw_difference_ratio to 0.70 lifts
+      # the achievable radius to 6.3 m at cruise, so 7.0 is both feasible for the
+      # goal (14 m diameter) and trackable by the hull with margin.
+      minimum_turning_radius: 7.0
+      reverse_penalty: 2.0
+      change_penalty: 0.2
+      non_straight_penalty: 1.2
+      cost_penalty: 2.0
+      retrospective_penalty: 0.015
+      lookup_table_size: 20.0
+      cache_obstacle_heuristic: true
+      smooth_path: true
+      smoother:
+        max_iterations: 1000
+        w_smooth: 0.3
+        w_data: 0.2
+        tolerance: 1.0e-10
+        do_refinement: true
+        refinement_num: 2
+
+smoother_server:
+  ros__parameters:
+    use_sim_time: true
+    smoother_plugins: ["simple_smoother"]
+    simple_smoother:
+      plugin: "nav2_smoother::SimpleSmoother"
+      tolerance: 1.0e-10
+      max_its: 1000
+      do_refinement: true
+
+behavior_server:
+  ros__parameters:
+    costmap_topic: local_costmap/costmap_raw
+    footprint_topic: local_costmap/published_footprint
+    cycle_frequency: 10.0
+    # 差动船不允许倒退 (allow_reversing: false), back_up 恢复会卡死。只留
+    # spin(原地差动转向可用) + wait + replanning。
+    behavior_plugins: ["spin", "drive_on_heading", "wait"]
+    spin:
+      plugin: "nav2_behaviors::Spin"
+    drive_on_heading:
+      plugin: "nav2_behaviors::DriveOnHeading"
+    wait:
+      plugin: "nav2_behaviors::Wait"
+    global_frame: camera_init
+    robot_base_frame: wamv/wamv/base_link
+    transform_tolerance: 0.5
+    use_sim_time: true
+    simulate_ahead_time: 2.0
+    max_rotational_vel: 1.5
+    min_rotational_vel: 0.2
+    rotational_acc_lim: 1.0
+
+robot_state_publisher:
+  ros__parameters:
+    use_sim_time: true
+
+waypoint_follower:
+  ros__parameters:
+    use_sim_time: true
+    loop_rate: 20
+    stop_on_failure: false
+
+# NOTE: collision_monitor was removed from the launch + lifecycle list: under
+# use_sim_time its pointcloud source stayed permanently stale (>5s timestamp
+# skew) so it never forwarded cmd_vel and the boat froze. Shore avoidance is
+# handled by the costmaps (min_obstacle_height now 0.50) + the independent
+# base_link LiDAR safety gate; RPP collision prediction is disabled for the
+# nonholonomic USV detour timing described above.
+
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: true
+    smoothing_frequency: 20.0
+    scale_velocities: false
+    feedback: "OPEN_LOOP"
+    # 2026-09-01: the yaw limit (3rd element) was 0.8 rad/s, about 13x what this
+    # hull can actually produce, so nothing in the stack ever bounded a yaw
+    # command to something achievable. Measured ceiling: the bridge caps the
+    # differential at max_yaw_difference_ratio*F = 25.6 N at cruise and the hull
+    # responds wz = 0.00238*dF (report3/data/turn_capability_20260901.csv), so
+    # 0.0609 rad/s is the physical maximum. In report3 static_plan_20260901_plan11
+    # RPP asked for more than that in 536 of 1090 moving samples (49%), which
+    # pinned the differential at its cap every cycle -- a saturated differential
+    # is a constant maximum-rate turn, so the boat circled for 122 m on an 18 m
+    # goal and never terminated. 0.055 sits just under the ceiling.
+    # RPP has no max_angular_vel parameter, so this is the enforcement point.
+    # Raised 0.055 -> 0.090 together with max_yaw_difference_ratio 0.45 -> 0.70:
+    # the achievable ceiling is now 0.00238 * (0.70*56.8) = 0.0947 rad/s, and a
+    # 7 m detour at cruise needs 0.0857 rad/s. 0.090 sits between the two, so a
+    # nominal detour is never clipped and a saturating command is still bounded.
+    max_velocity: [1.5, 0.0, 0.090]
+    min_velocity: [-0.3, 0.0, -0.090]
+    # Yaw accel scaled to the new ceiling rather than left at 1.5 rad/s^2, which
+    # was 27x the whole yaw range and so never bound anything. 0.05 rad/s^2
+    # reaches the 0.055 ceiling in ~1.1 s. (The hull's true yaw transient was not
+    # measured; this only keeps the smoother's limit in the same order as the
+    # command range it is smoothing.)
+    max_accel: [1.0, 0.0, 0.05]
+    max_decel: [-1.0, 0.0, -0.05]
+    odom_topic: "/aft_mapped_to_init"
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0
+
+lifecycle_manager_navigation:
+  ros__parameters:
+    use_sim_time: true
+    autostart: true
+    node_names: ['controller_server', 'planner_server', 'behavior_server', 'bt_navigator', 'velocity_smoother', 'smoother_server']

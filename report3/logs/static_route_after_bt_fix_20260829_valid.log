@@ -1,0 +1,6 @@
+[INFO] [1787977587.319696596] [nav_data_logger]: nav_data_logger -> /home/jkjkzhang/lidar_project/report3/data/static_route_after_bt_fix_20260829_valid.csv
+[0;36m当前位置 (camera_init): x: -0.15233830961027772 y: 0.12502823450741665 z: 0.03869184249802948 --- [0m
+[0;32m导航目标: x=4  y=0  朝向=0rad[0m
+[0;32m✓ 目标已发送，等待船移动...[0m
+goal_sent_at=2026-08-29T12:26:35+08:00
+experiment_finished_at=2026-08-29T12:27:48+08:00

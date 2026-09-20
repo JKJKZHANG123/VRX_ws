@@ -1,0 +1,3 @@
+[INFO] [1788062927.560262457] [dynamic_trial_goal_publisher]: published goal (14.000, 0.000), yaw=0.000
+[INFO] [1788062927.670664255] [dynamic_trial_goal_publisher]: goal gateway changed status to: SUCCEEDED code=4
+STATUS:SUCCEEDED code=4

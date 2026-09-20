@@ -1,0 +1,40 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-08-29-15-19-20-532929-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-308111
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [cloud_filter-1]: process started with pid [308133]
+[INFO] [pointlio_mapping-2]: process started with pid [308134]
+[INFO] [static_transform_publisher-3]: process started with pid [308135]
+[INFO] [nice-4]: process started with pid [308136]
+[static_transform_publisher-3] [INFO] [1787987960.643482197] [aft_mapped_to_base_link]: Spinning until stopped - publishing transform
+[static_transform_publisher-3] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-3] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-3] from 'aft_mapped' to 'wamv/wamv/base_link'
+[pointlio_mapping-2] Multi thread started 
+[pointlio_mapping-2] lidar_type: 2
+[pointlio_mapping-2] ~~~~/home/jkjkzhang/lidar_project/src/point_lio_ros2/ file opened
+[nice-4] [INFO] [1787987960.977136338] [rviz2]: Stereo is NOT SUPPORTED
+[nice-4] [INFO] [1787987960.977197325] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[nice-4] [INFO] [1787987960.992158869] [rviz2]: Stereo is NOT SUPPORTED
+[nice-4] [INFO] [1787987961.830876105] [rviz]: Subscribing to: /cloud_effected
+[nice-4] 
+[nice-4] [INFO] [1787987961.831796494] [rviz]: Subscribing to: /cloud_registered
+[nice-4] 
+[nice-4] [INFO] [1787987961.925385956] [rviz]: Subscribing to: /usv/safety_cloud
+[nice-4] 
+[nice-4] [INFO] [1787987961.926164529] [rviz]: Subscribing to: /usv/safety_cloud
+[nice-4] 
+[nice-4] [INFO] [1787987961.926573923] [rviz]: Subscribing to: /Laser_map
+[nice-4] 
+[nice-4] [INFO] [1787987961.935725167] [rviz]: Subscribing to: /cloud_effected
+[nice-4] 
+[nice-4] [INFO] [1787987961.936124481] [rviz]: Subscribing to: /cloud_registered
+[nice-4] 
+[nice-4] [INFO] [1787987961.936423015] [rviz]: Subscribing to: /usv/safety_cloud
+[nice-4] 
+[nice-4] [INFO] [1787987961.936697743] [rviz]: Subscribing to: /Laser_map
+[nice-4] 
+[cloud_filter-1] [INFO] [1787987963.516470936] [cloud_filter]: adapting: 69984 -> 21768 pts; dropped 46889 non-finite; sensor z filter enabled at -1.50m; 1327 low points dropped; time field appended (0..0.1s over 2187 cols)
+[pointlio_mapping-2] first lidar time21.2
+[pointlio_mapping-2] [INFO] [1787987963.687111048] [laserMapping]: IMU Initializing: 1.0 %
+[pointlio_mapping-2] [WARN] [1787987963.687420371] [laserMapping]: Reset ImuProcess
+[pointlio_mapping-2] [INFO] [1787987964.415184408] [laserMapping]: IMU Initializing: 75.0 %
+[pointlio_mapping-2] [INFO] [1787987964.415266208] [laserMapping]: IMU Initializing: 100.0 %

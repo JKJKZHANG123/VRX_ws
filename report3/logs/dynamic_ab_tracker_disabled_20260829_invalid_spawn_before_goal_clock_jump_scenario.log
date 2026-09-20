@@ -1,0 +1,5 @@
+[INFO] [1787983970.387881075] [dynamic_obstacle_scenario]: spawned: camera=(3.00,-3.00) world=(-527.82,162.91) speed=0.250 m/s; update_hz=2.0
+[INFO] [1787983970.388614117] [dynamic_obstacle_scenario]: motion_start: camera=(3.00,-3.00) world=(-527.82,162.91) duration=24.000 s
+[INFO] [1787983970.711555917] [dynamic_obstacle_scenario]: pose_sample: camera=(3.00,-3.00) world=(-527.82,162.91) fraction=0.000
+[INFO] [1787983971.158160364] [dynamic_obstacle_scenario]: pose_sample: camera=(3.00,3.00) world=(-532.89,166.14) fraction=1.000
+[INFO] [1787983971.160477432] [dynamic_obstacle_scenario]: motion_complete: camera=(3.00,3.00) world=(-532.89,166.14) elapsed=197.312 s

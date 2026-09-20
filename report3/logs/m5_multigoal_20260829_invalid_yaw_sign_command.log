@@ -1,0 +1,12 @@
+[INFO] [1787980717.278411400] [m5_multigoal_command]: waypoints_camera_init: (1.50,0.00); (3.00,0.50); (4.00,0.00)
+[INFO] [1787980718.217962213] [m5_multigoal_command]: status: IDLE code=0
+[INFO] [1787980718.269310689] [m5_multigoal_command]: transform_ready: boat_world=(-532.5278043544512, 161.92975560952172); boat_camera=(-0.30740840509546896, 0.29204437955445156)
+[INFO] [1787980718.270296381] [m5_multigoal_command]: command: clear
+[INFO] [1787980719.073985615] [m5_multigoal_command]: marker: 1: camera=(1.500,0.000) world=(-531.296,163.302)
+[INFO] [1787980719.786082499] [m5_multigoal_command]: marker: 2: camera=(3.000,0.500) world=(-530.913,164.816)
+[INFO] [1787980720.487969564] [m5_multigoal_command]: marker: 3: camera=(4.000,0.000) world=(-529.899,165.383)
+[INFO] [1787980721.198020716] [m5_multigoal_command]: command: navigate
+[INFO] [1787980721.200314794] [m5_multigoal_command]: status: QUEUED code=1; waiting for NavigateThroughPoses
+[INFO] [1787980721.202009191] [m5_multigoal_command]: status: ACCEPTED code=1; Nav2 multi-goal accepted
+[INFO] [1787980721.999251512] [m5_multigoal_command]: navigate_sent: 3 waypoints
+[INFO] [1787980892.010937130] [m5_multigoal_command]: timeout: no terminal status after 170.0 s

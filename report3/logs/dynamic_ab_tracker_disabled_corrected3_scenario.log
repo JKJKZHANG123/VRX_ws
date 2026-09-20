@@ -1,0 +1,25 @@
+[INFO] [1787988052.181742346] [dynamic_obstacle_scenario]: transform_frozen: camera=(0.00,0.00) world=(-530.46,163.71) tx=-530.463318; ty=163.708708; yaw=1.000000; boat_world=(-529.226549227707, 166.5121467132347); boat_camera=(3.0272413208559095, 0.4739998485756057)
+[INFO] [1787988052.556163768] [dynamic_obstacle_scenario]: spawned: camera=(6.50,-6.00) world=(-521.90,165.94) speed=0.600 m/s; update_hz=5.0
+[INFO] [1787988052.575587644] [dynamic_obstacle_scenario]: motion_start: camera=(6.50,-6.00) world=(-521.90,165.94) duration=20.000 s
+[INFO] [1787988052.883051659] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-5.86) world=(-522.02,166.01) fraction=0.012
+[INFO] [1787988054.581642868] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-5.29) world=(-522.50,166.32) fraction=0.059
+[INFO] [1787988056.238398101] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-4.67) world=(-523.02,166.65) fraction=0.111
+[INFO] [1787988057.538394718] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-4.17) world=(-523.44,166.93) fraction=0.153
+[INFO] [1787988059.528971951] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-3.41) world=(-524.08,167.34) fraction=0.216
+[INFO] [1787988060.860442363] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-2.90) world=(-524.51,167.61) fraction=0.258
+[INFO] [1787988062.613056234] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-2.25) world=(-525.06,167.96) fraction=0.313
+[INFO] [1787988064.617106853] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-1.55) world=(-525.64,168.34) fraction=0.371
+[INFO] [1787988066.266611230] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-0.96) world=(-526.14,168.66) fraction=0.420
+[INFO] [1787988067.880879160] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,-0.32) world=(-526.68,169.00) fraction=0.473
+[INFO] [1787988068.854116954] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,0.05) world=(-526.99,169.20) fraction=0.504
+[INFO] [1787988070.849007035] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,0.80) world=(-527.62,169.61) fraction=0.567
+[INFO] [1787988072.900713906] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,1.54) world=(-528.25,170.01) fraction=0.628
+[INFO] [1787988073.942672765] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,1.92) world=(-528.56,170.21) fraction=0.660
+[INFO] [1787988075.898725548] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,2.66) world=(-529.19,170.61) fraction=0.721
+[INFO] [1787988076.838176793] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,3.02) world=(-529.50,170.81) fraction=0.752
+[INFO] [1787988078.849183893] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,3.82) world=(-530.17,171.24) fraction=0.819
+[INFO] [1787988080.883722418] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,4.56) world=(-530.79,171.64) fraction=0.880
+[INFO] [1787988081.886778230] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,4.95) world=(-531.11,171.85) fraction=0.912
+[INFO] [1787988083.914723559] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,5.71) world=(-531.76,172.26) fraction=0.976
+[INFO] [1787988084.946486343] [dynamic_obstacle_scenario]: pose_sample: camera=(6.50,6.00) world=(-532.00,172.42) fraction=1.000
+[INFO] [1787988084.948656920] [dynamic_obstacle_scenario]: motion_complete: camera=(6.50,6.00) world=(-532.00,172.42) elapsed=20.156 s

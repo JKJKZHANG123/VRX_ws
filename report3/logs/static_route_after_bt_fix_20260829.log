@@ -1,0 +1,37 @@
+[INFO] [1787975820.344217581] [nav_data_logger]: nav_data_logger -> /home/jkjkzhang/lidar_project/report3/data/static_route_after_bt_fix_20260829.csv
+Traceback (most recent call last):
+  File "/home/jkjkzhang/lidar_project/build/usv_navigation/usv_navigation/nav_data_logger.py", line 321, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+    raise handler.exception()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+    result = coro.send(None)
+             ^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 592, in handler
+    await call_coroutine()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 454, in _execute
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 115, in await_or_execute
+    return callback(*args)
+           ^^^^^^^^^^^^^^^
+  File "/home/jkjkzhang/lidar_project/build/usv_navigation/usv_navigation/nav_data_logger.py", line 314, in _tick
+    self._f.flush()
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jkjkzhang/lidar_project/install/usv_navigation/lib/usv_navigation/nav_data_logger", line 33, in <module>
+    sys.exit(load_entry_point('usv-navigation', 'console_scripts', 'nav_data_logger')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jkjkzhang/lidar_project/build/usv_navigation/usv_navigation/nav_data_logger.py", line 325, in main
+    node._f.close()
+OSError: [Errno 28] No space left on device

@@ -1,0 +1,12 @@
+mode=sudden_obstacle_reaction
+run_id=20260901_sudden01
+world=sydney_regatta
+goal_camera_init=24.0,0.0,0.0
+trigger_spawn_ahead_m=8.0
+trigger_lateral_offset_m=0.0
+obstacle_box_m=1.2x1.2x2.0
+obstacle_z_m=1.0
+note=obstacle spawned only after the boat is under way; not present in first plan
+started_wall_time=2026-09-01T22:04:28+08:00
+validity=INVALID
+invalid_reason=spawn point was computed from the drifting LIO camera_init frame via a transform frozen at trial start; by the trigger instant the drift placed the box ON the hull (Gazebo truth: 1.99 m centre separation, box embedded beside the boat) instead of 8 m ahead. sudden01 additionally aborted after 4 s on the 20 ms default_server_timeout bug. Retained for audit only; not usable for avoidance conclusions.

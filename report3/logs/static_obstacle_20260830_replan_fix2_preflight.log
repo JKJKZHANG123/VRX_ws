@@ -1,0 +1,7 @@
+wall_time=2026-08-30T14:26:29+08:00
+stage=preflight_before_recorder
+nav2=active_nodes_and_actions_verified
+goal_pose=subscriber_verified
+stage=preflight_before_goal
+nav2=active_nodes_and_actions_verified_again
+goal_pose=subscriber_verified_again

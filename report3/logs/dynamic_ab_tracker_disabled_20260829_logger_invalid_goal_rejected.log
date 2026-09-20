@@ -1,0 +1,3 @@
+[INFO] [1787983279.934102897] [nav_data_logger]: nav_data_logger -> /home/jkjkzhang/lidar_project/report3/data/dynamic_ab_tracker_disabled_20260829.csv
+[INFO] [1787983559.716045720] [nav_data_logger]: nav_data_logger closed
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:423

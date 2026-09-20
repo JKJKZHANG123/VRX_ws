@@ -1,0 +1,177 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-09-01-11-23-05-769594-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-35847
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [controller_server-1]: process started with pid [35940]
+[INFO] [planner_server-2]: process started with pid [35941]
+[INFO] [smoother_server-3]: process started with pid [35942]
+[INFO] [behavior_server-4]: process started with pid [35943]
+[INFO] [bt_navigator-5]: process started with pid [35944]
+[INFO] [waypoint_follower-6]: process started with pid [35945]
+[INFO] [velocity_smoother-7]: process started with pid [35946]
+[INFO] [costmap_3d_markers-8]: process started with pid [35947]
+[INFO] [click_to_goal-9]: process started with pid [35948]
+[INFO] [lifecycle_manager-10]: process started with pid [35949]
+[waypoint_follower-6] [INFO] [1788232986.061510606] [waypoint_follower]: 
+[waypoint_follower-6] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-6] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-6] [INFO] [1788232986.061979664] [waypoint_follower]: Creating
+[lifecycle_manager-10] [INFO] [1788232986.073866981] [lifecycle_manager_navigation]: Creating
+[behavior_server-4] [INFO] [1788232986.076853291] [behavior_server]: 
+[behavior_server-4] 	behavior_server lifecycle node launched. 
+[behavior_server-4] 	Waiting on external lifecycle transitions to activate
+[behavior_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788232986.081199304] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[planner_server-2] [INFO] [1788232986.083113831] [planner_server]: 
+[planner_server-2] 	planner_server lifecycle node launched. 
+[planner_server-2] 	Waiting on external lifecycle transitions to activate
+[planner_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-5] [INFO] [1788232986.083583961] [bt_navigator]: 
+[bt_navigator-5] 	bt_navigator lifecycle node launched. 
+[bt_navigator-5] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-2] [INFO] [1788232986.085057861] [planner_server]: Creating
+[bt_navigator-5] [INFO] [1788232986.086175261] [bt_navigator]: Creating
+[smoother_server-3] [INFO] [1788232986.087554208] [smoother_server]: 
+[smoother_server-3] 	smoother_server lifecycle node launched. 
+[smoother_server-3] 	Waiting on external lifecycle transitions to activate
+[smoother_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-3] [INFO] [1788232986.089477529] [smoother_server]: Creating smoother server
+[controller_server-1] [INFO] [1788232986.090968768] [controller_server]: 
+[controller_server-1] 	controller_server lifecycle node launched. 
+[controller_server-1] 	Waiting on external lifecycle transitions to activate
+[controller_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[velocity_smoother-7] [INFO] [1788232986.094315424] [velocity_smoother]: 
+[velocity_smoother-7] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-7] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-2] [INFO] [1788232986.095915252] [global_costmap.global_costmap]: 
+[planner_server-2] 	global_costmap lifecycle node launched. 
+[planner_server-2] 	Waiting on external lifecycle transitions to activate
+[planner_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-2] [INFO] [1788232986.096584744] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-1] [INFO] [1788232986.097965597] [controller_server]: Creating controller server
+[controller_server-1] [INFO] [1788232986.115104048] [local_costmap.local_costmap]: 
+[controller_server-1] 	local_costmap lifecycle node launched. 
+[controller_server-1] 	Waiting on external lifecycle transitions to activate
+[controller_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-1] [INFO] [1788232986.115846129] [local_costmap.local_costmap]: Creating Costmap
+[costmap_3d_markers-8] [INFO] [1788232986.909939659] [costmap_3d_markers]: costmap_3d_markers up (visualization only)
+[click_to_goal-9] [INFO] [1788232986.921548503] [click_to_goal]: click_to_goal up: validated goals -> NavigateToPose, frame=camera_init, radius=2.8m, reject_unknown=True
+[lifecycle_manager-10] [INFO] [1788232987.602512211] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788232987.602562536] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-1] [INFO] [1788232987.721037254] [controller_server]: Configuring controller interface
+[controller_server-1] [INFO] [1788232987.721065589] [controller_server]: getting progress checker plugins..
+[controller_server-1] [INFO] [1788232987.721223164] [controller_server]: getting goal checker plugins..
+[controller_server-1] [INFO] [1788232987.721299964] [controller_server]: Controller frequency set to 10.0000Hz
+[controller_server-1] [INFO] [1788232987.721328236] [local_costmap.local_costmap]: Configuring
+[controller_server-1] [INFO] [1788232987.731602687] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-1] [INFO] [1788232987.735512263] [local_costmap.local_costmap]: Subscribed to Topics: lidar_cloud dynamic_cloud
+[controller_server-1] [INFO] [1788232987.742743633] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-1] [INFO] [1788232987.742794607] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-1] [INFO] [1788232987.743692392] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-1] [INFO] [1788232987.762028085] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-1] [INFO] [1788232987.762337666] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[controller_server-1] [INFO] [1788232987.762803808] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-1] [INFO] [1788232987.763083349] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-1] [INFO] [1788232987.763949137] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-1] [INFO] [1788232987.768787156] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788232987.776946221] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-2] [INFO] [1788232987.777305026] [planner_server]: Configuring
+[planner_server-2] [INFO] [1788232987.777351417] [global_costmap.global_costmap]: Configuring
+[planner_server-2] [INFO] [1788232987.786680381] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-2] [INFO] [1788232987.790140021] [global_costmap.global_costmap]: Subscribed to Topics: lidar_cloud dynamic_cloud
+[planner_server-2] [INFO] [1788232987.796313947] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-2] [INFO] [1788232987.796376910] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-2] [INFO] [1788232987.797045478] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-2] [INFO] [1788232987.823881369] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner::SmacPlannerHybrid
+[planner_server-2] [INFO] [1788232987.823917965] [planner_server]: Configuring GridBased of type SmacPlannerHybrid
+[planner_server-2] [INFO] [1788232987.825896032] [planner_server]: Even sized heuristic lookup table size set 40.000000, increasing size by 1 to make odd
+[planner_server-2] [ERROR] [1788232987.825949144] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[planner_server-2] [INFO] [1788232987.842240445] [planner_server]: Configured plugin GridBased of type SmacPlannerHybrid with maximum iterations 300000, max on approach iterations 1000, and allowing unknown traversal. Tolerance 2.00.Using motion model: Dubin.
+[planner_server-2] [INFO] [1788232987.842304525] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1788232987.855862424] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-4] [INFO] [1788232987.856119492] [behavior_server]: Configuring
+[behavior_server-4] [INFO] [1788232987.862279385] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[behavior_server-4] [INFO] [1788232987.863527994] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[behavior_server-4] [INFO] [1788232987.864626325] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[behavior_server-4] [INFO] [1788232987.878334463] [behavior_server]: Configuring spin
+[behavior_server-4] [INFO] [1788232987.891089996] [behavior_server]: Configuring drive_on_heading
+[behavior_server-4] [INFO] [1788232987.898303196] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788232987.908552150] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-5] [INFO] [1788232987.908929064] [bt_navigator]: Configuring
+[bt_navigator-5] [INFO] [1788232987.919984727] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[bt_navigator-5] [WARN] [1788232987.924319243] [bt_navigator]: Error_code parameters were not set. Using default values of: follow_path_error_code compute_path_error_code
+[bt_navigator-5] Make sure these match your BT and there are not other sources of error codes youreported to your application
+[bt_navigator-5] [INFO] [1788232987.988608814] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[lifecycle_manager-10] [INFO] [1788232988.009411821] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-6] [INFO] [1788232988.009675397] [waypoint_follower]: Configuring
+[waypoint_follower-6] [INFO] [1788232988.031825449] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[waypoint_follower-6] [INFO] [1788232988.032192595] [waypoint_follower]: Waypoint pause duration is set to zero, disabling task executor plugin.
+[lifecycle_manager-10] [INFO] [1788232988.032721477] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-7] [INFO] [1788232988.032980521] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788232988.038467541] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-3] [INFO] [1788232988.038702130] [smoother_server]: Configuring smoother server
+[smoother_server-3] [INFO] [1788232988.057222472] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-3] [INFO] [1788232988.057715132] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788232988.064483908] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-1] [INFO] [1788232988.064711129] [controller_server]: Activating
+[controller_server-1] [INFO] [1788232988.064755758] [local_costmap.local_costmap]: Activating
+[controller_server-1] [INFO] [1788232988.064762715] [local_costmap.local_costmap]: Checking transform
+[controller_server-1] [INFO] [1788232988.064899320] [local_costmap.local_costmap]: start
+[controller_server-1] [INFO] [1788232988.266943684] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-1] [INFO] [1788232988.267017024] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232988.575584741] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788232988.575650077] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-2] [INFO] [1788232988.576255347] [planner_server]: Activating
+[planner_server-2] [INFO] [1788232988.576323528] [global_costmap.global_costmap]: Activating
+[planner_server-2] [INFO] [1788232988.576333644] [global_costmap.global_costmap]: Checking transform
+[planner_server-2] [INFO] [1788232988.576509589] [global_costmap.global_costmap]: start
+[planner_server-2] [INFO] [1788232989.579008899] [planner_server]: Activating plugin GridBased of type SmacPlannerHybrid
+[planner_server-2] [INFO] [1788232989.581689471] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232989.687661977] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788232989.687715348] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-4] [INFO] [1788232989.688146843] [behavior_server]: Activating
+[behavior_server-4] [INFO] [1788232989.688181794] [behavior_server]: Activating spin
+[behavior_server-4] [INFO] [1788232989.688202072] [behavior_server]: Activating drive_on_heading
+[behavior_server-4] [INFO] [1788232989.688216391] [behavior_server]: Activating wait
+[behavior_server-4] [INFO] [1788232989.688235518] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232989.795910547] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788232989.796023545] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-5] [INFO] [1788232989.796980511] [bt_navigator]: Activating
+[bt_navigator-5] [INFO] [1788232989.876592299] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232989.984253759] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788232989.984309803] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-6] [INFO] [1788232989.984663985] [waypoint_follower]: Activating
+[waypoint_follower-6] [INFO] [1788232989.984706149] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232990.093926428] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788232990.093999029] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-7] [INFO] [1788232990.094429543] [velocity_smoother]: Activating
+[velocity_smoother-7] [INFO] [1788232990.094504835] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232990.202621436] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788232990.202666650] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-3] [INFO] [1788232990.203096704] [smoother_server]: Activating
+[smoother_server-3] [INFO] [1788232990.203143012] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788232990.310654624] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788232990.310713716] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788232990.310730742] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[bt_navigator-5] [INFO] [1788233271.011307482] [bt_navigator]: Begin navigating from current location (-0.41, 0.45) to (11.00, 0.00)
+[planner_server-2] [ERROR] [1788233271.012235744] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[click_to_goal-9] [INFO] [1788233271.014455575] [click_to_goal]: validated goal sent to NavigateToPose
+[click_to_goal-9] [INFO] [1788233271.015028684] [click_to_goal]: external goal accepted (11.00, 0.00)
+[bt_navigator-5] [INFO] [1788233271.021684711] [bt_navigator]: Received goal preemption request
+[bt_navigator-5] [INFO] [1788233271.021876335] [bt_navigator]: Begin navigating from current location (-0.41, 0.45) to (11.00, 0.00)
+[controller_server-1] [INFO] [1788233271.032723068] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-1] [WARN] [1788233271.032783977] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-1] [WARN] [1788233271.032805326] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[planner_server-2] [ERROR] [1788233275.042115854] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[planner_server-2] [WARN] [1788233275.042640005] [planner_server]: GridBased plugin failed to plan from (-0.27, 0.45) to (11.00, 0.00): "no valid path found"
+[planner_server-2] [WARN] [1788233275.042668474] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-2] [INFO] [1788233275.051889353] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-2] [WARN] [1788233275.582755634] [planner_server]: GridBased plugin failed to plan from (-0.23, 0.44) to (11.00, 0.00): "Start occupied"
+[planner_server-2] [WARN] [1788233275.582841604] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-5] [ERROR] [1788233275.619741885] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[bt_navigator-5] [WARN] [1788233275.619958328] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-5] [ERROR] [1788233275.620118993] [bt_navigator]: Goal failed
+[click_to_goal-9] [INFO] [1788233275.621528077] [click_to_goal]: NavigateToPose finished: ABORTED (status=6)
+[controller_server-1] [INFO] [1788233275.632920414] [controller_server]: Cancellation was successful. Stopping the robot.
+[controller_server-1] [INFO] [1788233275.632965705] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.

@@ -1,0 +1,8 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-08-29-15-20-07-595850-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-309605
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [parameter_bridge-1]: process started with pid [309633]
+[INFO] [gz_click_to_goal_node.py-2]: process started with pid [309634]
+[parameter_bridge-1] [INFO] [1787988008.553387102] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/click/point (gz.msgs.Vector3d) -> /gazebo/click/point (geometry_msgs/msg/Vector3)] (Lazy 0)
+[parameter_bridge-1] [INFO] [1787988008.566312239] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/boat_pose (gz.msgs.Vector3d) -> /gazebo/boat_pose (geometry_msgs/msg/Vector3)] (Lazy 0)
+[parameter_bridge-1] [INFO] [1787988008.567270834] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/waypoint_cmd (gz.msgs.StringMsg) -> /gazebo/waypoint_cmd (std_msgs/msg/String)] (Lazy 0)
+[gz_click_to_goal_node.py-2] [INFO] [1787988009.531601631] [gz_click_to_goal_node]: gz_click_to_goal_node up: Gazebo markers -> Nav2 (spawn_yaw=1.000)

@@ -1,0 +1,10 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-09-01-22-12-20-074870-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-77359
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [77400]
+[control_bridge-1] [INFO] [1788271940.832170195] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=420.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, emergency_box=x[-2.8,3.5]m +/-y1.3, warning_corridor=x[3.5,9.5]m +/-y2.4, yaw_ratio=0.70, escape_v=0.18m/s, escape_w=0.08rad/s
+[control_bridge-1] [ERROR] [1788271941.843843882] [control_bridge]: COLLISION EMERGENCY STOP: direct LiDAR cloud stale/unavailable
+[control_bridge-1] [WARN] [1788271941.844522068] [control_bridge]: FORWARD SAFETY STOP: direct LiDAR cloud stale/unavailable
+[control_bridge-1] [INFO] [1788271942.019034323] [control_bridge]: collision emergency stop cleared
+[control_bridge-1] [INFO] [1788271942.019736225] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [ERROR] [1788272134.145913959] [control_bridge]: COLLISION EMERGENCY STOP: obstacle inside hull envelope (2379 points)
+[control_bridge-1] [INFO] [1788272134.147099334] [control_bridge]: zeroing thrust: obstacle inside hull safety envelope

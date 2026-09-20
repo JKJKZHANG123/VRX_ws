@@ -1,0 +1,2 @@
+[INFO] [1788263537.459659110] [nav_path_recorder]: recording trajectory, /plan snapshots and obstacle clouds
+recorder stopped during ROS shutdown: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

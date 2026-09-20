@@ -1,0 +1,19 @@
+[ERROR] [1787977169.358652233] [rcl]: Failed to parse global arguments
+Traceback (most recent call last):
+  File "/home/jkjkzhang/lidar_project/install/usv_navigation/lib/usv_navigation/nav_data_logger", line 33, in <module>
+    sys.exit(load_entry_point('usv-navigation', 'console_scripts', 'nav_data_logger')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jkjkzhang/lidar_project/build/usv_navigation/usv_navigation/nav_data_logger.py", line 318, in main
+    rclpy.init(args=args)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 88, in init
+    context.init(args, domain_id=domain_id)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 99, in init
+    self.__context = _rclpy.Context(
+                     ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize rcl: Couldn't parse parameter override rule: '-p out_csv=/home/jkjkzhang/lidar_project/report3/data/static_route_after_bt_fix_20260829_retry.csv'. Error: Expected lexeme type (22) not found, search ended at index 7, at ./src/rcl/lexer_lookahead.c:239, at ./src/rcl/arguments.c:352
+[ros2run]: Process exited with failure 1
+[0;36m当前位置 (camera_init): x: -0.21544562915405985 y: 0.2614484046369539 z: 0.03281818021482035 --- [0m
+[0;32m导航目标: x=4  y=0  朝向=0rad[0m
+[0;32m✓ 目标已发送，等待船移动...[0m
+goal_sent_at=2026-08-29T12:19:38+08:00
+experiment_finished_at=2026-08-29T12:20:26+08:00

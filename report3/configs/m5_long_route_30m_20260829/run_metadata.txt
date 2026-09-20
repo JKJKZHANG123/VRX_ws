@@ -1,0 +1,7 @@
+command=./run_nav_test.sh report3/data/m5_long_route_30m_20260829.csv 30 0 180 1.0 0
+startup=USV_DYNAMIC_TRACKER=false ./usv.sh start
+shutdown=./usv.sh stop; ros2 daemon stop
+startup_cloud_gate=passed
+goal_target=(30,0), frame=camera_init, yaw=0
+goal_result=SUCCEEDED code=4, verified in nav2 log
+dynamic_tracker=false

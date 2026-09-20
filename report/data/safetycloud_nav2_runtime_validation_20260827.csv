@@ -1,0 +1,15 @@
+dataset,metric,value,unit,source_file,interpretation
+20260827_runtime_validation,nav2_transform_timeout_count,5,count,.usv_logs/nav2.log,启动阶段 local_costmap 等待 camera_init 的 TF；不是持续运行错误
+20260827_runtime_validation,nav2_invalid_frame_count,5,count,.usv_logs/nav2.log,与上项相同的启动竞态，连续 5 次后恢复
+20260827_runtime_validation,nav2_transform_error_window_s,2.0,s,.usv_logs/nav2.log,首条到末条 Transform 等待日志约 2 秒，随后完成激活
+20260827_runtime_validation,nav2_error_count,1,count,.usv_logs/nav2.log,仅包含 Smac 膨胀层建议；不属于 TF/SafetyCloud 故障
+20260827_runtime_validation,nav2_warning_count,1,count,.usv_logs/nav2.log,BT error_code 参数提示；不影响本次 TF 恢复
+20260827_runtime_validation,nav2_managed_nodes_active,1,boolean,.usv_logs/nav2.log,日志确认 Managed nodes are active
+20260827_runtime_validation,cloud_tf_skip_count,1,count,.usv_logs/cloud_filter.log,过滤器首帧时 TF 缓存尚未建立，随后恢复
+20260827_runtime_validation,cloud_error_count,0,count,.usv_logs/cloud_filter.log,SafetyCloud 运行期间没有 ERROR
+20260827_runtime_validation,safety_cloud_sample_count,66,frames,.usv_logs/cloud_filter.log,SafetyCloud 原始近场安全云统计样本数
+20260827_runtime_validation,safety_cloud_points_median,3548.0,points,.usv_logs/cloud_filter.log,SafetyCloud 每帧点数中位数；frame=wamv/wamv/base_link
+20260827_runtime_validation,safety_cloud_points_min,3350,points,.usv_logs/cloud_filter.log,SafetyCloud 每帧点数最小值
+20260827_runtime_validation,safety_cloud_points_max,3742,points,.usv_logs/cloud_filter.log,SafetyCloud 每帧点数最大值
+20260827_runtime_validation,filtered_cloud_points_median,427.0,points,.usv_logs/cloud_filter.log,经过 band/range/outlier 后的输出点数中位数
+20260827_runtime_validation,filtered_cloud_samples,65,frames,.usv_logs/cloud_filter.log,过滤器输出统计样本数

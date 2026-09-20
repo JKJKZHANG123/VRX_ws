@@ -1,0 +1,24 @@
+# 视觉回环检测参数
+visual_slam_node:
+  ros__parameters:
+    # 话题
+    image_topic: "/camera/color/image_raw"
+    odom_topic: "/Odometry"
+
+    # ORB 特征
+    orb_max_features: 1000
+
+    # 关键帧
+    max_keyframes: 500
+    min_keyframe_dist: 0.3           # 最小平移距离 (米)
+    min_keyframe_angle_deg: 15.0     # 最小旋转角度 (度)
+
+    # 回环检测
+    loop_min_matches: 30             # 最小匹配数
+    loop_match_ratio: 0.75           # Lowe's ratio test 阈值
+    loop_min_gap: 20                 # 最少间隔关键帧数
+    loop_search_radius: 80.0         # 搜索半径 (米)
+
+    # 位姿图
+    pose_graph_fixed_first: true
+    optimize_period: 5.0             # 优化间隔 (秒)

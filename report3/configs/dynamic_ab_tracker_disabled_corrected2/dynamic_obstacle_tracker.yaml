@@ -1,0 +1,43 @@
+dynamic_obstacle_tracker:
+  ros__parameters:
+    use_sim_time: true
+    input_topic: /usv/raw_obstacle_cloud
+    static_map_topic: /usv/structure_map_cloud
+    output_topic: /usv/dynamic_obstacle_cloud
+    world_frame: camera_init
+    base_frame: wamv/wamv/base_link
+
+    # 5 Hz output matches the local costmap and the VRX LiDAR cadence.
+    publish_period_s: 0.2
+
+    # Static-map subtraction.  The map is represented as conservative XY
+    # voxels; a raw return inside one voxel is not sent to the dynamic layer.
+    static_voxel_size_m: 0.75
+    static_match_radius_m: 1.0
+
+    # Lightweight connected-component clustering for sparse point clouds.
+    cluster_cell_size_m: 0.8
+    cluster_min_points: 3
+    cluster_max_points: 250
+    cluster_max_extent_m: 8.0
+
+    # Nearest-neighbour association + alpha-beta constant-velocity filter.
+    track_match_distance_m: 4.0
+    track_timeout_s: 1.5
+    min_confirmed_hits: 2
+    new_track_hold_s: 0.8
+    dynamic_speed_threshold_mps: 0.15
+    alpha: 0.65
+    beta: 0.20
+    max_speed_mps: 5.0
+
+    # Predict ahead of the raw scan.  The local costmap inflation layer adds
+    # the WAM-V footprint margin around these centreline samples.
+    prediction_horizon_s: 8.0
+    prediction_step_s: 1.0
+    prediction_radius_m: 1.5
+    publish_range_m: 35.0
+
+    # Match cloud_filter's 5 s warmup + 15 s persistent-map bootstrap.
+    # Dynamic tracking starts only after the static map is frozen.
+    startup_ignore_s: 20.0

@@ -1,0 +1,10 @@
+validation=PASS
+checks=CSV row count; left/right thrust nonzero; post-arrival thrust zero; safety_stop zero; Nav2 success log; final error <5m; artifact hashes written
+csv_rows=941
+left_thrust_nonzero=466
+right_thrust_nonzero=466
+final_goal_error_m=0.267032
+nav2_terminal=SUCCEEDED code=4
+safety_stop_samples=0
+post_test_project_processes=none
+agents_md=pre-existing; not modified

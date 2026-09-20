@@ -1,0 +1,12 @@
+validation_build_start=2026-08-29T19:39:16+08:00
+workspace=/home/jkjkzhang/lidar_project
+Starting >>> usv_cloud_filter
+Starting >>> usv_control_bridge
+Starting >>> usv_navigation
+Finished <<< usv_cloud_filter [0.31s]
+Finished <<< usv_control_bridge [1.24s]
+Finished <<< usv_navigation [1.24s]
+
+Summary: 3 packages finished [1.39s]
+validation_build_end=2026-08-29T19:39:18+08:00
+return_code=0

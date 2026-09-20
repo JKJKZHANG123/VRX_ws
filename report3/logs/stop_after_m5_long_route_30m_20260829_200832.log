@@ -1,0 +1,18 @@
+[validation] stop start=2026-08-29T20:08:32+08:00
+[0;36m[USV][0m 停止全部 USV 进程...
+  停止 sim (pid 23585)
+  停止 clock_watchdog (pid 24425)
+  停止 lio (pid 24467)
+  停止 cloud_filter (pid 25169)
+  停止 nav2 (pid 25408)
+  停止 bridge (pid 26012)
+  停止 gz_click (pid 26051)
+  停止 view (pid 26248)
+[0;32m[OK][0m  已停止
+[validation] usv.sh stop rc=0
+[validation] ros2 daemon stop
+The daemon has been stopped
+[validation] ros2 daemon stop rc=0
+[validation] remaining project processes
+  24856    2209   24851 Sl         10:54 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp
+[validation] stop end=2026-08-29T20:08:36+08:00

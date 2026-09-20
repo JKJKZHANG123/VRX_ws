@@ -1,0 +1,3 @@
+[INFO] [1788268200.617866511] [dynamic_obstacle_scenario]: transform_frozen: camera=(0.00,0.00) world=(-532.01,162.02) tx=-532.008145; ty=162.017161; yaw=1.000000; boat_world=(-532.3540399669812, 161.9514831685735); boat_camera=(-0.24215318716679202, 0.2555746049086666)
+[INFO] [1788268201.019601548] [dynamic_obstacle_scenario]: spawned: camera=(10.00,0.00) world=(-526.61,170.43) speed=0.600 m/s; update_hz=5.0
+[INFO] [1788268201.021547767] [dynamic_obstacle_scenario]: static_ready: camera=(10.00,0.00) world=(-526.61,170.43) static obstacle ready; no motion loop

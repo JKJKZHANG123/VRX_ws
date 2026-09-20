@@ -1,0 +1,12 @@
+2026-09-04T13:56:34+08:00 fresh=ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:56:37+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:56:43+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:56:49+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:56:55+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:01+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:07+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:13+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:19+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:25+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:31+08:00 ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-09-04T13:57:37+08:00 ABORTED code=6; status_seq=4

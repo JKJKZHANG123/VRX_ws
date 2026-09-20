@@ -1,0 +1,5 @@
+[37;1m2026-09-01 13:20:44.587 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed init_port fastrtps_port7025: open_and_lock_file failed[34;1m -> Function [36mopen_port_internal[m
+[WARN] [1788240076.189893785] [dynamic_obstacle_scenario]: no /gz_boat_pose publisher; using gz model query boat_world=(-533.595, 161.791)
+[INFO] [1788240076.190459599] [dynamic_obstacle_scenario]: transform_frozen: camera=(0.00,0.00) world=(-532.04,162.01) tx=-532.041509; ty=162.010939; yaw=1.000000; boat_world=(-533.595, 161.791); boat_camera=(-1.024427364754368, 1.1883843709685946)
+[INFO] [1788240076.502021735] [dynamic_obstacle_scenario]: spawned: camera=(10.00,0.00) world=(-526.64,170.43) speed=0.600 m/s; update_hz=5.0
+[INFO] [1788240076.504137109] [dynamic_obstacle_scenario]: static_ready: camera=(10.00,0.00) world=(-526.64,170.43) static obstacle ready; no motion loop

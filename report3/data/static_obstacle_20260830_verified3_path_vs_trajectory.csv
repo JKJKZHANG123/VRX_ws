@@ -1,0 +1,15 @@
+metric,value
+trajectory_samples,297
+trajectory_duration_s,59.199999999999996
+plan_snapshot_count,115
+first_plan_points,15
+last_plan_points,15
+first_plan_length_m,11.139851193217181
+last_plan_length_m,11.170771509309558
+actual_traveled_distance_m,1.6999796309189614
+mean_actual_to_time_aligned_plan_m,0.18639644528517613
+p95_actual_to_time_aligned_plan_m,0.2576260274118281
+max_actual_to_time_aligned_plan_m,0.3086526202707503
+min_actual_distance_to_scenario_obstacle_m,5.0831310951027024
+observed_obstacle_points,14400
+scenario_obstacle_samples,4

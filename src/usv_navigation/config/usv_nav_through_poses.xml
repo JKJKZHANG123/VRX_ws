@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+  WAM-V NavigateThroughPoses tree.
+
+  This tree must remain separate from usv_nav_to_pose.xml: the multi-goal
+  navigator exposes a {goals} blackboard entry and requires
+  ComputePathThroughPoses, not ComputePathToPose/{goal}.
+  Recovery actions deliberately avoid in-place spinning and backing up.
+-->
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="2" name="NavigateRecovery">
+      <PipelineSequence name="NavigateThroughWithBoundedReplanning">
+        <ControllerSelector selected_controller="{selected_controller}"
+          default_controller="FollowPath" topic_name="controller_selector"/>
+        <PlannerSelector selected_planner="{selected_planner}"
+          default_planner="GridBased" topic_name="planner_selector"/>
+        <RateController hz="0.25">
+          <RecoveryNode number_of_retries="1" name="ComputePathThroughPoses">
+            <ReactiveSequence>
+              <RemovePassedGoals input_goals="{goals}" output_goals="{goals}" radius="0.7"/>
+              <ComputePathThroughPoses goals="{goals}" path="{path}"
+                planner_id="{selected_planner}"
+                error_code_id="{compute_path_error_code}"/>
+            </ReactiveSequence>
+            <Sequence>
+              <WouldAPlannerRecoveryHelp
+                error_code="{compute_path_error_code}"/>
+              <ClearEntireCostmap name="ClearGlobalCostmap-PlanningRecovery"
+                service_name="global_costmap/clear_entirely_global_costmap"/>
+            </Sequence>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="{selected_controller}"
+            error_code_id="{follow_path_error_code}"/>
+          <Sequence>
+            <WouldAControllerRecoveryHelp error_code="{follow_path_error_code}"/>
+            <ClearEntireCostmap name="ClearLocalCostmap-ControlRecovery"
+              service_name="local_costmap/clear_entirely_local_costmap"/>
+          </Sequence>
+        </RecoveryNode>
+      </PipelineSequence>
+      <Sequence name="SafeNavigationRecovery">
+        <Fallback>
+          <WouldAControllerRecoveryHelp error_code="{follow_path_error_code}"/>
+          <WouldAPlannerRecoveryHelp error_code="{compute_path_error_code}"/>
+        </Fallback>
+        <ClearEntireCostmap name="ClearLocalCostmap-FinalRecovery"
+          service_name="local_costmap/clear_entirely_local_costmap"/>
+        <ClearEntireCostmap name="ClearGlobalCostmap-FinalRecovery"
+          service_name="global_costmap/clear_entirely_global_costmap"/>
+        <Wait wait_duration="2.0"/>
+      </Sequence>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,9 @@
+2026-08-29T20:54:23+08:00 sending one goal after subscriber readiness
+[INFO] [1788008064.077648239] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008064.581883876] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008065.086038186] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008065.593762101] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008066.099341055] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008066.602859124] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008067.107745786] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000)
+[INFO] [1788008067.215168175] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted

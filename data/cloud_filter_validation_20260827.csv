@@ -1,0 +1,6 @@
+phase,topic,total_points,finite_points,water_band_points,above_0_5_points,forward_corridor_points,z_median_m,notes
+before,/wamv/sensors/lidars/lidar_wamv_sensor/points,69984,33524,4978,14734,0,-0.040,"raw sensor frame; water is mainly below sensor"
+before,/wamv/points_filtered,16049,16049,1265,14741,0,8.935,"incorrect sensor-frame z>0 crop"
+before,/cloud_registered,6974,6974,1,9,0,-15.471,"LIO map had severe vertical drift"
+before,/usv/structure_cloud,0,0,0,0,0,nan,"world-frame height crop removed all structure"
+before,/usv/raw_obstacle_cloud,11759,11759,7131,2710,0,0.222,"water surface marked in Nav2"

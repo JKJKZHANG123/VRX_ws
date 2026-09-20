@@ -1,0 +1,93 @@
+wall_time,t,event,detail
+2026-08-30T18:01:10+0800,0.000,recorder_started,prefix=/home/jkjkzhang/lidar_project/report3/data/static_obstacle_20260830_formal04
+2026-08-30T18:01:10+0800,0.501,goal_status,IDLE code=0; status_seq=1
+2026-08-30T18:01:44+0800,34.537,goal_received,frame=camera_init; x=10.000; y=0.000
+2026-08-30T18:01:44+0800,34.540,goal_status,QUEUED code=1; waiting for Nav2 action server; status_seq=2
+2026-08-30T18:01:44+0800,34.543,goal_status,ACCEPTED code=1; Nav2 goal accepted; status_seq=3
+2026-08-30T18:01:44+0800,34.545,plan_received,id=1; source=/plan; points=15; frame=camera_init; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.546,plan_received,id=2; source=/unsmoothed_plan; points=15; frame=camera_init; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.565,plan_received,id=3; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.666,plan_received,id=4; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.765,plan_received,id=5; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.865,plan_received,id=6; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:44+0800,34.965,plan_received,id=7; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.066,plan_received,id=8; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.165,plan_received,id=9; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.265,plan_received,id=10; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.364,plan_received,id=11; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.465,plan_received,id=12; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.565,plan_received,id=13; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.665,plan_received,id=14; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.765,plan_received,id=15; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.865,plan_received,id=16; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:45+0800,35.965,plan_received,id=17; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.065,plan_received,id=18; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.165,plan_received,id=19; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.266,plan_received,id=20; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.365,plan_received,id=21; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.465,plan_received,id=22; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.565,plan_received,id=23; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.665,plan_received,id=24; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.765,plan_received,id=25; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.865,plan_received,id=26; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:46+0800,36.965,plan_received,id=27; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.066,plan_received,id=28; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.165,plan_received,id=29; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.265,plan_received,id=30; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.365,plan_received,id=31; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.465,plan_received,id=32; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.565,plan_received,id=33; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.665,plan_received,id=34; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.765,plan_received,id=35; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.865,plan_received,id=36; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:47+0800,37.965,plan_received,id=37; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.065,plan_received,id=38; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.165,plan_received,id=39; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.265,plan_received,id=40; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.365,plan_received,id=41; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.465,plan_received,id=42; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.565,plan_received,id=43; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.573,plan_received,id=44; source=/unsmoothed_plan; points=16; frame=camera_init; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.574,plan_received,id=45; source=/plan; points=16; frame=camera_init; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.733,plan_received,id=46; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.765,plan_received,id=47; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.865,plan_received,id=48; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:48+0800,38.966,plan_received,id=49; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.066,plan_received,id=50; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.165,plan_received,id=51; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.265,plan_received,id=52; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.365,plan_received,id=53; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.465,plan_received,id=54; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.566,plan_received,id=55; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.665,plan_received,id=56; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.765,plan_received,id=57; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.865,plan_received,id=58; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:49+0800,39.966,plan_received,id=59; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.065,plan_received,id=60; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.165,plan_received,id=61; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.265,plan_received,id=62; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.364,plan_received,id=63; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.465,plan_received,id=64; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.565,plan_received,id=65; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.665,plan_received,id=66; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.765,plan_received,id=67; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.864,plan_received,id=68; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:50+0800,40.965,plan_received,id=69; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.065,plan_received,id=70; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.166,plan_received,id=71; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.265,plan_received,id=72; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.365,plan_received,id=73; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.464,plan_received,id=74; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.565,plan_received,id=75; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.665,plan_received,id=76; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.765,plan_received,id=77; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.865,plan_received,id=78; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:51+0800,41.964,plan_received,id=79; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.065,plan_received,id=80; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.165,plan_received,id=81; source=/received_global_plan; points=16; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.265,plan_received,id=82; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.365,plan_received,id=83; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.465,plan_received,id=84; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.568,plan_received,id=85; source=/received_global_plan; points=15; frame=wamv/wamv/base_link; world_frame=camera_init
+2026-08-30T18:01:52+0800,42.634,goal_status,ABORTED code=6; status_seq=4
+2026-08-30T18:02:04+0800,54.065,recorder_stopped,

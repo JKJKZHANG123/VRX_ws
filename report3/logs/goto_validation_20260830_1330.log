@@ -1,0 +1,19 @@
+[0;36m[gate] 确认 Nav2 lifecycle/action 就绪...[0m
+[0;32m[gate] Nav2 已确认：6 个节点 active [3]，两个 action server 存在。[0m
+[0;32m[gate] /goal_pose 订阅者已确认。[0m
+[0;36m当前位置 (camera_init): x: 10.109141639626458 y: 3.8488833897882353 z: 0.34776949231131454 --- [0m
+[0;32m导航目标: x=15  y=0  朝向=0rad[0m
+[INFO] [1788067105.184839476] [dynamic_trial_goal_publisher]: baseline status='ABORTED code=6; status_seq=7'; generation=1; status_seq=7
+[INFO] [1788067105.186182326] [dynamic_trial_goal_publisher]: published goal (15.000, 0.000), yaw=0.000
+[INFO] [1788067105.189357885] [dynamic_trial_goal_publisher]: goal gateway changed status to: QUEUED code=1; waiting for Nav2 action server; status_seq=8
+STATUS:QUEUED code=1; waiting for Nav2 action server; status_seq=8
+[INFO] [1788067105.192680825] [dynamic_trial_goal_publisher]: goal gateway changed status to: ACCEPTED code=1; Nav2 goal accepted; status_seq=9
+STATUS:ACCEPTED code=1; Nav2 goal accepted; status_seq=9
+[INFO] [1788067105.193600796] [dynamic_trial_goal_publisher]: Nav2 accepted the goal; target publication verified
+[0;32m[gate] 目标状态已二次确认：ACCEPTED code=1; Nav2 goal accepted; status_seq=9[0m
+[0;36m[gate] 确认 Nav2 lifecycle/action 就绪...[0m
+[0;32m[gate] Nav2 已确认：6 个节点 active [3]，两个 action server 存在。[0m
+[0;36m[gate] 目标状态复核：---[0m
+[0;36m[gate] 目标状态复核：---[0m
+[0;36m[gate] 目标状态复核：---[0m
+[0;32m✓ Nav2 已连续复核 active，目标仍在执行：---[0m

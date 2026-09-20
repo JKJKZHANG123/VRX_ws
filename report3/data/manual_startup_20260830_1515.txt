@@ -1,0 +1,141 @@
+run_id=manual_startup_20260830_1515
+wall_time=2026-08-30T15:15:25+08:00
+mode=manual_one_by_one_no_usv_script
+
+=== process commands ===
+ 112833    5907  112833 Ss+        15:37 /bin/bash -c source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=/home/jkjkzhang/lidar_project/.manual_logs/ros; export __NV_PRIME_RENDER_OFFLOAD=1; export __GLX_VENDOR_LIBRARY_NAME=nvidia; INSTALL_DIR=/home/jkjkzhang/lidar_project/install; for pkg_share in "$INSTALL_DIR"/*/share; do [ -d "$pkg_share" ] && export GZ_SIM_RESOURCE_PATH="$pkg_share:${GZ_SIM_RESOURCE_PATH:-}"; done; export GZ_GUI_PLUGIN_PATH="$INSTALL_DIR/usv_click_gazebo/lib/usv_click_gazebo:${GZ_GUI_PLUGIN_PATH:-}"; ros2 launch vrx_gz competition.launch.py world:=sydney_regatta 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/gazebo.log
+ 112851  112833  112833 Sl+        15:37 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch vrx_gz competition.launch.py world:=sydney_regatta
+ 112857  112851  112833 S+         15:36 /bin/sh -c ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -v 4 -r  sydney_regatta.sdf --force-version 8
+ 112859  112857  112833 S+         15:36 gz sim -v 4 -r sydney_regatta.sdf
+ 112902  112859  112902 Rl         15:36 gz sim server
+ 112903  112859  112903 SLl        15:36 gz sim gui
+ 114534  114529  114513 Sl+        14:24 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/lidar_timestamp_adapter/lib/lidar_timestamp_adapter/cloud_filter --ros-args -r __node:=cloud_filter --params-file /tmp/launch_params_ovrl25yt
+ 114535  114529  114513 Sl+        14:24 /home/jkjkzhang/lidar_project/install/point_lio/lib/point_lio/pointlio_mapping --ros-args -r __node:=laserMapping --params-file /home/jkjkzhang/lidar_project/install/point_lio/share/point_lio/config/vrx_wamv.yaml --params-file /tmp/launch_params_6k2wsp3u
+ 120849    5907  120849 Ss+        08:19 /bin/bash -c kill -INT 90732 2>/dev/null || true; sleep 1; ps -p 90732 -o pid,stat,cmd || true; source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=$PWD/.manual_logs/ros; ros2 launch usv_cloud_filter cloud_filter.launch.py 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/obstacle_filter.log
+ 120916  120849  120849 Sl+        08:17 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_cloud_filter cloud_filter.launch.py
+ 120917  120849  120849 S+         08:17 tee /home/jkjkzhang/lidar_project/.manual_logs/obstacle_filter.log
+ 120920  120916  120849 Sl+        08:17 /home/jkjkzhang/lidar_project/install/usv_cloud_filter/lib/usv_cloud_filter/obstacle_filter --ros-args -r __node:=obstacle_filter --params-file /home/jkjkzhang/lidar_project/install/usv_cloud_filter/share/usv_cloud_filter/config/cloud_filter_params.yaml
+ 122455    5907  122455 Ss+        07:11 /bin/bash -c source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=/home/jkjkzhang/lidar_project/.manual_logs/ros; ros2 launch usv_navigation navigation.launch.py use_sim_time:=true enable_dynamic_tracker:=false 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/nav2.log
+ 122472  122455  122455 Sl+        07:11 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_navigation navigation.launch.py use_sim_time:=true enable_dynamic_tracker:=false
+ 122477  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_controller/controller_server --ros-args -r __node:=controller_server -p use_sim_time:=True --params-file /tmp/tmpfv_6y__r
+ 122478  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_planner/planner_server --ros-args -r __node:=planner_server -p use_sim_time:=True --params-file /tmp/tmp1zw5om60
+ 122479  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_smoother/smoother_server --ros-args -r __node:=smoother_server -p use_sim_time:=True --params-file /tmp/tmphua__rkd
+ 122480  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_behaviors/behavior_server --ros-args -r __node:=behavior_server -p use_sim_time:=True --params-file /tmp/tmp6g_4wdk1
+ 122481  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_bt_navigator/bt_navigator --ros-args -r __node:=bt_navigator -p use_sim_time:=True --params-file /tmp/tmpjybldn9e
+ 122482  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_waypoint_follower/waypoint_follower --ros-args -r __node:=waypoint_follower -p use_sim_time:=True --params-file /tmp/tmps3c25mee
+ 122487  122472  122455 Sl+        07:10 /opt/ros/jazzy/lib/nav2_velocity_smoother/velocity_smoother --ros-args -r __node:=velocity_smoother -p use_sim_time:=True --params-file /tmp/tmpflqa2akp
+ 125418    5907  125418 Ss+        05:49 /bin/bash -c source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=/home/jkjkzhang/lidar_project/.manual_logs/ros; ros2 launch usv_control_bridge control_bridge.launch.py 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/control_bridge.log
+ 125434  125418  125418 Sl+        05:49 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_control_bridge control_bridge.launch.py
+ 125435  125418  125418 S+         05:49 tee /home/jkjkzhang/lidar_project/.manual_logs/control_bridge.log
+ 125439  125434  125418 Sl+        05:48 /usr/bin/python3 /home/jkjkzhang/lidar_project/install/usv_control_bridge/lib/usv_control_bridge/control_bridge --ros-args -r __node:=control_bridge --params-file /home/jkjkzhang/lidar_project/install/usv_control_bridge/share/usv_control_bridge/config/bridge_params.yaml
+ 132618    5907  132618 Ss+        01:58 /bin/bash -c source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=$PWD/.manual_logs/ros; ros2 launch usv_click_gazebo gz_click_bridge.launch.py 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/gz_click_bridge.log
+ 132634  132618  132618 Sl+        01:58 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 launch usv_click_gazebo gz_click_bridge.launch.py
+ 132635  132618  132618 S+         01:58 tee /home/jkjkzhang/lidar_project/.manual_logs/gz_click_bridge.log
+ 132639  132634  132618 Sl+        01:58 /opt/ros/jazzy/lib/ros_gz_bridge/parameter_bridge /gazebo/click/point@geometry_msgs/msg/Vector3[gz.msgs.Vector3d /gazebo/boat_pose@geometry_msgs/msg/Vector3[gz.msgs.Vector3d /gazebo/waypoint_cmd@std_msgs/msg/String[gz.msgs.StringMsg --ros-args -r __node:=gz_click_bridge --params-file /tmp/launch_params_yu0ku6km -r /gazebo/click/point:=/gz_click/point -r /gazebo/boat_pose:=/gz_boat_pose -r /gazebo/waypoint_cmd:=/gz_waypoint_cmd
+ 132640  132634  132618 Sl+        01:58 python3 /home/jkjkzhang/lidar_project/install/usv_click_gazebo/lib/usv_click_gazebo/gz_click_to_goal_node.py --ros-args -r __node:=gz_click_to_goal_node --params-file /tmp/launch_params_vq_9jake
+ 135285    5907  135285 Ss+        00:52 /bin/bash -c source /opt/ros/jazzy/setup.bash; source /home/jkjkzhang/lidar_project/install/setup.bash; export ROS_LOG_DIR=/home/jkjkzhang/lidar_project/.manual_logs/ros; rviz2 -d /home/jkjkzhang/lidar_project/install/usv_navigation/share/usv_navigation/config/nav3d_view.rviz 2>&1 | tee /home/jkjkzhang/lidar_project/.manual_logs/nav_rviz.log
+ 135302  135285  135285 Rl+        00:51 rviz2 -d /home/jkjkzhang/lidar_project/install/usv_navigation/share/usv_navigation/config/nav3d_view.rviz
+
+=== required nodes ===
+WARNING: Be aware that there are nodes in the graph that share an exact name, which can have unintended side effects.
+/behavior_server
+/bt_navigator
+/bt_navigator_navigate_through_poses_rclcpp_node
+/bt_navigator_navigate_to_pose_rclcpp_node
+/cloud_filter
+/control_bridge
+/controller_server
+/costmap_3d_markers
+/gz_click_bridge
+/gz_click_to_goal_node
+/laserMapping
+/obstacle_filter
+/planner_server
+/rviz
+/smoother_server
+/velocity_smoother
+/waypoint_follower
+
+=== lifecycle ===
+/planner_server: active [3] 
+/controller_server: active [3] 
+/smoother_server: active [3] 
+/behavior_server: active [3] 
+/bt_navigator: active [3] 
+/waypoint_follower: active [3] 
+/velocity_smoother: active [3] 
+
+=== actions ===
+/navigate_through_poses
+/navigate_to_pose
+
+=== goal_pose ===
+Type: geometry_msgs/msg/PoseStamped
+Publisher count: 2
+Subscription count: 2
+
+=== thrust topics ===
+Type: std_msgs/msg/Float64
+Publisher count: 1
+Subscription count: 1
+Type: std_msgs/msg/Float64
+Publisher count: 1
+Subscription count: 1
+left_zero_sample:
+data: 0.0
+---
+right_zero_sample:
+data: 0.0
+---
+
+=== input/output topics ===
+Type: sensor_msgs/msg/PointCloud2
+Publisher count: 1
+Subscription count: 2
+Type: sensor_msgs/msg/PointCloud2
+Publisher count: 1
+Subscription count: 1
+
+=== logs ===
+[.manual_logs/gazebo.log]
+[gazebo-1] [1;32m[GUI] [0m[1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[GUI] [0m[1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[GUI] [0m[1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[GUI] [0m[1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[parameter_bridge-8] [INFO] [1788073983.779044861] [wamv.ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[.manual_logs/lio.log]
+[cloud_filter-1] [INFO] [1788073262.795958055] [cloud_filter]: adapting: 69984 -> 22085 pts; dropped 46903 non-finite; sensor z filter enabled at -1.50m; 996 low points dropped; time field appended (0..0.1s over 2187 cols)
+[pointlio_mapping-2] first lidar time65.1
+[pointlio_mapping-2] [INFO] [1788073263.258052849] [laserMapping]: IMU Initializing: 1.0 %
+[pointlio_mapping-2] [WARN] [1788073263.258212574] [laserMapping]: Reset ImuProcess
+[pointlio_mapping-2] [INFO] [1788073263.258226287] [laserMapping]: IMU Initializing: 100.0 %
+[.manual_logs/obstacle_filter.log]
+[obstacle_filter-1] [INFO] [1788074133.212108561] [obstacle_filter]: filtered [0.10,3.00]: 7791 -> band 1042 -> no-self 1042 -> range 369 -> out 362
+[obstacle_filter-1] [INFO] [1788074138.273478707] [obstacle_filter]: raw safety cloud: 23774 finite -> 2958 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1788074139.145819789] [obstacle_filter]: filtered [0.10,3.00]: 7807 -> band 1096 -> no-self 1096 -> range 387 -> out 379
+[obstacle_filter-1] [INFO] [1788074144.436871968] [obstacle_filter]: raw safety cloud: 23690 finite -> 3082 near points (frame wamv/wamv/base_link)
+[obstacle_filter-1] [INFO] [1788074145.079038634] [obstacle_filter]: filtered [0.10,3.00]: 7639 -> band 1072 -> no-self 1072 -> range 363 -> out 358
+[.manual_logs/nav2.log]
+[smoother_server-3] [INFO] [1788073697.488461103] [smoother_server]: Activating
+[smoother_server-3] [INFO] [1788073697.488516563] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788073697.593540744] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788073697.593628995] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788073697.593635692] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[.manual_logs/control_bridge.log]
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [125439]
+[control_bridge-1] [INFO] [1788073777.309815270] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=80.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, safety_corridor=x[2.8,8.8]m, yaw_ratio=0.45, escape_v=0.18m/s, escape_w=0.08rad/s
+[control_bridge-1] [WARN] [1788073778.057796259] [control_bridge]: FORWARD SAFETY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [INFO] [1788073779.155513305] [control_bridge]: forward safety stop cleared
+[.manual_logs/gz_click_bridge.log]
+[INFO] [gz_click_to_goal_node.py-2]: process started with pid [132640]
+[parameter_bridge-1] [INFO] [1788074007.486817306] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/click/point (gz.msgs.Vector3d) -> /gazebo/click/point (geometry_msgs/msg/Vector3)] (Lazy 0)
+[parameter_bridge-1] [INFO] [1788074007.498521913] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/boat_pose (gz.msgs.Vector3d) -> /gazebo/boat_pose (geometry_msgs/msg/Vector3)] (Lazy 0)
+[parameter_bridge-1] [INFO] [1788074007.499442430] [gz_click_bridge]: Creating GZ->ROS Bridge: [/gazebo/waypoint_cmd (gz.msgs.StringMsg) -> /gazebo/waypoint_cmd (std_msgs/msg/String)] (Lazy 0)
+[gz_click_to_goal_node.py-2] [INFO] [1788074008.725071539] [gz_click_to_goal_node]: gz_click_to_goal_node up: Gazebo markers -> Nav2 (spawn_yaw=1.000)
+[.manual_logs/nav_rviz.log]
+[INFO] [1788074076.522378540] [rviz2]: Trying to create a map of size 100 x 100 using 1 swatches
+[ERROR] [1788074076.572935438] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+rviz/glsl120/indexed_8bit_image.frag
+ GLSL link result : 
+active samplers with a different type refer to the same texture image unit

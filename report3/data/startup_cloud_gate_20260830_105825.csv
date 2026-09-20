@@ -1,0 +1,10 @@
+wall_time,sim_time,topic,frame_id,tf_ok,total_points,danger_points,expanded_box_points,nearest_xy_m,danger_sectors,raw_clean_streak,result
+2026-08-30T10:58:27+0800,0.000,/usv/raw_obstacle_cloud,wamv/wamv/base_link,1,2960,0,0,8.092,0,1,clean
+2026-08-30T10:58:27+0800,0.000,/usv/structure_map_cloud,camera_init,0,0,0,0,,0,,blocked
+2026-08-30T10:58:27+0800,0.000,/usv/raw_obstacle_cloud,wamv/wamv/base_link,1,3022,0,0,8.089,0,2,clean
+2026-08-30T10:58:27+0800,0.000,/usv/structure_map_cloud,camera_init,0,0,0,0,,0,,blocked
+2026-08-30T10:58:27+0800,0.000,/usv/raw_obstacle_cloud,wamv/wamv/base_link,1,3054,0,0,8.090,0,3,clean
+2026-08-30T10:58:28+0800,0.000,/usv/structure_map_cloud,camera_init,0,0,0,0,,0,,blocked
+2026-08-30T10:58:28+0800,43.316,/usv/raw_obstacle_cloud,wamv/wamv/base_link,1,3094,0,0,8.094,0,4,clean
+2026-08-30T10:58:28+0800,43.316,/usv/structure_map_cloud,camera_init,0,0,0,0,,0,,blocked
+2026-08-30T10:58:28+0800,43.500,/usv/raw_obstacle_cloud,wamv/wamv/base_link,1,3096,0,0,8.100,0,5,PASS

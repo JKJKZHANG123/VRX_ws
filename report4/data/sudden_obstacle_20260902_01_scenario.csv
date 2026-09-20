@@ -1,0 +1,3 @@
+wall_time,sim_time,event,camera_x,camera_y,world_x,world_y,detail
+2026-09-02T10:06:07+0800,1450.404,start,18.931,0.164,-523.044,178.120,"boat_world=(-523.044,178.120) yaw=0.710; lio_camera=(18.931,0.164); spawn point will be computed from Gazebo truth, not LIO"
+2026-09-02T10:06:07+0800,1450.404,waiting_for_motion,18.931,0.164,-523.044,178.120,need speed>=0.25 m/s and travel>=4.0 m

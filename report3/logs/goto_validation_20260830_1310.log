@@ -1,0 +1,11 @@
+[0;36m[gate] 确认 Nav2 lifecycle/action 就绪...[0m
+[0;32m[gate] Nav2 已确认：6 个节点 active [3]，两个 action server 存在。[0m
+[0;32m[gate] /goal_pose 订阅者已确认。[0m
+[0;36m当前位置 (camera_init): x: -0.2299575102368845 y: 0.29808099988461284 z: 0.034692147616647045 --- [0m
+[0;32m导航目标: x=10  y=0  朝向=0rad[0m
+[INFO] [1788066580.173387781] [dynamic_trial_goal_publisher]: baseline status='IDLE code=0; status_seq=1'; generation=1; status_seq=1
+[INFO] [1788066580.174405628] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000), yaw=0.000
+[INFO] [1788066580.176729279] [dynamic_trial_goal_publisher]: goal gateway changed status to: QUEUED code=1; waiting for Nav2 action server; status_seq=2
+STATUS:QUEUED code=1; waiting for Nav2 action server; status_seq=2
+[0;32m[gate] 目标状态已二次确认：QUEUED code=1; waiting for Nav2 action server; status_seq=2[0m
+[0;32m✓ Nav2 仍处于 active，目标已发送，等待船移动...[0m

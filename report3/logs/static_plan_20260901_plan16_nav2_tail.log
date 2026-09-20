@@ -1,0 +1,323 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-09-01-19-48-37-856507-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-217206
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [controller_server-1]: process started with pid [217250]
+[INFO] [planner_server-2]: process started with pid [217251]
+[INFO] [smoother_server-3]: process started with pid [217252]
+[INFO] [behavior_server-4]: process started with pid [217253]
+[INFO] [bt_navigator-5]: process started with pid [217254]
+[INFO] [waypoint_follower-6]: process started with pid [217255]
+[INFO] [velocity_smoother-7]: process started with pid [217256]
+[INFO] [costmap_3d_markers-8]: process started with pid [217257]
+[INFO] [click_to_goal-9]: process started with pid [217258]
+[INFO] [lifecycle_manager-10]: process started with pid [217259]
+[controller_server-1] [INFO] [1788263318.178708334] [controller_server]: 
+[controller_server-1] 	controller_server lifecycle node launched. 
+[controller_server-1] 	Waiting on external lifecycle transitions to activate
+[controller_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-1] [INFO] [1788263318.185915125] [controller_server]: Creating controller server
+[lifecycle_manager-10] [INFO] [1788263318.188873362] [lifecycle_manager_navigation]: Creating
+[smoother_server-3] [INFO] [1788263318.194214067] [smoother_server]: 
+[smoother_server-3] 	smoother_server lifecycle node launched. 
+[smoother_server-3] 	Waiting on external lifecycle transitions to activate
+[smoother_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788263318.194477567] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[velocity_smoother-7] [INFO] [1788263318.195197066] [velocity_smoother]: 
+[velocity_smoother-7] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-7] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-3] [INFO] [1788263318.196487735] [smoother_server]: Creating smoother server
+[planner_server-2] [INFO] [1788263318.197091794] [planner_server]: 
+[planner_server-2] 	planner_server lifecycle node launched. 
+[planner_server-2] 	Waiting on external lifecycle transitions to activate
+[planner_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-6] [INFO] [1788263318.198580258] [waypoint_follower]: 
+[waypoint_follower-6] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-6] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-2] [INFO] [1788263318.199080468] [planner_server]: Creating
+[waypoint_follower-6] [INFO] [1788263318.199252510] [waypoint_follower]: Creating
+[controller_server-1] [INFO] [1788263318.199642114] [local_costmap.local_costmap]: 
+[controller_server-1] 	local_costmap lifecycle node launched. 
+[controller_server-1] 	Waiting on external lifecycle transitions to activate
+[controller_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-1] [INFO] [1788263318.200217301] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-2] [INFO] [1788263318.207498122] [global_costmap.global_costmap]: 
+[planner_server-2] 	global_costmap lifecycle node launched. 
+[planner_server-2] 	Waiting on external lifecycle transitions to activate
+[planner_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-2] [INFO] [1788263318.208313705] [global_costmap.global_costmap]: Creating Costmap
+[bt_navigator-5] [INFO] [1788263318.211637718] [bt_navigator]: 
+[bt_navigator-5] 	bt_navigator lifecycle node launched. 
+[bt_navigator-5] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-5] [INFO] [1788263318.214782629] [bt_navigator]: Creating
+[behavior_server-4] [INFO] [1788263318.224628063] [behavior_server]: 
+[behavior_server-4] 	behavior_server lifecycle node launched. 
+[behavior_server-4] 	Waiting on external lifecycle transitions to activate
+[behavior_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788263319.232897660] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788263319.232952516] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-1] [INFO] [1788263319.249357476] [controller_server]: Configuring controller interface
+[controller_server-1] [INFO] [1788263319.249388927] [controller_server]: getting progress checker plugins..
+[controller_server-1] [INFO] [1788263319.249559146] [controller_server]: getting goal checker plugins..
+[controller_server-1] [INFO] [1788263319.249616733] [controller_server]: Controller frequency set to 10.0000Hz
+[controller_server-1] [INFO] [1788263319.249648750] [local_costmap.local_costmap]: Configuring
+[controller_server-1] [INFO] [1788263319.256828994] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-1] [INFO] [1788263319.259913107] [local_costmap.local_costmap]: Subscribed to Topics: lidar_cloud dynamic_cloud
+[controller_server-1] [INFO] [1788263319.265320632] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-1] [INFO] [1788263319.265345038] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-1] [INFO] [1788263319.265670998] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-1] [INFO] [1788263319.286137302] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-1] [INFO] [1788263319.286358482] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[controller_server-1] [INFO] [1788263319.286790966] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-1] [INFO] [1788263319.286951974] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-1] [INFO] [1788263319.287814132] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-1] [INFO] [1788263319.293791832] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788263319.301917474] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-2] [INFO] [1788263319.302225238] [planner_server]: Configuring
+[planner_server-2] [INFO] [1788263319.302266065] [global_costmap.global_costmap]: Configuring
+[planner_server-2] [INFO] [1788263319.313064722] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-2] [INFO] [1788263319.316764144] [global_costmap.global_costmap]: Subscribed to Topics: lidar_cloud dynamic_cloud
+[planner_server-2] [INFO] [1788263319.322918366] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-2] [INFO] [1788263319.322964247] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-2] [INFO] [1788263319.323591986] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-2] [INFO] [1788263319.345873506] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner::SmacPlannerHybrid
+[planner_server-2] [INFO] [1788263319.345937833] [planner_server]: Configuring GridBased of type SmacPlannerHybrid
+[planner_server-2] [INFO] [1788263319.347339952] [planner_server]: Even sized heuristic lookup table size set 40.000000, increasing size by 1 to make odd
+[planner_server-2] [INFO] [1788263319.364592447] [planner_server]: Configured plugin GridBased of type SmacPlannerHybrid with maximum iterations 300000, max on approach iterations 1000, and allowing unknown traversal. Tolerance 2.00.Using motion model: Dubin.
+[planner_server-2] [INFO] [1788263319.364644120] [planner_server]: Planner Server has GridBased  planners available.
+[costmap_3d_markers-8] [INFO] [1788263319.579931032] [costmap_3d_markers]: costmap_3d_markers up (visualization only)
+[lifecycle_manager-10] [INFO] [1788263319.670375670] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-4] [INFO] [1788263319.670776266] [behavior_server]: Configuring
+[behavior_server-4] [INFO] [1788263319.676323298] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[behavior_server-4] [INFO] [1788263319.677906556] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[behavior_server-4] [INFO] [1788263319.678809029] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[behavior_server-4] [INFO] [1788263319.688202526] [behavior_server]: Configuring spin
+[behavior_server-4] [INFO] [1788263319.696815135] [behavior_server]: Configuring drive_on_heading
+[behavior_server-4] [INFO] [1788263319.701575370] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788263319.708179343] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-5] [INFO] [1788263319.708588379] [bt_navigator]: Configuring
+[bt_navigator-5] [INFO] [1788263319.715489015] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[bt_navigator-5] [WARN] [1788263319.720140095] [bt_navigator]: Error_code parameters were not set. Using default values of: follow_path_error_code compute_path_error_code
+[bt_navigator-5] Make sure these match your BT and there are not other sources of error codes youreported to your application
+[click_to_goal-9] [INFO] [1788263319.757242616] [click_to_goal]: click_to_goal up: validated goals -> NavigateToPose, frame=camera_init, radius=2.8m, reject_unknown=True
+[bt_navigator-5] [INFO] [1788263319.780966537] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[lifecycle_manager-10] [INFO] [1788263319.806656978] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-6] [INFO] [1788263319.806925569] [waypoint_follower]: Configuring
+[waypoint_follower-6] [INFO] [1788263319.830047222] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[waypoint_follower-6] [INFO] [1788263319.830607396] [waypoint_follower]: Waypoint pause duration is set to zero, disabling task executor plugin.
+[lifecycle_manager-10] [INFO] [1788263319.831074687] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-7] [INFO] [1788263319.831297382] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788263319.836264850] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-3] [INFO] [1788263319.836447678] [smoother_server]: Configuring smoother server
+[smoother_server-3] [INFO] [1788263319.851374875] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-3] [INFO] [1788263319.852145101] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788263319.861978371] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-1] [INFO] [1788263319.862156363] [controller_server]: Activating
+[controller_server-1] [INFO] [1788263319.862183464] [local_costmap.local_costmap]: Activating
+[controller_server-1] [INFO] [1788263319.862188446] [local_costmap.local_costmap]: Checking transform
+[controller_server-1] [INFO] [1788263319.862224396] [local_costmap.local_costmap]: Timed out waiting for transform from wamv/wamv/base_link to camera_init to become available, tf error: Invalid frame ID "camera_init" passed to canTransform argument target_frame - frame does not exist
+[controller_server-1] [INFO] [1788263320.362286709] [local_costmap.local_costmap]: Timed out waiting for transform from wamv/wamv/base_link to camera_init to become available, tf error: Invalid frame ID "camera_init" passed to canTransform argument target_frame - frame does not exist
+[controller_server-1] [INFO] [1788263320.862277365] [local_costmap.local_costmap]: Timed out waiting for transform from wamv/wamv/base_link to camera_init to become available, tf error: Invalid frame ID "camera_init" passed to canTransform argument target_frame - frame does not exist
+[controller_server-1] [INFO] [1788263321.362351512] [local_costmap.local_costmap]: start
+[controller_server-1] [INFO] [1788263321.564580518] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-1] [INFO] [1788263321.564699266] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263321.672571319] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788263321.672671215] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-2] [INFO] [1788263321.674226438] [planner_server]: Activating
+[planner_server-2] [INFO] [1788263321.674336973] [global_costmap.global_costmap]: Activating
+[planner_server-2] [INFO] [1788263321.674352627] [global_costmap.global_costmap]: Checking transform
+[planner_server-2] [INFO] [1788263321.674509473] [global_costmap.global_costmap]: start
+[planner_server-2] [INFO] [1788263322.679733258] [planner_server]: Activating plugin GridBased of type SmacPlannerHybrid
+[planner_server-2] [INFO] [1788263322.683960757] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263322.790075412] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788263322.790151635] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-4] [INFO] [1788263322.790585443] [behavior_server]: Activating
+[behavior_server-4] [INFO] [1788263322.790620318] [behavior_server]: Activating spin
+[behavior_server-4] [INFO] [1788263322.790639835] [behavior_server]: Activating drive_on_heading
+[behavior_server-4] [INFO] [1788263322.790655828] [behavior_server]: Activating wait
+[behavior_server-4] [INFO] [1788263322.790677418] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263322.899027776] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788263322.899114567] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-5] [INFO] [1788263322.899832756] [bt_navigator]: Activating
+[bt_navigator-5] [INFO] [1788263322.962993050] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263323.070344874] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788263323.070397456] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-6] [INFO] [1788263323.070948432] [waypoint_follower]: Activating
+[waypoint_follower-6] [INFO] [1788263323.071036839] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263323.177888066] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788263323.177937155] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-7] [INFO] [1788263323.178294750] [velocity_smoother]: Activating
+[velocity_smoother-7] [INFO] [1788263323.178359903] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263323.287535432] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788263323.287594880] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-3] [INFO] [1788263323.288044277] [smoother_server]: Activating
+[smoother_server-3] [INFO] [1788263323.288109295] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788263323.396868175] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788263323.396922809] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788263323.396939988] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[bt_navigator-5] [INFO] [1788263552.334737768] [bt_navigator]: Begin navigating from current location (-0.33, 0.33) to (18.00, 0.00)
+[planner_server-2] [ERROR] [1788263552.335875161] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[click_to_goal-9] [INFO] [1788263552.336829901] [click_to_goal]: validated goal sent to NavigateToPose
+[click_to_goal-9] [INFO] [1788263552.337404954] [click_to_goal]: external goal accepted (18.00, 0.00)
+[bt_navigator-5] [INFO] [1788263552.345165435] [bt_navigator]: Received goal preemption request
+[bt_navigator-5] [INFO] [1788263552.345413612] [bt_navigator]: Begin navigating from current location (-0.33, 0.33) to (18.00, 0.00)
+[controller_server-1] [INFO] [1788263552.355813189] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-1] [WARN] [1788263552.355872129] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-1] [WARN] [1788263552.355892498] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[planner_server-2] [ERROR] [1788263556.516216544] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263556.556025810] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263560.544355347] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263560.656021219] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263564.564818460] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263564.656020352] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263568.594761603] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263568.656014427] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263572.627063752] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263572.656018687] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263576.654869368] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263576.756033373] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263580.675811130] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263580.756039916] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263584.704877770] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263584.756022255] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263588.734995240] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263588.756015643] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263592.754927430] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263592.855998445] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263596.774774008] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263596.856044282] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263599.756080439] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263599.756199489] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788263599.774657403] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788263599.775311561] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-1] [WARN] [1788263599.965745126] [controller_server]: Control loop missed its desired rate of 10.0000 Hz. Current loop rate is 5.8140 Hz.
+[planner_server-2] [ERROR] [1788263600.804974850] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263600.865892873] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263604.824911182] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263604.865883799] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263608.855002786] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263608.965882029] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263609.265960205] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263609.266116408] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788263609.284660055] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-2] [INFO] [1788263609.285026746] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-4] [INFO] [1788263609.285846233] [behavior_server]: Running wait
+[behavior_server-4] [INFO] [1788263611.786101419] [behavior_server]: wait completed successfully
+[planner_server-2] [ERROR] [1788263611.805114112] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263611.824783413] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788263615.834838150] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263615.924963046] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263619.864785841] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263619.924968805] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263620.925036769] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263620.925174789] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788263620.944771451] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788263620.945358266] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788263623.894704558] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263623.945485459] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263627.914899380] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263627.945465237] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263630.145536556] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263630.145692012] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788263630.164607329] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-2] [INFO] [1788263630.164868977] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-4] [INFO] [1788263630.165336897] [behavior_server]: Running wait
+[behavior_server-4] [INFO] [1788263632.416867993] [behavior_server]: wait completed successfully
+[planner_server-2] [ERROR] [1788263632.436212046] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263632.455880195] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788263636.466104908] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263636.556017607] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263640.486329315] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263640.556014016] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263641.456105373] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263641.456264197] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788263641.476205821] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788263641.476673622] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788263644.506644246] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263644.576795879] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788263648.536345800] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788263648.576795737] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788263650.876922294] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788263650.877129544] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[bt_navigator-5] [WARN] [1788263650.905903662] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-5] [ERROR] [1788263650.906213404] [bt_navigator]: Goal failed
+[click_to_goal-9] [INFO] [1788263650.908291835] [click_to_goal]: NavigateToPose finished: ABORTED (status=6)
+[bt_navigator-5] [INFO] [1788264225.443701393] [bt_navigator]: Begin navigating from current location (4.29, 2.67) to (18.00, 0.00)
+[planner_server-2] [ERROR] [1788264225.444366088] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[click_to_goal-9] [INFO] [1788264225.447324869] [click_to_goal]: validated goal sent to NavigateToPose
+[click_to_goal-9] [INFO] [1788264225.447880160] [click_to_goal]: external goal accepted (18.00, 0.00)
+[bt_navigator-5] [INFO] [1788264225.454473025] [bt_navigator]: Received goal preemption request
+[bt_navigator-5] [INFO] [1788264225.454606393] [bt_navigator]: Begin navigating from current location (4.28, 2.66) to (18.00, 0.00)
+[controller_server-1] [INFO] [1788264225.465075617] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788264229.474385808] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264229.565229371] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264233.494729737] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264233.565226572] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264237.524330245] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264237.565229798] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264241.554315930] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264241.665230363] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264245.574620480] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264245.665227172] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264249.594522641] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264249.665229200] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264253.624466387] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264253.665184006] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264254.665287881] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264254.665454776] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788264254.684298892] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788264254.684795210] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788264257.654278115] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264257.684940457] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264261.684295708] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264261.784924740] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264263.485001251] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264263.485162566] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788264263.504278486] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-2] [INFO] [1788264263.504745912] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-4] [INFO] [1788264263.505209912] [behavior_server]: Running wait
+[behavior_server-4] [INFO] [1788264265.705418656] [behavior_server]: wait completed successfully
+[planner_server-2] [ERROR] [1788264265.724312954] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264265.744232996] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788264269.744461527] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264269.844370410] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264273.754580684] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264273.844386825] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264274.445203391] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264274.445364559] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788264274.464201327] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788264274.464792258] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-1] [WARN] [1788264274.565222471] [controller_server]: Control loop missed its desired rate of 10.0000 Hz. Current loop rate is 10.0000 Hz.
+[planner_server-2] [ERROR] [1788264277.774422290] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264277.865356342] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264281.794526885] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264281.865376117] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264283.265451846] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264283.265593578] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788264283.284320129] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-2] [INFO] [1788264283.284696952] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-4] [INFO] [1788264283.285232139] [behavior_server]: Running wait
+[behavior_server-4] [INFO] [1788264285.485431346] [behavior_server]: wait completed successfully
+[planner_server-2] [ERROR] [1788264285.504507377] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264285.524311630] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-2] [ERROR] [1788264289.534423883] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264289.624445515] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264293.564436588] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264293.624461995] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264297.594418762] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264297.624497128] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264299.224530098] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264299.224724534] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-1] [INFO] [1788264299.244190804] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[controller_server-1] [INFO] [1788264299.245274767] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-1] [WARN] [1788264299.365513087] [controller_server]: Control loop missed its desired rate of 10.0000 Hz. Current loop rate is 8.3333 Hz.
+[planner_server-2] [ERROR] [1788264301.614773308] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264301.665615440] [controller_server]: Passing new path to controller.
+[planner_server-2] [ERROR] [1788264305.644481121] [planner_server]: Inflation layer either not found or inflation is not set sufficiently for optimized non-circular collision checking capabilities. It is HIGHLY recommended to set the inflation radius to be at MINIMUM half of the robot's largest cross-section. See github.com/ros-planning/navigation2/tree/main/nav2_smac_planner#potential-fields for full instructions. This will substantially impact run-time performance.
+[controller_server-1] [INFO] [1788264305.665620035] [controller_server]: Passing new path to controller.
+[controller_server-1] [ERROR] [1788264307.965679568] [controller_server]: Failed to make progress
+[controller_server-1] [WARN] [1788264307.965822302] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[bt_navigator-5] [WARN] [1788264307.993860059] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-5] [ERROR] [1788264307.993963469] [bt_navigator]: Goal failed
+[click_to_goal-9] [INFO] [1788264307.994674864] [click_to_goal]: NavigateToPose finished: ABORTED (status=6)

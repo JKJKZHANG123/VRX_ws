@@ -1,0 +1,5 @@
+[INFO] [1788087593.196062385] [dynamic_trial_goal_publisher]: baseline status='IDLE code=0; status_seq=1'; generation=1; status_seq=1
+[INFO] [1788087593.197394613] [dynamic_trial_goal_publisher]: published goal (10.000, 0.000), yaw=0.000
+[INFO] [1788087593.198794698] [dynamic_trial_goal_publisher]: goal gateway changed status to: rejected: goal footprint cost 99 >= 50; status_seq=2
+STATUS:rejected: goal footprint cost 99 >= 50; status_seq=2
+[ERROR] [1788087593.200156864] [dynamic_trial_goal_publisher]: goal reached terminal status before acceptance: rejected: goal footprint cost 99 >= 50; status_seq=2

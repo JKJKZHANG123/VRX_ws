@@ -1,0 +1,15 @@
+[INFO] [launch]: All log files can be found below /home/jkjkzhang/lidar_project/.usv_logs/ros/2026-09-01-22-31-24-777540-jkjkzhang-TX-Gaming-FX608JPR-FX608JPR-90021
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [control_bridge-1]: process started with pid [90139]
+[control_bridge-1] [INFO] [1788273085.561183937] [control_bridge]: control_bridge (feed-forward) ready  k_v_lin=51.3 k_v_quad=72.4 k_yaw=420.0 yaw_sign=1.0  max=300N, safety_topic=/usv/safety_cloud, goal_status_topic=/usv/goal_status, emergency_box=x[-2.8,3.5]m +/-y1.3, warning_corridor=x[3.5,9.5]m +/-y2.4, yaw_ratio=0.70, escape_v=0.18m/s, escape_w=0.08rad/s
+[control_bridge-1] [ERROR] [1788273087.476478549] [control_bridge]: COLLISION EMERGENCY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [WARN] [1788273087.477220512] [control_bridge]: FORWARD SAFETY STOP: waiting for direct LiDAR safety cloud
+[control_bridge-1] [INFO] [1788273087.574125769] [control_bridge]: collision emergency stop cleared
+[control_bridge-1] [INFO] [1788273087.574735980] [control_bridge]: forward safety stop cleared
+[control_bridge-1] [WARN] [1788273254.092775455] [control_bridge]: FORWARD SAFETY STOP: obstacle in warning corridor (392 points)
+[control_bridge-1] [INFO] [1788273254.106722892] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=4.74 m, diagnostic)
+[control_bridge-1] [INFO] [1788273256.136657953] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=4.08 m, diagnostic)
+[control_bridge-1] [INFO] [1788273258.145337286] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=3.30 m, diagnostic)
+[control_bridge-1] [INFO] [1788273260.204757017] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=2.65 m, diagnostic)
+[control_bridge-1] [INFO] [1788273262.221266267] [control_bridge]: warning corridor: cap vx=0.50 m/s, Nav2 retains steering (swept clearance=2.15 m, diagnostic)
+[control_bridge-1] [INFO] [1788273264.200239823] [control_bridge]: forward safety stop cleared

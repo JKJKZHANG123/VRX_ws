@@ -1,0 +1,9 @@
+recorded_at,event,source,detail
+2026-08-29T20:04:03+08:00,experiment_start,report3/logs/m5_long_route_30m_20260829_run.log,"run_nav_test.sh target=(30,0), duration=180 s, yaw_sign=1.0"
+2026-08-29T20:04:06+08:00,goal_published,report3/logs/m5_long_route_30m_20260829_run.log,"/goal_pose frame=camera_init, x=30, y=0, yaw=0"
+sim=1788005048.693460362,controller_received_goal,.usv_logs/nav2.log,controller_server received goal and began control effort
+sim=1788005141.693874020,goal_reached,.usv_logs/nav2.log,controller_server: Reached the goal!
+sim=1788005141.721606722,goal_succeeded,.usv_logs/nav2.log,bt_navigator: Goal succeeded; result code 4
+t=96.800,thrust_commands_end,report3/data/m5_long_route_30m_20260829.csv,last nonzero des_vx/left_thrust/right_thrust sample
+2026-08-29T20:07:13+08:00,logger_stopped,report3/logs/m5_long_route_30m_20260829_run.log,CSV closed after 188.2 s recorded simulation time
+2026-08-29T20:08:36+08:00,stack_stopped,report3/logs/stop_after_m5_long_route_30m_20260829_200832.log,usv.sh stop rc=0; ros2 daemon stop rc=0

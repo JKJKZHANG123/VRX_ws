@@ -1,0 +1,13 @@
+
+[0;36m━━━━━━━━━━━━━━━━━━━━━━ USV 链路状态 ━━━━━━━━━━━━━━━━━━━━━━[0m
+  [0;32m●[0m sim  (pid 62459)
+  [0;32m●[0m clock_watchdog  (pid 63168)
+  [0;32m●[0m lio  (pid 63237)
+  [0;32m●[0m cloud_filter  (pid 63822)
+  [0;32m●[0m nav2  (pid 64002)
+  [0;32m●[0m bridge  (pid 64969)
+  [0;32m●[0m gz_click  (pid 65155)
+  [0;32m●[0m view  (pid 65438)
+  [0;32m✓ Nav2 实际状态: READY（6 节点 active [3] + 2 action server）[0m
+  [0;32m✓ /goal_pose: 有订阅者[0m
+

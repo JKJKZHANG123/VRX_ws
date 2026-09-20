@@ -1,0 +1,48 @@
+# USV 相机感知参数 (VRX 仿真)
+# 三个方向共用一个配置文件, 各节点读各自命名空间
+
+# ---- 方向1: 浮标语义识别 + LiDAR 融合 3D 定位 ----
+buoy_detector:
+  ros__parameters:
+    image_topic: "/wamv/sensors/cameras/front_left_camera_sensor/optical/image_raw"
+    camera_info_topic: "/wamv/sensors/cameras/front_left_camera_sensor/optical/camera_info"
+    cloud_topic: "/wamv/sensors/lidars/lidar_wamv_sensor/points"
+    min_area: 60            # 最小连通域面积 (像素), 滤掉噪点
+    max_area: 200000
+    min_fill_ratio: 0.30    # 轮廓填充率, 滤散乱噪点
+    publish_debug_image: true
+    classes: ['red', 'green', 'white', 'black', 'orange']
+    # --- LiDAR 融合门控 (滤掉远岸树线/天空等纯 2D 颜色误检) ---
+    fusion_enable: true     # 关闭则退回纯 2D (会误检岸线)
+    max_range: 80.0         # 浮标最大距离 (m); 远岸树线超此被滤
+    min_range: 1.0          # 最小距离, 滤船体自反射
+    z_min: -2.5             # 高度带下限 (LiDAR 系, m): 水面以上
+    z_max: 2.0              # 高度带上限: 滤高处树冠
+    min_support: 2          # 框内所需最少雷达点数
+    bbox_dilate: 4          # 框膨胀像素 (投影/标定容差)
+
+# ---- 方向2: LiDAR-相机彩色点云 ----
+cloud_colorizer:
+  ros__parameters:
+    cloud_topic: "/wamv/sensors/lidars/lidar_wamv_sensor/points"
+    image_topic: "/wamv/sensors/cameras/front_left_camera_sensor/optical/image_raw"
+    camera_info_topic: "/wamv/sensors/cameras/front_left_camera_sensor/optical/camera_info"
+    camera_frame: "wamv/wamv/base_link/front_left_camera_sensor_optical"
+    lidar_frame: "wamv/wamv/base_link/lidar_wamv_sensor"
+    colored_cloud_topic: "/usv/colored_cloud"
+    min_depth: 0.5
+    max_range: 100.0
+
+# ---- 方向3: 水面点云过滤 ----
+water_filter:
+  ros__parameters:
+    cloud_topic: "/wamv/sensors/lidars/lidar_wamv_sensor/points"
+    output_topic: "/usv/obstacle_cloud"
+    z_min: -1.5
+    z_max: 8.0
+    range_min: 2.0
+    range_max: 100.0
+    outlier_radius: 0.6
+    outlier_min_neighbors: 4
+    enable_outlier: true
+    voxel_size: 0.15

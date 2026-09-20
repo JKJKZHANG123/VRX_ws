@@ -1,0 +1,12 @@
+[INFO] [1788314767.555232112] [spawn_obstacle_ahead]: start: camera=(18.93,0.16) world=(-523.04,178.12) boat_world=(-523.044,178.120) yaw=0.710; lio_camera=(18.931,0.164); spawn point will be computed from Gazebo truth, not LIO
+[INFO] [1788314767.556280132] [spawn_obstacle_ahead]: waiting_for_motion: camera=(18.93,0.16) world=(-523.04,178.12) need speed>=0.25 m/s and travel>=4.0 m
+Traceback (most recent call last):
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 233, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 226, in main
+    return node.run()
+           ^^^^^^^^^^
+  File "/home/jkjkzhang/lidar_project/experiments/spawn_obstacle_ahead.py", line 202, in run
+    raise RuntimeError(
+RuntimeError: boat never reached speed 0.25 m/s and travel 4.0 m within 120.0s

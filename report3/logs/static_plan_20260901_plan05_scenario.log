@@ -1,0 +1,2 @@
+[37;1m2026-09-01 13:12:23.630 [31;1m[[37;1mRTPS_TRANSPORT_SHM[31;1m Error] [37mFailed init_port fastrtps_port7025: open_and_lock_file failed[34;1m -> Function [36mopen_port_internal[m
+[ERROR] [1788239573.749921651] [dynamic_obstacle_scenario]: boat world/camera poses unavailable within 30 s

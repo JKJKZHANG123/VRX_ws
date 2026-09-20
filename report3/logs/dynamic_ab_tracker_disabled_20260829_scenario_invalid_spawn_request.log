@@ -1,0 +1,2 @@
+[ERROR] [1787982915.373483983] [dynamic_obstacle_scenario]: Gazebo service failed (0): [libprotobuf ERROR google/protobuf/text_format.cc:337] Error parsing text-format gz.msgs.EntityFactory: 1:237: Expected identifier, got: }
+Unable to create request of type[gz.msgs.EntityFactory] with data[name: "dynamic_obstacle_ab", sdf_filename: "/home/jkjkzhang/lidar_project/experiments/models/dynamic_obstacle/model.sdf", allow_renaming: false, pose: {position: {x: -527.364701260, y: 163.756185457, z: 1.000000}, orientation: {w: 1.0}}}].
